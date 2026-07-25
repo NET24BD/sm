@@ -11,17 +11,23 @@
 
 <title>My Account | LINK4 COMMUNICATION</title>
 
+
 <script>
+
 (function(){
 
-    if(localStorage.getItem("loggedIn") !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace("login.html");
 
     }
 
 })();
+
 </script>
+
 
 <style>
 
@@ -30,9 +36,11 @@
 ===================================================== */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 
@@ -845,13 +853,33 @@ body{
 
     color:#0b7a4b;
 
-    padding:5px 8px;
+    padding:6px 10px;
 
     border-radius:6px;
 
     cursor:pointer;
 
     font-size:10px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+
+.password-toggle:hover{
+
+    background:#0b7a4b;
+
+    color:#ffffff;
+
+}
+
+
+.password-toggle:active{
+
+    transform:scale(.96);
 
 }
 
@@ -1126,13 +1154,11 @@ body{
 
     }
 
-
     .profile-left{
 
         padding:28px;
 
     }
-
 
     .profession-list{
 
@@ -1152,7 +1178,6 @@ body{
 
     }
 
-
     .sidebar.open{
 
         transform:
@@ -1160,13 +1185,11 @@ body{
 
     }
 
-
     .sidebar-overlay.show{
 
         display:block;
 
     }
-
 
     .main{
 
@@ -1177,7 +1200,6 @@ body{
         padding:15px;
 
     }
-
 
     .mobile-menu-btn{
 
@@ -1196,13 +1218,11 @@ body{
 
     }
 
-
     .page-title h1{
 
         font-size:18px;
 
     }
-
 
     .account-grid{
 
@@ -1210,13 +1230,11 @@ body{
 
     }
 
-
     .profile-right{
 
         padding:20px;
 
     }
-
 
     .profile-left{
 
@@ -1256,7 +1274,9 @@ L4
 
 LINK4 COMMUNICATION
 
-<small>MANAGEMENT SYSTEM</small>
+<small>
+MANAGEMENT SYSTEM
+</small>
 
 </div>
 
@@ -1295,7 +1315,9 @@ User
 
 <a href="dashboard.html">
 
-<span class="menu-icon">🏠</span>
+<span class="menu-icon">
+🏠
+</span>
 
 Dashboard
 
@@ -1304,7 +1326,9 @@ Dashboard
 
 <a href="dashboard.html">
 
-<span class="menu-icon">📊</span>
+<span class="menu-icon">
+📊
+</span>
 
 Overview
 
@@ -1313,7 +1337,9 @@ Overview
 
 <a href="support.html">
 
-<span class="menu-icon">🛠️</span>
+<span class="menu-icon">
+🛠️
+</span>
 
 Support
 
@@ -1322,7 +1348,9 @@ Support
 
 <a href="call.html">
 
-<span class="menu-icon">📞</span>
+<span class="menu-icon">
+📞
+</span>
 
 Call
 
@@ -1331,7 +1359,9 @@ Call
 
 <a href="account.html" class="active">
 
-<span class="menu-icon">👤</span>
+<span class="menu-icon">
+👤
+</span>
 
 My Account
 
@@ -1345,7 +1375,9 @@ My Account
 
 <button class="logout-btn" id="logoutBtn">
 
-<span class="menu-icon">🚪</span>
+<span class="menu-icon">
+🚪
+</span>
 
 Logout
 
@@ -1372,38 +1404,52 @@ Logout
 
 <div class="page-title">
 
+
 <button class="mobile-menu-btn" id="mobileMenuBtn">
 
 ☰
 
 </button>
 
+
 <div>
 
-<h1>My Account</h1>
+<h1>
+My Account
+</h1>
 
-<p>Employee profile and account information</p>
+<p>
+Employee profile and account information
+</p>
 
 </div>
+
 
 </div>
 
 
 <div class="top-user">
 
+
 <div class="top-user-info">
 
-<strong id="topName">User</strong>
+<strong id="topName">
+User
+</strong>
 
-<span id="topRole">User</span>
+<span id="topRole">
+User
+</span>
 
 </div>
+
 
 <div class="top-avatar" id="topAvatar">
 
 U
 
 </div>
+
 
 </div>
 
@@ -1457,17 +1503,20 @@ User
 
 <div class="profile-tags">
 
+
 <span class="profile-tag" id="profileRole">
 
 Role
 
 </span>
 
+
 <span class="profile-tag" id="profileStatus">
 
 Status
 
 </span>
+
 
 </div>
 
@@ -1480,9 +1529,13 @@ Status
 
 <div class="profile-right-title">
 
-<h2>Account Information</h2>
+<h2>
+Account Information
+</h2>
 
-<p>Your personal account details</p>
+<p>
+Your personal account details
+</p>
 
 </div>
 
@@ -1492,27 +1545,45 @@ Status
 
 <div class="info-card">
 
-<span class="info-label">Name</span>
+<span class="info-label">
+Name
+</span>
 
-<span class="info-value" id="accountName">-</span>
-
-</div>
-
-
-<div class="info-card">
-
-<span class="info-label">Username</span>
-
-<span class="info-value" id="accountUsername">-</span>
+<span
+class="info-value"
+id="accountName"
+>
+-
+</span>
 
 </div>
 
 
 <div class="info-card">
 
-<span class="info-label">Password</span>
+<span class="info-label">
+Username
+</span>
+
+<span
+class="info-value"
+id="accountUsername"
+>
+-
+</span>
+
+</div>
+
+
+<div class="info-card">
+
+<span class="info-label">
+Password
+</span>
+
 
 <div class="password-row">
+
 
 <span
 class="info-value"
@@ -1522,46 +1593,71 @@ data-password=""
 ••••••••
 </span>
 
+
 <button
 class="password-toggle"
 id="passwordToggle"
+type="button"
 >
 Show
 </button>
 
-</div>
 
 </div>
-
-
-<div class="info-card">
-
-<span class="info-label">Department</span>
-
-<span class="info-value" id="accountDepartment">-</span>
 
 </div>
 
 
 <div class="info-card">
 
-<span class="info-label">Join Date</span>
+<span class="info-label">
+Department
+</span>
 
-<span class="info-value" id="accountJoinDate">-</span>
+<span
+class="info-value"
+id="accountDepartment"
+>
+-
+</span>
 
 </div>
 
 
 <div class="info-card">
 
-<span class="info-label">Blood Group</span>
+<span class="info-label">
+Join Date
+</span>
 
-<span class="info-value" id="accountBloodGroup">-</span>
+<span
+class="info-value"
+id="accountJoinDate"
+>
+-
+</span>
+
+</div>
+
+
+<div class="info-card">
+
+<span class="info-label">
+Blood Group
+</span>
+
+<span
+class="info-value"
+id="accountBloodGroup"
+>
+-
+</span>
 
 </div>
 
 
 </div>
+
 
 </div>
 
@@ -1573,19 +1669,33 @@ Show
      PROFESSIONAL INFORMATION
 ===================================================== -->
 
-<section class="section" id="professionSection">
+<section
+class="section"
+id="professionSection"
+>
 
 
 <div class="section-header">
 
-<h2>Professional Information</h2>
 
-<span id="professionCount">0 Professional Roles</span>
+<h2>
+Professional Information
+</h2>
+
+
+<span id="professionCount">
+0 Professional Roles
+</span>
+
 
 </div>
 
 
-<div class="profession-list" id="professionList">
+<div
+class="profession-list"
+id="professionList"
+>
+
 
 <div class="loading">
 
@@ -1593,10 +1703,15 @@ Loading professional information...
 
 </div>
 
+
 </div>
 
 
-<div class="no-data" id="noProfession" style="display:none;">
+<div
+class="no-data"
+id="noProfession"
+style="display:none;"
+>
 
 No professional information available.
 
@@ -1620,6 +1735,7 @@ No professional information available.
 
 
 <script>
+
 
 /* =====================================================
    API CONFIG
@@ -1697,6 +1813,16 @@ document.getElementById("profilePhoto");
 const defaultPhoto =
 document.getElementById("defaultPhoto");
 
+const passwordToggle =
+document.getElementById("passwordToggle");
+
+
+/* =====================================================
+   PASSWORD STATE
+===================================================== */
+
+let passwordVisible = false;
+
 
 /* =====================================================
    INITIAL LOCAL DATA
@@ -1708,13 +1834,20 @@ setUserData({
     loggedUsername,
 
     name:
-    localStorage.getItem("name") || "User",
+    localStorage.getItem("name") ||
+    "User",
 
     role:
-    localStorage.getItem("role") || "User",
+    localStorage.getItem("role") ||
+    "User",
 
     status:
-    localStorage.getItem("status") || "Active"
+    localStorage.getItem("status") ||
+    "Active",
+
+    password:
+    localStorage.getItem("password") ||
+    ""
 
 });
 
@@ -1728,6 +1861,7 @@ loadAccount();
 
 async function loadAccount(){
 
+
     if(!loggedUsername){
 
         return;
@@ -1737,20 +1871,34 @@ async function loadAccount(){
 
     try{
 
+
         const url =
+
         API_URL +
+
         "?action=getAccount" +
+
         "&username=" +
-        encodeURIComponent(loggedUsername);
+
+        encodeURIComponent(
+            loggedUsername
+        );
 
 
         const response =
+
         await fetch(
+
             url,
+
             {
+
                 method:"GET",
+
                 cache:"no-store"
+
             }
+
         );
 
 
@@ -1764,39 +1912,56 @@ async function loadAccount(){
 
 
         const data =
+
         await response.json();
 
 
         if(data.success === true){
 
+
             setUserData(
+
                 data.user
+
             );
 
+
             renderProfessions(
+
                 data.user
+
             );
+
 
         }
 
         else{
 
             console.error(
+
                 data.message
+
             );
 
         }
+
 
     }
 
     catch(error){
 
+
         console.error(
+
             "Account Error:",
+
             error
+
         );
 
+
     }
+
 
 }
 
@@ -1807,183 +1972,406 @@ async function loadAccount(){
 
 function setUserData(user){
 
+
+    user =
+    user || {};
+
+
     const name =
-    user.name || "User";
+
+    String(
+
+        user.name ||
+
+        "User"
+
+    ).trim();
+
 
     const username =
-    user.username || loggedUsername || "-";
+
+    String(
+
+        user.username ||
+
+        loggedUsername ||
+
+        "-"
+
+    ).trim();
+
 
     const role =
-    user.role || "User";
+
+    String(
+
+        user.role ||
+
+        "User"
+
+    ).trim();
+
 
     const status =
-    user.status || "Active";
+
+    String(
+
+        user.status ||
+
+        "Active"
+
+    ).trim();
+
+
+    /* =================================================
+       PASSWORD
+    ================================================= */
+
+
+    const password =
+
+    String(
+
+        user.password ||
+
+        localStorage.getItem("password") ||
+
+        ""
+
+    ).trim();
+
+
+    accountPassword.dataset.password =
+
+        password;
+
+
+    passwordVisible = false;
+
+
+    accountPassword.textContent =
+
+        "••••••••";
+
+
+    passwordToggle.textContent =
+
+        "Show";
+
+
+    /* =================================================
+       BASIC USER DATA
+    ================================================= */
 
 
     sidebarName.textContent =
-    name;
+
+        name;
+
 
     sidebarRole.textContent =
-    role;
+
+        role;
+
 
     topName.textContent =
-    name;
+
+        name;
+
 
     topRole.textContent =
-    role;
+
+        role;
+
 
     profileName.textContent =
-    name;
+
+        name;
+
 
     profileUsername.textContent =
-    "@" + username;
+
+        "@" + username;
+
 
     profileRole.textContent =
-    role;
+
+        role;
+
 
     profileStatus.textContent =
-    status;
+
+        status;
+
 
     accountName.textContent =
-    name;
+
+        name;
+
 
     accountUsername.textContent =
-    username;
+
+        username;
+
 
     accountDepartment.textContent =
-    user.department || "-";
+
+        user.department ||
+
+        "-";
+
 
     accountJoinDate.textContent =
-    user.joinDate || "-";
+
+        user.joinDate ||
+
+        "-";
+
 
     accountBloodGroup.textContent =
-    user.bloodGroup || "-";
+
+        user.bloodGroup ||
+
+        "-";
+
+
+    /* =================================================
+       INITIAL
+    ================================================= */
 
 
     const initial =
+
     name
+
     .trim()
+
     .charAt(0)
-    .toUpperCase() || "U";
+
+    .toUpperCase()
+
+    || "U";
 
 
     sidebarAvatar.textContent =
-    initial;
+
+        initial;
+
 
     topAvatar.textContent =
-    initial;
+
+        initial;
+
 
     defaultPhoto.textContent =
-    initial;
+
+        initial;
 
 
-    /* ================================================
+    /* =================================================
        PROFILE PHOTO
-    ================================================ */
+    ================================================= */
+
 
     const photo =
+
     String(
-        user.photo || ""
+
+        user.photo ||
+
+        ""
+
     ).trim();
 
 
     if(photo){
 
+
         profilePhoto.src =
-        photo;
+
+            photo;
+
 
         profilePhoto.style.display =
-        "block";
+
+            "block";
+
 
         defaultPhoto.style.display =
-        "none";
+
+            "none";
 
 
         profilePhoto.onload =
+
         function(){
 
+
             sidebarAvatar.innerHTML =
+
             '<img src="' +
+
             photo +
+
             '" alt="Profile">';
 
+
             topAvatar.innerHTML =
+
             '<img src="' +
+
             photo +
+
             '" alt="Profile">';
+
 
         };
 
 
         profilePhoto.onerror =
+
         function(){
 
+
             profilePhoto.style.display =
-            "none";
+
+                "none";
+
 
             defaultPhoto.style.display =
-            "flex";
+
+                "flex";
+
+
+            sidebarAvatar.textContent =
+
+                initial;
+
+
+            topAvatar.textContent =
+
+                initial;
+
 
         };
 
-    }
-
-}
-
-
-/* =====================================================
-   PASSWORD
-===================================================== */
-
-document
-.getElementById("passwordToggle")
-.addEventListener(
-"click",
-function(){
-
-    const password =
-    accountPassword.dataset.password || "";
-
-
-    if(!password){
-
-        return;
-
-    }
-
-
-    if(
-        accountPassword.textContent ===
-        "••••••••"
-    ){
-
-        accountPassword.textContent =
-        password;
-
-        this.textContent =
-        "Hide";
 
     }
 
     else{
 
-        accountPassword.textContent =
-        "••••••••";
 
-        this.textContent =
-        "Show";
+        profilePhoto.style.display =
+
+            "none";
+
+
+        defaultPhoto.style.display =
+
+            "flex";
+
+
+        sidebarAvatar.textContent =
+
+            initial;
+
+
+        topAvatar.textContent =
+
+            initial;
+
 
     }
 
-});
+
+}
 
 
 /* =====================================================
-   DISPLAY PASSWORD AFTER API LOAD
+   PASSWORD SHOW / HIDE
 ===================================================== */
 
-const originalSetUserData =
-setUserData;
+passwordToggle.addEventListener(
+
+    "click",
+
+    function(){
+
+
+        const password =
+
+        accountPassword.dataset.password || "";
+
+
+        /* PASSWORD NOT AVAILABLE */
+
+        if(!password){
+
+
+            accountPassword.textContent =
+
+                "••••••••";
+
+
+            passwordToggle.textContent =
+
+                "Show";
+
+
+            passwordVisible = false;
+
+
+            return;
+
+
+        }
+
+
+        /* SHOW PASSWORD */
+
+        if(passwordVisible === false){
+
+
+            accountPassword.textContent =
+
+                password;
+
+
+            passwordToggle.textContent =
+
+                "Hide";
+
+
+            passwordVisible = true;
+
+
+        }
+
+
+        /* HIDE PASSWORD */
+
+        else{
+
+
+            accountPassword.textContent =
+
+                "••••••••";
+
+
+            passwordToggle.textContent =
+
+                "Show";
+
+
+            passwordVisible = false;
+
+
+        }
+
+
+    }
+
+);
 
 
 /* =====================================================
@@ -1992,24 +2380,40 @@ setUserData;
 
 function renderProfessions(user){
 
+
     const list =
+
     document.getElementById(
+
         "professionList"
+
     );
+
 
     const section =
+
     document.getElementById(
+
         "professionSection"
+
     );
+
 
     const noData =
+
     document.getElementById(
+
         "noProfession"
+
     );
 
+
     const countText =
+
     document.getElementById(
+
         "professionCount"
+
     );
 
 
@@ -2018,35 +2422,72 @@ function renderProfessions(user){
 
     const professions = [
 
-        {
-            name:user.profession1,
-            logo:user.professionCompanyLG1
-        },
 
         {
-            name:user.profession2,
-            logo:user.professionCompanyLG2
+
+            name:
+            user.profession1,
+
+            logo:
+            user.professionCompanyLG1
+
         },
 
-        {
-            name:user.profession3,
-            logo:user.professionCompanyLG3
-        },
 
         {
-            name:user.profession4,
-            logo:user.professionCompanyLG4
+
+            name:
+            user.profession2,
+
+            logo:
+            user.professionCompanyLG2
+
         },
 
-        {
-            name:user.profession5,
-            logo:user.professionCompanyLG5
-        },
 
         {
-            name:user.profession6,
-            logo:user.professionCompanyLG6
+
+            name:
+            user.profession3,
+
+            logo:
+            user.professionCompanyLG3
+
+        },
+
+
+        {
+
+            name:
+            user.profession4,
+
+            logo:
+            user.professionCompanyLG4
+
+        },
+
+
+        {
+
+            name:
+            user.profession5,
+
+            logo:
+            user.professionCompanyLG5
+
+        },
+
+
+        {
+
+            name:
+            user.profession6,
+
+            logo:
+            user.professionCompanyLG6
+
         }
+
 
     ];
 
@@ -2055,21 +2496,27 @@ function renderProfessions(user){
 
 
     professions.forEach(
+
     function(item){
 
+
         const profession =
+
         String(
+
             item.name || ""
+
         ).trim();
 
 
         const logo =
+
         String(
+
             item.logo || ""
+
         ).trim();
 
-
-        /* EMPTY PROFESSION HIDE */
 
         if(!profession){
 
@@ -2082,140 +2529,242 @@ function renderProfessions(user){
 
 
         const card =
+
         document.createElement(
+
             "div"
+
         );
 
+
         card.className =
-        "profession-card";
+
+            "profession-card";
 
 
         const left =
+
         document.createElement(
+
             "div"
+
         );
 
+
         left.className =
-        "profession-left";
+
+            "profession-left";
 
 
         const number =
+
         document.createElement(
+
             "div"
+
         );
 
+
         number.className =
-        "profession-number";
+
+            "profession-number";
+
 
         number.textContent =
-        count;
+
+            count;
 
 
         const text =
+
         document.createElement(
+
             "div"
+
         );
 
 
         const label =
+
         document.createElement(
+
             "div"
+
         );
 
+
         label.className =
-        "profession-label";
+
+            "profession-label";
+
 
         label.textContent =
-        "Professional Role";
+
+            "Professional Role";
 
 
         const value =
+
         document.createElement(
+
             "div"
+
         );
 
+
         value.className =
-        "profession-value";
+
+            "profession-value";
+
 
         value.textContent =
-        profession;
+
+            profession;
 
 
-        text.appendChild(label);
+        text.appendChild(
 
-        text.appendChild(value);
+            label
 
-
-        left.appendChild(number);
-
-        left.appendChild(text);
+        );
 
 
-        card.appendChild(left);
+        text.appendChild(
+
+            value
+
+        );
+
+
+        left.appendChild(
+
+            number
+
+        );
+
+
+        left.appendChild(
+
+            text
+
+        );
+
+
+        card.appendChild(
+
+            left
+
+        );
 
 
         /* COMPANY LOGO */
 
+
         if(logo){
 
+
             const image =
+
             document.createElement(
+
                 "img"
+
             );
 
+
             image.className =
-            "company-logo";
+
+                "company-logo";
+
 
             image.src =
-            logo;
+
+                logo;
+
 
             image.alt =
-            "Company Logo";
+
+                "Company Logo";
 
 
             image.onerror =
+
             function(){
 
+
                 this.style.display =
-                "none";
+
+                    "none";
+
 
             };
 
 
-            card.appendChild(image);
+            card.appendChild(
+
+                image
+
+            );
+
 
         }
 
 
-        list.appendChild(card);
+        list.appendChild(
+
+            card
+
+        );
+
 
     });
 
 
     if(count === 0){
 
+
         section.style.display =
-        "none";
+
+            "none";
+
+
+        noData.style.display =
+
+            "none";
+
 
     }
 
     else{
 
+
         section.style.display =
-        "block";
+
+            "block";
+
 
         noData.style.display =
-        "none";
+
+            "none";
+
 
         countText.textContent =
+
         count +
+
         (
+
             count === 1
+
             ? " Professional Role"
+
             : " Professional Roles"
+
         );
 
+
     }
+
 
 }
 
@@ -2225,49 +2774,82 @@ function renderProfessions(user){
 ===================================================== */
 
 const mobileMenuBtn =
+
 document.getElementById(
+
     "mobileMenuBtn"
+
 );
+
 
 const sidebar =
+
 document.getElementById(
+
     "sidebar"
+
 );
 
+
 const overlay =
+
 document.getElementById(
+
     "sidebarOverlay"
+
 );
 
 
 mobileMenuBtn.addEventListener(
-"click",
-function(){
 
-    sidebar.classList.add(
-        "open"
-    );
+    "click",
 
-    overlay.classList.add(
-        "show"
-    );
+    function(){
 
-});
+
+        sidebar.classList.add(
+
+            "open"
+
+        );
+
+
+        overlay.classList.add(
+
+            "show"
+
+        );
+
+
+    }
+
+);
 
 
 overlay.addEventListener(
-"click",
-function(){
 
-    sidebar.classList.remove(
-        "open"
-    );
+    "click",
 
-    overlay.classList.remove(
-        "show"
-    );
+    function(){
 
-});
+
+        sidebar.classList.remove(
+
+            "open"
+
+        );
+
+
+        overlay.classList.remove(
+
+            "show"
+
+        );
+
+
+    }
+
+);
 
 
 /* =====================================================
@@ -2275,20 +2857,33 @@ function(){
 ===================================================== */
 
 document
+
 .getElementById("logoutBtn")
+
 .addEventListener(
-"click",
-function(){
 
-    localStorage.clear();
+    "click",
 
-    window.location.replace(
-        "login.html"
-    );
+    function(){
 
-});
+
+        localStorage.clear();
+
+
+        window.location.replace(
+
+            "login.html"
+
+        );
+
+
+    }
+
+);
+
 
 </script>
+
 
 </body>
 
