@@ -1,1351 +1,851 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#07111f">
+    <meta name="theme-color" content="#07111f">
 
-<meta name="description"
-content="LINK4 COMMUNICATION Management System - Professional support, call, customer and operations management platform.">
+    <meta name="description"
+        content="LINK4 COMMUNICATION Management System">
 
-<title>LINK4 COMMUNICATION | Management System</title>
+    <title>LINK4 COMMUNICATION | Management System</title>
 
-<!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- ICONS -->
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-
-    font-family:"Inter",sans-serif;
-
-    background:#07111f;
-
-    color:#ffffff;
-
-    min-height:100vh;
-
-    overflow-x:hidden;
-
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #07111f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
+/* BACKGROUND */
 
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    width:600px;
-
-    height:600px;
-
-    background:rgba(0,200,140,0.08);
-
-    filter:blur(120px);
-
-    border-radius:50%;
-
-    top:-250px;
-
-    left:-200px;
-
-    z-index:-2;
-
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 208, 132, 0.08);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -200px;
+    left: -150px;
+    z-index: -1;
 }
 
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    width:500px;
-
-    height:500px;
-
-    background:rgba(0,120,255,0.08);
-
-    filter:blur(120px);
-
-    border-radius:50%;
-
-    bottom:-250px;
-
-    right:-150px;
-
-    z-index:-2;
-
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 100, 255, 0.08);
+    filter: blur(120px);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -150px;
+    z-index: -1;
 }
 
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* NAVBAR */
 
-.navbar{
-
-    width:100%;
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    z-index:1000;
-
-    background:rgba(7,17,31,0.82);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,0.07);
-
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    z-index: 1000;
+    background: rgba(7, 17, 31, 0.90);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.nav-container{
+.nav-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    padding: 0 20px;
 
-    max-width:1250px;
-
-    margin:auto;
-
-    height:76px;
-
-    padding:0 25px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
 /* LOGO */
 
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    text-decoration:none;
-
-    color:#fff;
-
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
 }
 
-.logo-icon{
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
 
-    width:44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    height:44px;
+    background: #00d084;
+    color: #07111f;
 
-    border-radius:13px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:linear-gradient(135deg,#00d084,#00a86b);
-
-    color:#06131d;
-
-    font-size:20px;
-
-    box-shadow:0 10px 30px rgba(0,208,132,0.25);
-
+    font-size: 20px;
 }
 
-.logo-text{
-
-    display:flex;
-
-    flex-direction:column;
-
+.logo-text strong {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 1px;
 }
 
-.logo-text strong{
-
-    font-size:17px;
-
-    letter-spacing:1px;
-
-}
-
-.logo-text span{
-
-    font-size:10px;
-
-    color:#8fa3b8;
-
-    letter-spacing:2px;
-
-    margin-top:2px;
-
+.logo-text span {
+    display: block;
+    color: #8193a4;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 3px;
 }
 
 
 /* NAV LINKS */
 
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:28px;
-
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-.nav-links a{
-
-    color:#aebdca;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:500;
-
-    transition:0.3s;
-
+.nav-links a {
+    color: #aab8c5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.nav-links a:hover{
-
-    color:#00d084;
-
+.nav-links a:hover {
+    color: #00d084;
 }
 
 
-/* LOGIN BUTTON */
+/* LOGIN */
 
-.login-btn{
+.login-btn {
+    background: #00d084 !important;
+    color: #07111f !important;
 
-    display:flex;
+    padding: 11px 20px;
+    border-radius: 10px;
 
-    align-items:center;
-
-    gap:8px;
-
-    padding:11px 19px;
-
-    border-radius:10px;
-
-    color:#07111f !important;
-
-    background:#00d084;
-
-    font-weight:700 !important;
-
-    box-shadow:0 8px 25px rgba(0,208,132,0.2);
-
-    transition:0.3s;
-
+    font-weight: 700 !important;
 }
 
-.login-btn:hover{
-
-    transform:translateY(-2px);
-
-    background:#10e99a;
-
+.login-btn:hover {
+    transform: translateY(-2px);
 }
 
 
-/* MOBILE MENU */
+/* MENU */
 
-.menu-btn{
+.menu-btn {
+    display: none;
 
-    display:none;
+    width: 42px;
+    height: 42px;
 
-    width:42px;
+    border-radius: 10px;
 
-    height:42px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
 
-    border:1px solid rgba(255,255,255,0.1);
+    color: white;
+    font-size: 18px;
 
-    border-radius:10px;
-
-    background:rgba(255,255,255,0.04);
-
-    color:white;
-
-    font-size:19px;
-
-    cursor:pointer;
-
+    cursor: pointer;
 }
 
 
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
-.hero{
+.hero {
+    max-width: 1200px;
+    min-height: 100vh;
 
-    max-width:1250px;
+    margin: auto;
 
-    margin:auto;
+    padding: 140px 20px 80px;
 
-    min-height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    padding:145px 25px 80px;
+    align-items: center;
 
-    display:grid;
-
-    grid-template-columns:1.1fr 0.9fr;
-
-    align-items:center;
-
-    gap:70px;
-
+    gap: 60px;
 }
 
 
 /* HERO TEXT */
 
-.hero-badge{
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-    display:inline-flex;
+    padding: 8px 14px;
 
-    align-items:center;
+    border-radius: 50px;
 
-    gap:8px;
+    background: rgba(0,208,132,0.08);
+    border: 1px solid rgba(0,208,132,0.2);
 
-    padding:8px 13px;
+    color: #00d084;
 
-    border-radius:50px;
+    font-size: 12px;
+    font-weight: 600;
 
-    background:rgba(0,208,132,0.08);
-
-    border:1px solid rgba(0,208,132,0.2);
-
-    color:#00d084;
-
-    font-size:12px;
-
-    font-weight:600;
-
-    margin-bottom:22px;
-
+    margin-bottom: 22px;
 }
 
-.status-dot{
+.status-dot {
+    width: 7px;
+    height: 7px;
 
-    width:7px;
+    border-radius: 50%;
 
-    height:7px;
+    background: #00d084;
 
-    border-radius:50%;
-
-    background:#00d084;
-
-    box-shadow:0 0 12px #00d084;
-
+    box-shadow: 0 0 10px #00d084;
 }
 
+.hero h1 {
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.05;
+    letter-spacing: -3px;
 
-.hero h1{
-
-    font-size:clamp(42px,6vw,72px);
-
-    line-height:1.05;
-
-    letter-spacing:-3px;
-
-    margin-bottom:25px;
-
+    margin-bottom: 25px;
 }
 
-.hero h1 span{
-
-    color:#00d084;
-
+.hero h1 span {
+    color: #00d084;
 }
 
-.hero p{
+.hero p {
+    color: #91a2b2;
 
-    max-width:650px;
+    max-width: 600px;
 
-    color:#9badbd;
+    font-size: 15px;
+    line-height: 1.8;
 
-    font-size:16px;
-
-    line-height:1.8;
-
-    margin-bottom:35px;
-
+    margin-bottom: 30px;
 }
 
 
-/* HERO BUTTONS */
+/* BUTTONS */
 
-.hero-buttons{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:13px;
-
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.primary-btn{
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-    display:inline-flex;
+    padding: 14px 22px;
 
-    align-items:center;
+    background: #00d084;
+    color: #07111f;
 
-    gap:10px;
+    border-radius: 10px;
 
-    padding:14px 23px;
+    text-decoration: none;
 
-    background:#00d084;
+    font-size: 14px;
+    font-weight: 700;
 
-    color:#06131d;
-
-    text-decoration:none;
-
-    border-radius:11px;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    transition:0.3s;
-
+    transition: 0.3s;
 }
 
-.primary-btn:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 15px 35px rgba(0,208,132,0.22);
-
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,208,132,0.2);
 }
 
-.secondary-btn{
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-    display:inline-flex;
+    padding: 14px 22px;
 
-    align-items:center;
+    background: rgba(255,255,255,0.04);
 
-    gap:10px;
+    border: 1px solid rgba(255,255,255,0.1);
 
-    padding:14px 23px;
+    color: white;
 
-    background:rgba(255,255,255,0.04);
+    border-radius: 10px;
 
-    color:#fff;
+    text-decoration: none;
 
-    border:1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    font-weight: 600;
 
-    text-decoration:none;
-
-    border-radius:11px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    transition:0.3s;
-
+    transition: 0.3s;
 }
 
-.secondary-btn:hover{
-
-    background:rgba(255,255,255,0.08);
-
-    transform:translateY(-3px);
-
+.secondary-btn:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
 }
 
 
-/* =====================================================
-   HERO DASHBOARD CARD
-===================================================== */
+/* DASHBOARD PREVIEW */
 
-.hero-visual{
+.dashboard-card {
+    max-width: 500px;
 
-    position:relative;
+    margin: auto;
 
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+
+    animation: floating 5s ease-in-out infinite;
 }
 
-.dashboard-card{
+@keyframes floating {
 
-    width:100%;
+    0%,100% {
+        transform: translateY(0);
+    }
 
-    max-width:500px;
-
-    margin:auto;
-
-    padding:22px;
-
-    border-radius:24px;
-
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,0.09),
-        rgba(255,255,255,0.025)
-    );
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    box-shadow:
-
-        0 35px 80px rgba(0,0,0,0.35),
-
-        inset 0 1px 0 rgba(255,255,255,0.05);
-
-    transform:perspective(1000px) rotateY(-4deg) rotateX(2deg);
+    50% {
+        transform: translateY(-10px);
+    }
 
 }
 
 
 /* CARD HEADER */
 
-.card-header{
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:25px;
-
+    margin-bottom: 22px;
 }
 
-.card-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.card-title-icon{
+.card-title-icon {
+    width: 40px;
+    height: 40px;
 
-    width:38px;
+    border-radius: 10px;
 
-    height:38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:flex;
+    background: rgba(0,208,132,0.12);
 
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:10px;
-
-    background:rgba(0,208,132,0.12);
-
-    color:#00d084;
-
+    color: #00d084;
 }
 
-.card-title strong{
-
-    font-size:14px;
-
+.card-title strong {
+    display: block;
+    font-size: 14px;
 }
 
-.card-title small{
+.card-title small {
+    display: block;
 
-    display:block;
+    color: #8193a4;
 
-    color:#7f92a5;
+    font-size: 10px;
 
-    font-size:10px;
-
-    margin-top:3px;
-
+    margin-top: 4px;
 }
 
-.live{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
-    color:#00d084;
-
-    font-size:10px;
-
-    font-weight:600;
-
+.live {
+    color: #00d084;
+    font-size: 10px;
+    font-weight: 600;
 }
 
 
 /* STATS */
 
-.stats-grid{
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 
-    display:grid;
+    gap: 12px;
 
-    grid-template-columns:repeat(2,1fr);
-
-    gap:12px;
-
-    margin-bottom:15px;
-
+    margin-bottom: 15px;
 }
 
-.stat{
+.stat {
+    padding: 18px;
 
-    padding:18px;
+    border-radius: 13px;
 
-    border-radius:14px;
+    background: rgba(255,255,255,0.04);
 
-    background:rgba(255,255,255,0.04);
-
-    border:1px solid rgba(255,255,255,0.06);
-
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
-.stat i{
+.stat i {
+    color: #00d084;
+    font-size: 16px;
 
-    color:#00d084;
-
-    font-size:15px;
-
-    margin-bottom:10px;
-
+    margin-bottom: 10px;
 }
 
-.stat h3{
-
-    font-size:24px;
-
-    margin-bottom:4px;
-
+.stat h3 {
+    font-size: 25px;
+    margin-bottom: 4px;
 }
 
-.stat p{
-
-    color:#8193a4;
-
-    font-size:10px;
-
+.stat p {
+    color: #8193a4;
+    font-size: 10px;
 }
 
 
 /* ACTIVITY */
 
-.activity{
+.activity {
+    padding: 17px;
 
-    padding:17px;
+    border-radius: 13px;
 
-    border-radius:14px;
+    background: rgba(255,255,255,0.035);
 
-    background:rgba(255,255,255,0.035);
-
-    border:1px solid rgba(255,255,255,0.06);
-
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
-.activity-title{
+.activity-title {
+    font-size: 12px;
+    font-weight: 600;
 
-    font-size:12px;
-
-    font-weight:600;
-
-    margin-bottom:14px;
-
+    margin-bottom: 12px;
 }
 
-.activity-row{
+.activity-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    display:flex;
+    padding: 10px 0;
 
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:10px 0;
-
-    border-bottom:1px solid rgba(255,255,255,0.05);
-
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.activity-row:last-child{
-
-    border-bottom:none;
-
+.activity-row:last-child {
+    border-bottom: none;
 }
 
-.activity-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-
+.activity-left {
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
-.activity-icon{
+.activity-icon {
+    width: 28px;
+    height: 28px;
 
-    width:27px;
+    border-radius: 8px;
 
-    height:27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border-radius:8px;
+    background: rgba(0,208,132,0.1);
 
-    display:flex;
+    color: #00d084;
 
-    align-items:center;
-
-    justify-content:center;
-
-    background:rgba(0,208,132,0.1);
-
-    color:#00d084;
-
-    font-size:10px;
-
+    font-size: 10px;
 }
 
-.activity-left span{
-
-    font-size:10px;
-
-    color:#a7b6c3;
-
+.activity-left span {
+    color: #a6b5c2;
+    font-size: 10px;
 }
 
-.activity-status{
-
-    font-size:9px;
-
-    color:#00d084;
-
+.activity-status {
+    color: #00d084;
+    font-size: 9px;
 }
 
 
-/* FLOATING BADGES */
+/* SECTIONS */
 
-.float-card{
+.section {
+    max-width: 1200px;
 
-    position:absolute;
+    margin: auto;
 
-    padding:12px 15px;
-
-    border-radius:12px;
-
-    background:rgba(15,29,45,0.92);
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:0 15px 40px rgba(0,0,0,0.25);
-
+    padding: 90px 20px;
 }
 
-.float-card.one{
+.section-heading {
+    max-width: 650px;
 
-    top:15%;
+    margin: 0 auto 50px;
 
-    right:-30px;
-
+    text-align: center;
 }
 
-.float-card.two{
+.section-heading span {
+    color: #00d084;
 
-    bottom:10%;
+    font-size: 11px;
 
-    left:-35px;
+    font-weight: 700;
 
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
-.float-card strong{
+.section-heading h2 {
+    font-size: 35px;
 
-    display:block;
-
-    font-size:14px;
-
+    margin: 12px 0;
 }
 
-.float-card span{
+.section-heading p {
+    color: #8193a4;
 
-    color:#7f93a5;
+    font-size: 14px;
 
-    font-size:9px;
-
+    line-height: 1.7;
 }
 
 
-/* =====================================================
-   SECTION
-===================================================== */
+/* FEATURES */
 
-.section{
+.features {
+    display: grid;
 
-    max-width:1250px;
+    grid-template-columns: repeat(3,1fr);
 
-    margin:auto;
-
-    padding:100px 25px;
-
+    gap: 18px;
 }
 
-.section-heading{
+.feature-card {
+    padding: 28px;
 
-    text-align:center;
+    border-radius: 17px;
 
-    max-width:650px;
+    background: rgba(255,255,255,0.035);
 
-    margin:0 auto 55px;
+    border: 1px solid rgba(255,255,255,0.07);
 
+    transition: 0.3s;
 }
 
-.section-heading span{
+.feature-card:hover {
+    transform: translateY(-6px);
 
-    color:#00d084;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
+    border-color: rgba(0,208,132,0.3);
 }
 
-.section-heading h2{
+.feature-icon {
+    width: 50px;
+    height: 50px;
 
-    font-size:36px;
+    border-radius: 13px;
 
-    letter-spacing:-1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    margin:13px 0;
+    background: rgba(0,208,132,0.1);
 
+    color: #00d084;
+
+    margin-bottom: 20px;
 }
 
-.section-heading p{
+.feature-card h3 {
+    font-size: 16px;
 
-    color:#8497a9;
-
-    line-height:1.7;
-
-    font-size:14px;
-
+    margin-bottom: 10px;
 }
 
+.feature-card p {
+    color: #8193a4;
 
-/* =====================================================
-   FEATURE CARDS
-===================================================== */
+    font-size: 12px;
 
-.features{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-
-}
-
-.feature-card{
-
-    padding:28px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,0.035);
-
-    border:1px solid rgba(255,255,255,0.07);
-
-    transition:0.35s;
-
-}
-
-.feature-card:hover{
-
-    transform:translateY(-7px);
-
-    border-color:rgba(0,208,132,0.3);
-
-    background:rgba(0,208,132,0.04);
-
-}
-
-.feature-icon{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:rgba(0,208,132,0.1);
-
-    color:#00d084;
-
-    font-size:19px;
-
-    margin-bottom:22px;
-
-}
-
-.feature-card h3{
-
-    font-size:17px;
-
-    margin-bottom:10px;
-
-}
-
-.feature-card p{
-
-    color:#8193a4;
-
-    font-size:13px;
-
-    line-height:1.7;
-
+    line-height: 1.7;
 }
 
 
-/* =====================================================
-   MANAGEMENT MODULES
-===================================================== */
+/* MODULES */
 
-.modules{
+.modules {
+    display: grid;
 
-    display:grid;
+    grid-template-columns: repeat(4,1fr);
 
-    grid-template-columns:repeat(4,1fr);
-
-    gap:15px;
-
+    gap: 15px;
 }
 
-.module{
+.module {
+    padding: 23px;
 
-    padding:23px;
+    border-radius: 15px;
 
-    border-radius:16px;
+    background: rgba(255,255,255,0.035);
 
-    background:rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.07);
 
-    border:1px solid rgba(255,255,255,0.07);
-
-    transition:0.3s;
-
+    transition: 0.3s;
 }
 
-.module:hover{
+.module:hover {
+    transform: translateY(-5px);
 
-    transform:translateY(-5px);
-
-    border-color:rgba(0,208,132,0.25);
-
+    border-color: rgba(0,208,132,0.25);
 }
 
-.module i{
+.module i {
+    color: #00d084;
 
-    color:#00d084;
+    font-size: 20px;
 
-    font-size:20px;
-
-    margin-bottom:18px;
-
+    margin-bottom: 16px;
 }
 
-.module h4{
+.module h4 {
+    font-size: 14px;
 
-    font-size:14px;
-
-    margin-bottom:8px;
-
+    margin-bottom: 8px;
 }
 
-.module p{
+.module p {
+    color: #8193a4;
 
-    color:#7f92a5;
+    font-size: 11px;
 
-    font-size:11px;
-
-    line-height:1.6;
-
+    line-height: 1.6;
 }
 
 
-/* =====================================================
-   CTA
-===================================================== */
+/* CTA */
 
-.cta{
+.cta {
+    max-width: 1100px;
 
-    max-width:1200px;
+    margin: 30px auto 90px;
 
-    margin:40px auto 100px;
+    padding: 55px 25px;
 
-    padding:55px 40px;
+    border-radius: 22px;
 
-    border-radius:24px;
+    text-align: center;
 
-    text-align:center;
+    background: rgba(0,208,132,0.06);
 
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        rgba(0,208,132,0.12),
-
-        rgba(0,130,255,0.08)
-
-    );
-
-    border:1px solid rgba(0,208,132,0.15);
-
+    border: 1px solid rgba(0,208,132,0.15);
 }
 
-.cta h2{
+.cta h2 {
+    font-size: 30px;
 
-    font-size:32px;
-
-    margin-bottom:12px;
-
+    margin-bottom: 12px;
 }
 
-.cta p{
+.cta p {
+    color: #8193a4;
 
-    color:#8ea1b2;
+    font-size: 14px;
 
-    font-size:14px;
-
-    margin-bottom:25px;
-
+    margin-bottom: 25px;
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
-footer{
+footer {
+    padding: 30px 20px;
 
-    border-top:1px solid rgba(255,255,255,0.07);
-
-    padding:35px 25px;
-
+    border-top: 1px solid rgba(255,255,255,0.07);
 }
 
-.footer-container{
+.footer-container {
+    max-width: 1200px;
 
-    max-width:1250px;
+    margin: auto;
 
-    margin:auto;
+    display: flex;
 
-    display:flex;
+    align-items: center;
 
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
+    justify-content: space-between;
 }
 
-.footer-brand{
+.footer-brand {
+    color: #8193a4;
 
-    color:#8ea0b1;
-
-    font-size:12px;
-
+    font-size: 11px;
 }
 
-.footer-brand strong{
-
-    color:#fff;
-
+.footer-brand strong {
+    color: white;
 }
 
-.footer-copy{
+.footer-copy {
+    color: #607284;
 
-    color:#617487;
-
-    font-size:11px;
-
+    font-size: 10px;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
-@media(max-width:900px){
+@media (max-width: 900px) {
 
-    .nav-links{
+    .nav-links {
+        position: absolute;
 
-        position:absolute;
+        top: 76px;
+        left: 0;
 
-        top:76px;
+        width: 100%;
 
-        left:0;
+        padding: 20px;
 
-        width:100%;
+        display: none;
 
-        padding:20px 25px;
+        flex-direction: column;
 
-        display:none;
+        background: #081522;
 
-        flex-direction:column;
-
-        align-items:stretch;
-
-        background:#081522;
-
-        border-bottom:1px solid rgba(255,255,255,0.07);
-
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .nav-links.active{
-
-        display:flex;
-
+    .nav-links.active {
+        display: flex;
     }
 
-    .nav-links a{
-
-        padding:10px 0;
-
+    .nav-links a {
+        padding: 8px 0;
     }
 
-    .login-btn{
-
-        justify-content:center;
-
+    .login-btn {
+        text-align: center;
     }
 
-    .menu-btn{
-
-        display:block;
-
+    .menu-btn {
+        display: block;
     }
 
-    .hero{
+    .hero {
+        grid-template-columns: 1fr;
 
-        grid-template-columns:1fr;
+        text-align: center;
 
-        text-align:center;
-
-        gap:55px;
-
+        padding-top: 120px;
     }
 
-    .hero p{
-
-        margin-left:auto;
-
-        margin-right:auto;
-
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .hero-buttons{
-
-        justify-content:center;
-
+    .hero-buttons {
+        justify-content: center;
     }
 
-    .float-card.one{
-
-        right:-5px;
-
+    .features {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .float-card.two{
-
-        left:-5px;
-
-    }
-
-    .features{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-    .modules{
-
-        grid-template-columns:repeat(2,1fr);
-
+    .modules {
+        grid-template-columns: repeat(2,1fr);
     }
 
 }
 
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-    .nav-container{
-
-        padding:0 18px;
-
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .hero{
-
-        padding-left:18px;
-
-        padding-right:18px;
-
+    .features {
+        grid-template-columns: 1fr;
     }
 
-    .hero h1{
-
-        font-size:42px;
-
-        letter-spacing:-2px;
-
+    .modules {
+        grid-template-columns: 1fr;
     }
 
-    .hero p{
-
-        font-size:14px;
-
+    .section-heading h2 {
+        font-size: 28px;
     }
 
-    .dashboard-card{
+    .footer-container {
+        flex-direction: column;
 
-        padding:16px;
+        gap: 10px;
 
+        text-align: center;
     }
-
-    .float-card{
-
-        display:none;
-
-    }
-
-    .section{
-
-        padding:75px 18px;
-
-    }
-
-    .section-heading h2{
-
-        font-size:29px;
-
-    }
-
-    .features{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .modules{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .cta{
-
-        margin:20px 18px 70px;
-
-        padding:40px 22px;
-
-    }
-
-    .cta h2{
-
-        font-size:26px;
-
-    }
-
-    .footer-container{
-
-        flex-direction:column;
-
-        text-align:center;
-
-    }
-
-}
-
-
-/* =====================================================
-   ANIMATION
-===================================================== */
-
-@keyframes float{
-
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-10px);
-
-    }
-
-}
-
-.dashboard-card{
-
-    animation:float 5s ease-in-out infinite;
 
 }
 
@@ -1353,702 +853,791 @@ footer{
 
 </head>
 
+
 <body>
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+
+<!-- NAVBAR -->
 
 <header class="navbar">
 
-<div class="nav-container">
+    <div class="nav-container">
 
-<a href="index.html" class="logo">
 
-<div class="logo-icon">
+        <a href="index.html" class="logo">
 
-<i class="fa-solid fa-network-wired"></i>
+            <div class="logo-icon">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
 
-</div>
+            <div class="logo-text">
 
-<div class="logo-text">
+                <strong>LINK4</strong>
 
-<strong>LINK4</strong>
+                <span>COMMUNICATION</span>
 
-<span>COMMUNICATION</span>
+            </div>
 
-</div>
+        </a>
 
-</a>
 
-<nav class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks">
 
-<a href="#home">Home</a>
+            <a href="#home">Home</a>
 
-<a href="#features">Features</a>
+            <a href="#features">Features</a>
 
-<a href="#modules">Modules</a>
+            <a href="#modules">Modules</a>
 
-<a href="#about">About</a>
+            <a href="#about">About</a>
 
-<a href="login.html" class="login-btn">
+            <a href="login.html" class="login-btn">
 
-<i class="fa-solid fa-right-to-bracket"></i>
+                <i class="fa-solid fa-right-to-bracket"></i>
 
-Login
+                Login
 
-</a>
+            </a>
 
-</nav>
+        </nav>
 
-<button class="menu-btn" onclick="toggleMenu()">
 
-<i class="fa-solid fa-bars"></i>
+        <button class="menu-btn" onclick="toggleMenu()">
 
-</button>
+            <i class="fa-solid fa-bars"></i>
 
-</div>
+        </button>
+
+
+    </div>
 
 </header>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+
+
+<!-- HERO -->
 
 <main id="home">
 
 <section class="hero">
 
-<div class="hero-content">
 
-<div class="hero-badge">
+    <div class="hero-content">
 
-<span class="status-dot"></span>
 
-Professional Management Platform
+        <div class="hero-badge">
 
-</div>
+            <span class="status-dot"></span>
 
-<h1>
+            Professional Management Platform
 
-Manage Smarter.<br>
+        </div>
 
-Work <span>Faster.</span>
 
-</h1>
+        <h1>
 
-<p>
+            Manage Smarter.<br>
 
-Welcome to the LINK4 COMMUNICATION Management System —
-a centralized platform designed to manage support operations,
-customer requests, calls, team activities and operational history
-from one professional workspace.
+            Work <span>Faster.</span>
 
-</p>
+        </h1>
 
-<div class="hero-buttons">
 
-<a href="login.html" class="primary-btn">
+        <p>
 
-<i class="fa-solid fa-arrow-right-to-bracket"></i>
+            Welcome to the LINK4 COMMUNICATION Management System.
 
-Access System
+            A centralized platform for managing customer support,
 
-</a>
+            calls, operations, team activities and service history
 
-<a href="#features" class="secondary-btn">
+            from one professional workspace.
 
-<i class="fa-solid fa-circle-info"></i>
+        </p>
 
-Explore Platform
 
-</a>
+        <div class="hero-buttons">
 
-</div>
 
-</div>
+            <a href="login.html" class="primary-btn">
 
-<!-- DASHBOARD PREVIEW -->
+                <i class="fa-solid fa-right-to-bracket"></i>
 
-<div class="hero-visual">
+                Access System
 
-<div class="dashboard-card">
+            </a>
 
-<div class="card-header">
 
-<div class="card-title">
+            <a href="#features" class="secondary-btn">
 
-<div class="card-title-icon">
+                <i class="fa-solid fa-circle-info"></i>
 
-<i class="fa-solid fa-chart-line"></i>
+                Explore Platform
 
-</div>
+            </a>
 
-<div>
 
-<strong>Management Overview</strong>
+        </div>
 
-<small>LINK4 Operations Center</small>
 
-</div>
+    </div>
 
-</div>
 
-<div class="live">
 
-<span class="status-dot"></span>
+    <!-- DASHBOARD PREVIEW -->
 
-LIVE
+    <div class="dashboard-card">
 
-</div>
 
-</div>
+        <div class="card-header">
 
-<div class="stats-grid">
 
-<div class="stat">
+            <div class="card-title">
 
-<i class="fa-solid fa-headset"></i>
 
-<h3>24</h3>
+                <div class="card-title-icon">
 
-<p>Active Support</p>
+                    <i class="fa-solid fa-chart-line"></i>
 
-</div>
+                </div>
 
-<div class="stat">
 
-<i class="fa-solid fa-phone"></i>
+                <div>
 
-<h3>18</h3>
+                    <strong>Management Overview</strong>
 
-<p>Pending Calls</p>
+                    <small>LINK4 Operations Center</small>
 
-</div>
+                </div>
 
-<div class="stat">
 
-<i class="fa-solid fa-users"></i>
+            </div>
 
-<h3>156</h3>
 
-<p>Customers</p>
+            <div class="live">
 
-</div>
+                <span class="status-dot"></span>
 
-<div class="stat">
+                LIVE
 
-<i class="fa-solid fa-check-double"></i>
+            </div>
 
-<h3>92%</h3>
 
-<p>Completed</p>
+        </div>
 
-</div>
 
-</div>
 
-<div class="activity">
+        <div class="stats-grid">
 
-<div class="activity-title">
 
-Recent Operations
+            <div class="stat">
 
-</div>
+                <i class="fa-solid fa-headset"></i>
 
-<div class="activity-row">
+                <h3>24</h3>
 
-<div class="activity-left">
+                <p>Active Support</p>
 
-<div class="activity-icon">
+            </div>
 
-<i class="fa-solid fa-ticket"></i>
 
-</div>
+            <div class="stat">
 
-<span>New support request received</span>
+                <i class="fa-solid fa-phone"></i>
 
-</div>
+                <h3>18</h3>
 
-<div class="activity-status">
+                <p>Pending Calls</p>
 
-Active
+            </div>
 
-</div>
 
-</div>
+            <div class="stat">
 
-<div class="activity-row">
+                <i class="fa-solid fa-users"></i>
 
-<div class="activity-left">
+                <h3>156</h3>
 
-<div class="activity-icon">
+                <p>Customers</p>
 
-<i class="fa-solid fa-phone-volume"></i>
+            </div>
 
-</div>
 
-<span>Customer call completed</span>
+            <div class="stat">
 
-</div>
+                <i class="fa-solid fa-check-double"></i>
 
-<div class="activity-status">
+                <h3>92%</h3>
 
-Done
+                <p>Completed</p>
 
-</div>
+            </div>
 
-</div>
 
-<div class="activity-row">
+        </div>
 
-<div class="activity-left">
 
-<div class="activity-icon">
 
-<i class="fa-solid fa-clock-rotate-left"></i>
+        <div class="activity">
 
-</div>
 
-<span>History record updated</span>
+            <div class="activity-title">
 
-</div>
+                Recent Operations
 
-<div class="activity-status">
+            </div>
 
-Logged
 
-</div>
+            <div class="activity-row">
 
-</div>
 
-</div>
+                <div class="activity-left">
 
-</div>
+                    <div class="activity-icon">
 
-<div class="float-card one">
+                        <i class="fa-solid fa-ticket"></i>
 
-<strong>99.9%</strong>
+                    </div>
 
-<span>System Availability</span>
+                    <span>New support request received</span>
 
-</div>
+                </div>
 
-<div class="float-card two">
 
-<strong><i class="fa-solid fa-shield-halved"></i> Secure</strong>
+                <div class="activity-status">
 
-<span>Protected Workspace</span>
+                    Active
 
-</div>
+                </div>
 
-</div>
+
+            </div>
+
+
+            <div class="activity-row">
+
+
+                <div class="activity-left">
+
+                    <div class="activity-icon">
+
+                        <i class="fa-solid fa-phone-volume"></i>
+
+                    </div>
+
+                    <span>Customer call completed</span>
+
+                </div>
+
+
+                <div class="activity-status">
+
+                    Done
+
+                </div>
+
+
+            </div>
+
+
+            <div class="activity-row">
+
+
+                <div class="activity-left">
+
+                    <div class="activity-icon">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    </div>
+
+                    <span>History record updated</span>
+
+                </div>
+
+
+                <div class="activity-status">
+
+                    Logged
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 
 </section>
 
-<!-- =====================================================
-     FEATURES
-===================================================== -->
+
+
+<!-- FEATURES -->
 
 <section class="section" id="features">
 
-<div class="section-heading">
 
-<span>Powerful Features</span>
+    <div class="section-heading">
 
-<h2>Everything You Need in One System</h2>
 
-<p>
+        <span>Powerful Features</span>
 
-A centralized management environment that helps teams
-organize daily operations, handle customer requests and
-maintain a clear activity history.
 
-</p>
+        <h2>
 
-</div>
+            Everything You Need in One System
 
-<div class="features">
+        </h2>
 
-<div class="feature-card">
 
-<div class="feature-icon">
+        <p>
 
-<i class="fa-solid fa-headset"></i>
+            A centralized management environment that helps
 
-</div>
+            teams organize daily operations and customer service.
 
-<h3>Support Management</h3>
+        </p>
 
-<p>
 
-Manage incoming customer support requests,
-track pending tasks and coordinate support activities
-efficiently.
+    </div>
 
-</p>
 
-</div>
 
-<div class="feature-card">
+    <div class="features">
 
-<div class="feature-icon">
 
-<i class="fa-solid fa-phone-volume"></i>
+        <div class="feature-card">
 
-</div>
+            <div class="feature-icon">
 
-<h3>Call Management</h3>
+                <i class="fa-solid fa-headset"></i>
 
-<p>
+            </div>
 
-Organize customer calls, follow-up activities and
-communication tasks from a centralized workspace.
+            <h3>Support Management</h3>
 
-</p>
+            <p>
 
-</div>
+                Manage incoming customer support requests,
 
-<div class="feature-card">
+                pending tasks and support activities efficiently.
 
-<div class="feature-icon">
+            </p>
 
-<i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
 
-</div>
 
-<h3>Support History</h3>
+        <div class="feature-card">
 
-<p>
+            <div class="feature-icon">
 
-Keep a clear record of completed support and call
-activities for better tracking and future reference.
+                <i class="fa-solid fa-phone-volume"></i>
 
-</p>
+            </div>
 
-</div>
+            <h3>Call Management</h3>
 
-<div class="feature-card">
+            <p>
 
-<div class="feature-icon">
+                Organize customer calls and follow-up
 
-<i class="fa-solid fa-users-gear"></i>
+                communication tasks from one workspace.
 
-</div>
+            </p>
 
-<h3>Team Operations</h3>
+        </div>
 
-<p>
 
-Help different teams manage their assigned responsibilities
-and work together through a structured workflow.
+        <div class="feature-card">
 
-</p>
+            <div class="feature-icon">
 
-</div>
+                <i class="fa-solid fa-clock-rotate-left"></i>
 
-<div class="feature-card">
+            </div>
 
-<div class="feature-icon">
+            <h3>Support History</h3>
 
-<i class="fa-solid fa-chart-pie"></i>
+            <p>
 
-</div>
+                Keep a clear record of completed support
 
-<h3>Performance Overview</h3>
+                and call activities.
 
-<p>
+            </p>
 
-Monitor important operational information through
-simple and organized dashboard insights.
+        </div>
 
-</p>
 
-</div>
+        <div class="feature-card">
 
-<div class="feature-card">
+            <div class="feature-icon">
 
-<div class="feature-icon">
+                <i class="fa-solid fa-users-gear"></i>
 
-<i class="fa-solid fa-shield-halved"></i>
+            </div>
 
-</div>
+            <h3>Team Operations</h3>
 
-<h3>Secure Access</h3>
+            <p>
 
-<p>
+                Help teams manage responsibilities through
 
-Controlled login access helps protect internal management
-pages and keeps the workspace organized.
+                a structured workflow.
 
-</p>
+            </p>
 
-</div>
+        </div>
 
-</div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+            </div>
+
+            <h3>Performance Overview</h3>
+
+            <p>
+
+                Monitor important operational information
+
+                through organized dashboard insights.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <h3>Secure Access</h3>
+
+            <p>
+
+                Controlled login access helps protect
+
+                internal management pages.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
 
 </section>
 
-<!-- =====================================================
-     MODULES
-===================================================== -->
+
+
+<!-- MODULES -->
 
 <section class="section" id="modules">
 
-<div class="section-heading">
 
-<span>Management Modules</span>
+    <div class="section-heading">
 
-<h2>Built for Complete Operations</h2>
 
-<p>
+        <span>Management Modules</span>
 
-LINK4 brings essential management functions together
-to create a more connected and efficient workflow.
 
-</p>
+        <h2>
 
-</div>
+            Built for Complete Operations
 
-<div class="modules">
+        </h2>
 
-<div class="module">
 
-<i class="fa-solid fa-file-circle-plus"></i>
+        <p>
 
-<h4>New Entry</h4>
+            LINK4 brings essential management functions
 
-<p>
+            together for a connected workflow.
 
-Create and submit new customer support requests
-for processing.
+        </p>
 
-</p>
 
-</div>
+    </div>
 
-<div class="module">
 
-<i class="fa-solid fa-headset"></i>
 
-<h4>Pending Support</h4>
+    <div class="modules">
 
-<p>
 
-Review and process support requests waiting
-for team action.
+        <div class="module">
 
-</p>
+            <i class="fa-solid fa-file-circle-plus"></i>
 
-</div>
+            <h4>New Entry</h4>
 
-<div class="module">
+            <p>
 
-<i class="fa-solid fa-phone"></i>
+                Create and submit new customer support requests.
 
-<h4>Pending Call</h4>
+            </p>
 
-<p>
+        </div>
 
-Manage customer calls and follow-up communication
-tasks.
 
-</p>
+        <div class="module">
 
-</div>
+            <i class="fa-solid fa-headset"></i>
 
-<div class="module">
+            <h4>Pending Support</h4>
 
-<i class="fa-solid fa-clock-rotate-left"></i>
+            <p>
 
-<h4>History</h4>
+                Review and process pending support requests.
 
-<p>
+            </p>
 
-Review completed support and operational records
-in one place.
+        </div>
 
-</p>
 
-</div>
+        <div class="module">
 
-<div class="module">
+            <i class="fa-solid fa-phone"></i>
 
-<i class="fa-solid fa-user"></i>
+            <h4>Pending Call</h4>
 
-<h4>User Account</h4>
+            <p>
 
-<p>
+                Manage customer calls and follow-up tasks.
 
-Manage personal account information and
-access details.
+            </p>
 
-</p>
+        </div>
 
-</div>
 
-<div class="module">
+        <div class="module">
 
-<i class="fa-solid fa-chart-line"></i>
+            <i class="fa-solid fa-clock-rotate-left"></i>
 
-<h4>Dashboard</h4>
+            <h4>History</h4>
 
-<p>
+            <p>
 
-Get a quick overview of system activity and
-important operations.
+                Review completed support and operational records.
 
-</p>
+            </p>
 
-</div>
+        </div>
 
-<div class="module">
 
-<i class="fa-solid fa-users"></i>
+        <div class="module">
 
-<h4>Customer Management</h4>
+            <i class="fa-solid fa-user"></i>
 
-<p>
+            <h4>User Account</h4>
 
-Organize customer-related information and
-service activities.
+            <p>
 
-</p>
+                Manage account information and access details.
 
-</div>
+            </p>
 
-<div class="module">
+        </div>
 
-<i class="fa-solid fa-gears"></i>
 
-<h4>Operations</h4>
+        <div class="module">
 
-<p>
+            <i class="fa-solid fa-chart-line"></i>
 
-Maintain a structured workflow for daily
-management operations.
+            <h4>Dashboard</h4>
 
-</p>
+            <p>
 
-</div>
+                Get a quick overview of system activity.
 
-</div>
+            </p>
+
+        </div>
+
+
+        <div class="module">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h4>Customer Management</h4>
+
+            <p>
+
+                Organize customer information and service activities.
+
+            </p>
+
+        </div>
+
+
+        <div class="module">
+
+            <i class="fa-solid fa-gears"></i>
+
+            <h4>Operations</h4>
+
+            <p>
+
+                Maintain a structured daily management workflow.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
 
 </section>
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+
+
+<!-- ABOUT -->
 
 <section class="section" id="about">
 
-<div class="section-heading">
 
-<span>About LINK4</span>
+    <div class="section-heading">
 
-<h2>A Better Way to Manage Work</h2>
 
-<p>
+        <span>About LINK4</span>
 
-LINK4 COMMUNICATION Management System is designed
-to simplify internal workflows, improve team coordination
-and provide a structured environment for managing
-customer support and operational activities.
 
-</p>
+        <h2>
 
-</div>
+            A Better Way to Manage Work
+
+        </h2>
+
+
+        <p>
+
+            LINK4 COMMUNICATION Management System is designed
+
+            to simplify internal workflows, improve team coordination
+
+            and provide a structured environment for managing
+
+            customer support and operational activities.
+
+        </p>
+
+
+    </div>
+
 
 </section>
 
-<!-- =====================================================
-     CTA
-===================================================== -->
+
+
+<!-- CTA -->
 
 <section class="cta">
 
-<h2>Ready to Access the Management System?</h2>
 
-<p>
+    <h2>
 
-Login to your secure LINK4 workspace and start managing
-your daily operations from one centralized platform.
+        Ready to Access the Management System?
 
-</p>
+    </h2>
 
-<a href="login.html" class="primary-btn">
 
-<i class="fa-solid fa-right-to-bracket"></i>
+    <p>
 
-Login to System
+        Login to your secure LINK4 workspace and start
 
-</a>
+        managing your daily operations.
+
+    </p>
+
+
+    <a href="login.html" class="primary-btn">
+
+        <i class="fa-solid fa-right-to-bracket"></i>
+
+        Login to System
+
+    </a>
+
 
 </section>
 
+
 </main>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+
+
+<!-- FOOTER -->
 
 <footer>
 
-<div class="footer-container">
 
-<div class="footer-brand">
+    <div class="footer-container">
 
-<strong>LINK4 COMMUNICATION</strong>
 
-<br>
+        <div class="footer-brand">
 
-Professional Management System
+            <strong>LINK4 COMMUNICATION</strong>
 
-</div>
+            <br>
 
-<div class="footer-copy">
+            Professional Management System
 
-© 2026 LINK4 COMMUNICATION. All Rights Reserved.
+        </div>
 
-</div>
 
-</div>
+        <div class="footer-copy">
+
+            © 2026 LINK4 COMMUNICATION. All Rights Reserved.
+
+        </div>
+
+
+    </div>
+
 
 </footer>
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+
 
 <script>
 
-function toggleMenu(){
+function toggleMenu() {
 
-    const nav =
-        document.getElementById("navLinks");
+    const nav = document.getElementById("navLinks");
 
     nav.classList.toggle("active");
 
 }
 
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(function(link){
+document.querySelectorAll(".nav-links a").forEach(function(link) {
 
-    link.addEventListener("click",function(){
+    link.addEventListener("click", function() {
 
         document
-        .getElementById("navLinks")
-        .classList
-        .remove("active");
+            .getElementById("navLinks")
+            .classList
+            .remove("active");
 
     });
 
 });
 
-
 </script>
+
 
 </body>
 
