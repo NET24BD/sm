@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07111f">
+
+    <meta name="description"
+        content="LINK4 COMMUNICATION Management System Login">
+
+    <title>Login | LINK4 COMMUNICATION</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Inter", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: #07111f;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND EFFECT
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    background: rgba(0, 208, 132, 0.08);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    top: -200px;
+
+    left: -150px;
+
+    z-index: -1;
+
+}
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    background: rgba(0, 100, 255, 0.08);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    bottom: -200px;
+
+    right: -150px;
+
+    z-index: -1;
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.login-wrapper {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,0.4),
+
+        inset 0 1px 0 rgba(255,255,255,0.04);
+
+}
+
+
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.login-info {
+
+    position: relative;
+
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(0,208,132,0.08),
+
+            rgba(0,100,255,0.04)
+
+        );
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    width: fit-content;
+
+}
+
+.logo-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #00d084;
+
+    color: #07111f;
+
+    font-size: 21px;
+
+}
+
+.logo-text strong {
+
+    display: block;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+
+}
+
+.logo-text span {
+
+    display: block;
+
+    color: #8193a4;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-top: 3px;
+
+}
+
+
+/* INFO CONTENT */
+
+.info-content {
+
+    margin-top: 60px;
+
+}
+
+.info-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 50px;
+
+    background: rgba(0,208,132,0.08);
+
+    border: 1px solid rgba(0,208,132,0.18);
+
+    color: #00d084;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+}
+
+.info-content h1 {
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+
+}
+
+.info-content h1 span {
+
+    color: #00d084;
+
+}
+
+.info-content p {
+
+    color: #8fa1b1;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    max-width: 420px;
+
+}
+
+
+/* FEATURES */
+
+.info-features {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+}
+
+.info-feature {
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+}
+
+.info-feature i {
+
+    color: #00d084;
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+
+}
+
+.info-feature strong {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+.info-feature span {
+
+    display: block;
+
+    color: #718497;
+
+    font-size: 9px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.login-panel {
+
+    padding: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(3,10,18,0.35);
+
+}
+
+.login-box {
+
+    width: 100%;
+
+    max-width: 390px;
+
+}
+
+
+/* LOGIN HEADER */
+
+.login-header {
+
+    margin-bottom: 30px;
+
+}
+
+.login-header h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+
+}
+
+.login-header p {
+
+    color: #8193a4;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* FORM */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    color: #aab8c5;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+.input-box {
+
+    position: relative;
+
+}
+
+.input-box i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #65798b;
+
+    font-size: 14px;
+
+}
+
+.input-box input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 45px;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    background: rgba(255,255,255,0.04);
+
+    color: #ffffff;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+
+}
+
+.input-box input::placeholder {
+
+    color: #617487;
+
+}
+
+.input-box input:focus {
+
+    border-color: rgba(0,208,132,0.5);
+
+    background: rgba(0,208,132,0.03);
+
+    box-shadow: 0 0 0 3px rgba(0,208,132,0.07);
+
+}
+
+
+/* PASSWORD TOGGLE */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #65798b;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+.password-toggle:hover {
+
+    color: #00d084;
+
+}
+
+
+/* LOGIN OPTIONS */
+
+.login-options {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+
+}
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #8193a4;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+}
+
+.remember input {
+
+    accent-color: #00d084;
+
+}
+
+.forgot {
+
+    color: #00d084;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+}
+
+.forgot:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* LOGIN BUTTON */
+
+.submit-btn {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #00d084;
+
+    color: #07111f;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    transition: 0.3s;
+
+}
+
+.submit-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(0,208,132,0.2);
+
+}
+
+.submit-btn:active {
+
+    transform: scale(0.98);
+
+}
+
+
+/* STATUS MESSAGE */
+
+.message {
+
+    display: none;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    text-align: center;
+
+}
+
+.message.error {
+
+    display: block;
+
+    color: #ff7b7b;
+
+    background: rgba(255,60,60,0.08);
+
+    border: 1px solid rgba(255,60,60,0.15);
+
+}
+
+.message.success {
+
+    display: block;
+
+    color: #00d084;
+
+    background: rgba(0,208,132,0.08);
+
+    border: 1px solid rgba(0,208,132,0.15);
+
+}
+
+
+/* SECURITY */
+
+.security-note {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+    color: #617487;
+
+    font-size: 9px;
+
+}
+
+.security-note i {
+
+    color: #00d084;
+
+}
+
+
+/* BACK HOME */
+
+.back-home {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+    color: #8193a4;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    transition: 0.3s;
+
+}
+
+.back-home:hover {
+
+    color: #00d084;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+
+    display: none;
+
+}
+
+.submit-btn.loading-active .button-text {
+
+    display: none;
+
+}
+
+.submit-btn.loading-active .loading {
+
+    display: inline-block;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+    .login-wrapper {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+    }
+
+    .login-info {
+
+        padding: 35px;
+
+        min-height: 420px;
+
+    }
+
+    .info-content {
+
+        margin-top: 40px;
+
+    }
+
+    .info-content h1 {
+
+        font-size: 35px;
+
+    }
+
+    .login-panel {
+
+        padding: 40px 30px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 0;
+
+    }
+
+    .login-wrapper {
+
+        min-height: 100vh;
+
+        border-radius: 0;
+
+        border: none;
+
+    }
+
+    .login-info {
+
+        padding: 30px 22px;
+
+    }
+
+    .login-panel {
+
+        padding: 35px 22px;
+
+    }
+
+    .info-features {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .info-content h1 {
+
+        font-size: 32px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="login-wrapper">
+
+
+    <!-- LEFT INFORMATION -->
+
+    <div class="login-info">
+
+
+        <div>
+
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="logo">
+
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-network-wired"></i>
+
+                </div>
+
+
+                <div class="logo-text">
+
+                    <strong>LINK4</strong>
+
+                    <span>COMMUNICATION</span>
+
+                </div>
+
+
+            </a>
+
+
+
+            <!-- CONTENT -->
+
+            <div class="info-content">
+
+
+                <div class="info-badge">
+
+                    <span class="status-dot"></span>
+
+                    Secure Management Portal
+
+                </div>
+
+
+                <h1>
+
+                    Welcome<br>
+
+                    <span>Back.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Access your LINK4 COMMUNICATION Management System
+
+                    and manage support, calls, customers and operations
+
+                    from one secure workspace.
+
+                </p>
+
+
+
+                <div class="info-features">
+
+
+                    <div class="info-feature">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        <strong>Support</strong>
+
+                        <span>Manage support requests</span>
+
+                    </div>
+
+
+                    <div class="info-feature">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <strong>Calls</strong>
+
+                        <span>Manage customer calls</span>
+
+                    </div>
+
+
+                    <div class="info-feature">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        <strong>History</strong>
+
+                        <span>Track completed work</span>
+
+                    </div>
+
+
+                    <div class="info-feature">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <strong>Dashboard</strong>
+
+                        <span>Monitor operations</span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- LOGIN PANEL -->
+
+    <div class="login-panel">
+
+
+        <div class="login-box">
+
+
+            <div class="login-header">
+
+                <h2>Sign In</h2>
+
+                <p>
+
+                    Enter your account details to continue
+
+                    to the management system.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+
+                    <label for="username">
+
+                        Username
+
+                    </label>
+
+
+                    <div class="input-box">
+
+
+                        <i class="fa-solid fa-user"></i>
+
+
+                        <input
+
+                            type="text"
+
+                            id="username"
+
+                            placeholder="Enter your username"
+
+                            autocomplete="username"
+
+                            required
+
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+
+                    <label for="password">
+
+                        Password
+
+                    </label>
+
+
+                    <div class="input-box">
+
+
+                        <i class="fa-solid fa-lock"></i>
+
+
+                        <input
+
+                            type="password"
+
+                            id="password"
+
+                            placeholder="Enter your password"
+
+                            autocomplete="current-password"
+
+                            required
+
+                        >
+
+
+                        <span
+
+                            class="password-toggle"
+
+                            onclick="togglePassword()"
+
+                        >
+
+                            <i
+
+                                id="eyeIcon"
+
+                                class="fa-solid fa-eye"
+
+                            ></i>
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+
+                    <label class="remember">
+
+
+                        <input
+
+                            type="checkbox"
+
+                            id="rememberMe"
+
+                        >
+
+
+                        Remember me
+
+
+                    </label>
+
+
+                    <a
+
+                        href="#"
+
+                        class="forgot"
+
+                        onclick="forgotPassword(event)"
+
+                    >
+
+                        Forgot password?
+
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+
+                    type="submit"
+
+                    class="submit-btn"
+
+                    id="loginButton"
+
+                >
+
+
+                    <span class="button-text">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Sign In
+
+                    </span>
+
+
+                    <span class="loading">
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        Signing In...
+
+                    </span>
+
+
+                </button>
+
+
+                <!-- MESSAGE -->
+
+                <div
+
+                    id="message"
+
+                    class="message"
+
+                ></div>
+
+
+            </form>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="security-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Secure access to LINK4 Management System
+
+            </div>
+
+
+
+            <!-- BACK HOME -->
+
+            <a
+
+                href="index.html"
+
+                class="back-home"
+
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Home
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   PASSWORD SHOW / HIDE
+===================================================== */
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const eyeIcon =
+        document.getElementById("eyeIcon");
+
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        eyeIcon.className =
+            "fa-solid fa-eye-slash";
+
+    } else {
+
+        password.type = "password";
+
+        eyeIcon.className =
+            "fa-solid fa-eye";
+
+    }
+
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+function forgotPassword(event) {
+
+    event.preventDefault();
+
+    showMessage(
+
+        "Please contact your system administrator to reset your password.",
+
+        "error"
+
+    );
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(text, type) {
+
+    const message =
+        document.getElementById("message");
+
+    message.textContent = text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+/* =====================================================
+   LOGIN FORM
+===================================================== */
+
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
+
+
+        event.preventDefault();
+
+
+        const username =
+            document
+                .getElementById("username")
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById("password")
+                .value
+                .trim();
+
+
+        const button =
+            document
+                .getElementById("loginButton");
+
+
+        if (!username || !password) {
+
+            showMessage(
+
+                "Please enter username and password.",
+
+                "error"
+
+            );
+
+            return;
+
+        }
+
+
+        button.classList.add("loading-active");
+
+
+        /*
+        =================================================
+        TEMPORARY LOGIN DEMO
+
+        Google Sheets login will be connected here later.
+        =================================================
+        */
+
+
+        setTimeout(function() {
+
+
+            button.classList.remove("loading-active");
+
+
+            showMessage(
+
+                "Login system is ready. Google Sheets authentication will be connected next.",
+
+                "success"
+
+            );
+
+
+        }, 1000);
+
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
