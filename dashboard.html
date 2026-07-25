@@ -15,6 +15,11 @@ name="theme-color"
 content="#06131f"
 >
 
+<meta
+name="description"
+content="LINK4 COMMUNICATION Management System Dashboard"
+>
+
 <title>Dashboard | LINK4 COMMUNICATION</title>
 
 
@@ -26,12 +31,27 @@ content="#06131f"
 
 (function(){
 
-    const loggedIn =
-    localStorage.getItem("loggedIn");
+    try{
 
-    if(loggedIn !== "true"){
+        if(
+            localStorage.getItem("loggedIn")
+            !==
+            "true"
+        ){
 
-        window.location.replace("login.html");
+            window.location.replace(
+                "login.html"
+            );
+
+        }
+
+    }
+
+    catch(error){
+
+        window.location.replace(
+            "login.html"
+        );
 
     }
 
@@ -47,25 +67,41 @@ content="#06131f"
 ===================================================== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
 
 
-/* =====================================================
-   BODY
-===================================================== */
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 
 body{
 
     font-family:
+
     "Segoe UI",
     Arial,
     Helvetica,
     sans-serif;
 
-    background:#06131f;
+    background:
+
+    radial-gradient(
+        circle at top right,
+        rgba(0,140,255,0.08),
+        transparent 35%
+    ),
+
+    #06131f;
 
     color:#ffffff;
 
@@ -75,14 +111,14 @@ body{
 
 
 /* =====================================================
-   LAYOUT
+   APP
 ===================================================== */
 
 .app{
 
-    display:flex;
-
     min-height:100vh;
+
+    display:flex;
 
 }
 
@@ -105,20 +141,25 @@ body{
 
     bottom:0;
 
-    background:
-    #081a29;
-
-    border-right:
-    1px solid
-    rgba(255,255,255,0.07);
+    z-index:100;
 
     padding:22px 16px;
 
-    z-index:100;
+    background:
+
+    rgba(7,24,39,0.97);
+
+    border-right:
+
+    1px solid
+    rgba(255,255,255,0.07);
 
     display:flex;
 
     flex-direction:column;
+
+    transition:
+    0.3s ease;
 
 }
 
@@ -136,7 +177,7 @@ body{
     gap:12px;
 
     padding:
-    5px 10px 25px;
+    5px 10px 24px;
 
     border-bottom:
     1px solid
@@ -160,22 +201,30 @@ body{
     border-radius:14px;
 
     background:
+
     linear-gradient(
         135deg,
         #00d084,
         #008cff
     );
 
-    font-size:17px;
+    color:#ffffff;
 
-    font-weight:800;
+    font-size:16px;
+
+    font-weight:900;
+
+    box-shadow:
+
+    0 10px 30px
+    rgba(0,200,120,0.15);
 
 }
 
 
 .brand-name{
 
-    font-size:15px;
+    font-size:14px;
 
     font-weight:800;
 
@@ -188,19 +237,19 @@ body{
 
     display:block;
 
+    margin-top:4px;
+
     color:#6f899b;
 
     font-size:9px;
 
-    letter-spacing:1.5px;
-
-    margin-top:3px;
+    letter-spacing:1.4px;
 
 }
 
 
 /* =====================================================
-   USER MINI PROFILE
+   USER MINI
 ===================================================== */
 
 .user-mini{
@@ -211,20 +260,20 @@ body{
 
     gap:11px;
 
-    padding:15px 10px;
+    padding:17px 10px;
 
-    margin-bottom:15px;
+    margin-bottom:10px;
 
 }
 
 
 .user-avatar{
 
-    width:40px;
+    width:42px;
 
-    height:40px;
+    height:42px;
 
-    border-radius:12px;
+    border-radius:13px;
 
     display:flex;
 
@@ -233,15 +282,31 @@ body{
     justify-content:center;
 
     background:
+
     linear-gradient(
         135deg,
         #00c878,
         #008cff
     );
 
+    color:#ffffff;
+
     font-size:14px;
 
     font-weight:800;
+
+    overflow:hidden;
+
+}
+
+
+.user-avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
 
 }
 
@@ -274,17 +339,19 @@ body{
 
     display:block;
 
-    margin-top:3px;
+    margin-top:4px;
 
-    color:#6d8799;
+    color:#00d084;
 
     font-size:10px;
+
+    text-transform:capitalize;
 
 }
 
 
 /* =====================================================
-   SIDEBAR MENU
+   MENU
 ===================================================== */
 
 .sidebar-menu{
@@ -293,14 +360,10 @@ body{
 
     flex-direction:column;
 
-    gap:7px;
+    gap:6px;
 
 }
 
-
-/* =====================================================
-   MENU LINK
-===================================================== */
 
 .sidebar-menu a{
 
@@ -308,15 +371,15 @@ body{
 
     align-items:center;
 
-    gap:13px;
+    gap:12px;
 
     width:100%;
 
-    padding:12px 13px;
+    padding:11px 12px;
 
     border-radius:12px;
 
-    color:#91a5b4;
+    color:#8da3b2;
 
     text-decoration:none;
 
@@ -324,12 +387,12 @@ body{
 
     font-weight:600;
 
-    transition:
-    0.25s;
-
     border:
     1px solid
     transparent;
+
+    transition:
+    0.25s ease;
 
 }
 
@@ -350,10 +413,6 @@ body{
 }
 
 
-/* =====================================================
-   ACTIVE MENU
-===================================================== */
-
 .sidebar-menu a.active{
 
     color:#ffffff;
@@ -363,19 +422,19 @@ body{
     linear-gradient(
         135deg,
         rgba(0,200,120,0.18),
-        rgba(0,140,255,0.12)
+        rgba(0,140,255,0.10)
     );
 
     border-color:
-
     rgba(0,200,120,0.18);
+
+    box-shadow:
+
+    0 8px 25px
+    rgba(0,200,120,0.05);
 
 }
 
-
-/* =====================================================
-   MENU ICON
-===================================================== */
 
 .menu-icon{
 
@@ -394,28 +453,9 @@ body{
     background:
     rgba(255,255,255,0.045);
 
-    font-size:16px;
+    font-size:15px;
 
     flex-shrink:0;
-
-}
-
-
-/* =====================================================
-   MY ACCOUNT SPECIAL
-===================================================== */
-
-.my-account-menu{
-
-    margin-top:5px;
-
-}
-
-
-.my-account-menu:hover .menu-icon{
-
-    background:
-    rgba(0,200,120,0.15);
 
 }
 
@@ -428,7 +468,7 @@ body{
 
     margin-top:auto;
 
-    padding-top:20px;
+    padding-top:18px;
 
     border-top:
     1px solid
@@ -436,10 +476,6 @@ body{
 
 }
 
-
-/* =====================================================
-   LOGOUT
-===================================================== */
 
 .logout-btn{
 
@@ -449,9 +485,9 @@ body{
 
     align-items:center;
 
-    gap:13px;
+    gap:12px;
 
-    padding:12px 13px;
+    padding:11px 12px;
 
     border-radius:12px;
 
@@ -488,15 +524,15 @@ body{
 
 
 /* =====================================================
-   MAIN CONTENT
+   MAIN
 ===================================================== */
 
 .main{
 
-    margin-left:260px;
-
     width:
     calc(100% - 260px);
+
+    margin-left:260px;
 
     min-height:100vh;
 
@@ -522,7 +558,7 @@ body{
     gap:20px;
 
     padding:
-    15px 20px;
+    13px 18px;
 
     border:
     1px solid
@@ -531,21 +567,28 @@ body{
     border-radius:18px;
 
     background:
-    rgba(8,25,40,0.75);
+    rgba(8,25,40,0.78);
 
     backdrop-filter:
-    blur(15px);
+    blur(18px);
 
 }
 
 
-/* =====================================================
-   PAGE TITLE
-===================================================== */
+.page-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
 
 .page-title h1{
 
-    font-size:22px;
+    font-size:21px;
 
     margin-bottom:4px;
 
@@ -561,9 +604,29 @@ body{
 }
 
 
-/* =====================================================
-   TOP USER
-===================================================== */
+.mobile-menu-btn{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
 
 .top-user{
 
@@ -596,13 +659,11 @@ body{
 
     display:block;
 
+    margin-top:3px;
+
     color:#00d084;
 
     font-size:10px;
-
-    margin-top:3px;
-
-    text-transform:capitalize;
 
 }
 
@@ -622,6 +683,7 @@ body{
     justify-content:center;
 
     background:
+
     linear-gradient(
         135deg,
         #00c878,
@@ -632,11 +694,24 @@ body{
 
     font-weight:800;
 
+    overflow:hidden;
+
+}
+
+
+.top-avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
 }
 
 
 /* =====================================================
-   WELCOME
+   WELCOME HERO
 ===================================================== */
 
 .welcome{
@@ -645,14 +720,18 @@ body{
 
     padding:30px;
 
-    border-radius:20px;
+    border-radius:22px;
+
+    position:relative;
+
+    overflow:hidden;
 
     background:
 
     linear-gradient(
         135deg,
-        rgba(0,200,120,0.12),
-        rgba(0,130,255,0.08)
+        rgba(0,200,120,0.13),
+        rgba(0,140,255,0.09)
     );
 
     border:
@@ -662,38 +741,155 @@ body{
 }
 
 
+.welcome::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    right:-70px;
+
+    top:-90px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(0,200,120,0.08);
+
+}
+
+
+.welcome-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
 .welcome h2{
 
-    font-size:25px;
+    font-size:26px;
 
     margin-bottom:8px;
 
 }
 
 
-.welcome h2 span{
+.welcome p{
 
-    color:#00d084;
+    color:#8ba2b1;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    max-width:600px;
 
 }
 
 
-.welcome p{
+.welcome-user{
 
-    color:#8197a7;
+    margin-top:16px;
 
-    font-size:13px;
+    display:flex;
 
-    line-height:1.7;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+
+.welcome-badge{
+
+    padding:
+    7px 12px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid
+    rgba(255,255,255,0.07);
+
+    color:#b9c9d3;
+
+    font-size:10px;
+
+}
+
+
+.welcome-badge.role{
+
+    color:#62e9af;
+
+}
+
+
+.welcome-badge.status{
+
+    color:#6dbbff;
 
 }
 
 
 /* =====================================================
-   STATS
+   SECTION
 ===================================================== */
 
-.stats{
+.section{
+
+    margin-top:25px;
+
+}
+
+
+.section-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+}
+
+
+.section-header h2{
+
+    font-size:17px;
+
+}
+
+
+.section-header p{
+
+    color:#60798b;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.stats-grid{
 
     display:grid;
 
@@ -702,14 +898,16 @@ body{
 
     gap:15px;
 
-    margin-top:20px;
-
 }
 
 
 .stat-card{
 
-    padding:22px;
+    position:relative;
+
+    overflow:hidden;
+
+    padding:20px;
 
     border-radius:17px;
 
@@ -721,7 +919,7 @@ body{
     rgba(255,255,255,0.06);
 
     transition:
-    0.25s;
+    0.25s ease;
 
 }
 
@@ -732,7 +930,20 @@ body{
     translateY(-3px);
 
     border-color:
-    rgba(0,200,120,0.20);
+    rgba(0,200,120,0.18);
+
+}
+
+
+.stat-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
 
 }
 
@@ -756,25 +967,66 @@ body{
 
     font-size:18px;
 
-    margin-bottom:16px;
+}
+
+
+.stat-card.blue .stat-icon{
+
+    background:
+    rgba(0,140,255,0.09);
 
 }
 
 
-.stat-card h3{
+.stat-card.orange .stat-icon{
 
-    font-size:24px;
+    background:
+    rgba(255,170,0,0.09);
 
 }
 
 
-.stat-card p{
+.stat-card.red .stat-icon{
 
-    color:#718899;
+    background:
+    rgba(255,70,70,0.09);
 
-    font-size:11px;
+}
+
+
+.stat-label{
+
+    margin-top:17px;
+
+    color:#668092;
+
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:0.6px;
+
+}
+
+
+.stat-value{
 
     margin-top:5px;
+
+    font-size:25px;
+
+    font-weight:800;
+
+}
+
+
+.stat-status{
+
+    margin-top:6px;
+
+    color:#00d084;
+
+    font-size:9px;
 
 }
 
@@ -783,43 +1035,12 @@ body{
    QUICK ACTIONS
 ===================================================== */
 
-.section-title{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin-top:30px;
-
-    margin-bottom:15px;
-
-}
-
-
-.section-title h2{
-
-    font-size:17px;
-
-}
-
-
-.section-title span{
-
-    color:#617b8d;
-
-    font-size:10px;
-
-}
-
-
 .quick-grid{
 
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+    repeat(4,1fr);
 
     gap:15px;
 
@@ -828,7 +1049,119 @@ body{
 
 .quick-card{
 
-    padding:22px;
+    min-height:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:18px;
+
+    border-radius:17px;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    background:
+    #081a29;
+
+    border:
+    1px solid
+    rgba(255,255,255,0.06);
+
+    transition:
+    0.25s ease;
+
+}
+
+
+.quick-card:hover{
+
+    transform:
+    translateY(-4px);
+
+    border-color:
+    rgba(0,200,120,0.20);
+
+    background:
+    #0a2031;
+
+}
+
+
+.quick-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        rgba(0,200,120,0.12),
+        rgba(0,140,255,0.08)
+    );
+
+    font-size:18px;
+
+}
+
+
+.quick-card h3{
+
+    margin-top:15px;
+
+    font-size:13px;
+
+}
+
+
+.quick-card p{
+
+    margin-top:4px;
+
+    color:#60798b;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   LOWER GRID
+===================================================== */
+
+.lower-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr 1fr;
+
+    gap:15px;
+
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.panel{
+
+    padding:20px;
 
     border-radius:17px;
 
@@ -839,102 +1172,62 @@ body{
     1px solid
     rgba(255,255,255,0.06);
 
-    text-decoration:none;
-
-    color:white;
-
-    transition:
-    0.25s;
-
 }
 
 
-.quick-card:hover{
+.panel-title{
 
-    transform:
-    translateY(-3px);
+    display:flex;
 
-    border-color:
-    rgba(0,200,120,0.22);
+    align-items:center;
 
-}
-
-
-.quick-icon{
-
-    font-size:25px;
-
-    margin-bottom:15px;
-
-}
-
-
-.quick-card h3{
-
-    font-size:14px;
-
-    margin-bottom:7px;
-
-}
-
-
-.quick-card p{
-
-    color:#718899;
-
-    font-size:11px;
-
-    line-height:1.6;
-
-}
-
-
-/* =====================================================
-   ACCOUNT INFO
-===================================================== */
-
-.account-card{
-
-    margin-top:25px;
-
-    padding:22px;
-
-    border-radius:18px;
-
-    background:
-    #081a29;
-
-    border:
-    1px solid
-    rgba(255,255,255,0.06);
-
-}
-
-
-.account-card h2{
-
-    font-size:16px;
+    justify-content:space-between;
 
     margin-bottom:18px;
 
 }
 
 
-.account-grid{
+.panel-title h3{
 
-    display:grid;
+    font-size:14px;
 
-    grid-template-columns:
-    repeat(4,1fr);
+}
+
+
+.panel-title span{
+
+    color:#60798b;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   ACTIVITY
+===================================================== */
+
+.activity-list{
+
+    display:flex;
+
+    flex-direction:column;
 
     gap:12px;
 
 }
 
 
-.account-item{
+.activity-item{
 
-    padding:15px;
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
 
     border-radius:12px;
 
@@ -944,58 +1237,147 @@ body{
 }
 
 
-.account-item label{
+.activity-icon{
 
-    display:block;
+    width:35px;
 
-    color:#617b8d;
+    height:35px;
 
-    font-size:9px;
+    display:flex;
 
-    text-transform:uppercase;
+    align-items:center;
 
-    letter-spacing:0.5px;
+    justify-content:center;
 
-    margin-bottom:7px;
+    border-radius:10px;
+
+    background:
+    rgba(0,200,120,0.08);
 
 }
 
 
-.account-item strong{
+.activity-text{
+
+    flex:1;
+
+}
+
+
+.activity-text strong{
 
     display:block;
 
-    font-size:12px;
+    font-size:11px;
 
-    word-break:break-word;
+}
+
+
+.activity-text span{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#61798a;
+
+    font-size:9px;
 
 }
 
 
 /* =====================================================
-   MOBILE MENU BUTTON
+   SYSTEM STATUS
 ===================================================== */
 
-.mobile-menu-btn{
+.system-list{
 
-    display:none;
+    display:flex;
 
-    width:42px;
+    flex-direction:column;
 
-    height:42px;
+    gap:12px;
 
-    border:none;
+}
 
-    border-radius:11px;
+
+.system-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:12px 13px;
+
+    border-radius:12px;
 
     background:
-    rgba(255,255,255,0.05);
+    rgba(255,255,255,0.025);
 
-    color:white;
+}
 
-    cursor:pointer;
 
-    font-size:18px;
+.system-name{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#b7c6d0;
+
+    font-size:11px;
+
+}
+
+
+.system-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#00d084;
+
+    box-shadow:
+
+    0 0 10px
+    rgba(0,208,132,0.5);
+
+}
+
+
+.system-status{
+
+    color:#00d084;
+
+    font-size:9px;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    margin-top:30px;
+
+    padding:20px 0;
+
+    text-align:center;
+
+    color:#4f6879;
+
+    font-size:10px;
 
 }
 
@@ -1012,10 +1394,10 @@ body{
 
     inset:0;
 
-    background:
-    rgba(0,0,0,0.60);
-
     z-index:90;
+
+    background:
+    rgba(0,0,0,0.65);
 
 }
 
@@ -1026,7 +1408,7 @@ body{
 
 @media(max-width:1100px){
 
-    .stats{
+    .stats-grid{
 
         grid-template-columns:
         repeat(2,1fr);
@@ -1034,7 +1416,7 @@ body{
     }
 
 
-    .account-grid{
+    .quick-grid{
 
         grid-template-columns:
         repeat(2,1fr);
@@ -1050,9 +1432,6 @@ body{
 
         transform:
         translateX(-100%);
-
-        transition:
-        0.3s;
 
     }
 
@@ -1074,9 +1453,9 @@ body{
 
     .main{
 
-        margin-left:0;
-
         width:100%;
+
+        margin-left:0;
 
         padding:15px;
 
@@ -1090,25 +1469,7 @@ body{
     }
 
 
-    .topbar{
-
-        padding:12px 15px;
-
-    }
-
-
-    .page-title{
-
-        display:flex;
-
-        align-items:center;
-
-        gap:12px;
-
-    }
-
-
-    .quick-grid{
+    .lower-grid{
 
         grid-template-columns:
         1fr;
@@ -1118,27 +1479,31 @@ body{
 }
 
 
-@media(max-width:550px){
+@media(max-width:600px){
 
-    .stats{
+    .stats-grid{
 
         grid-template-columns:
-        1fr;
+        1fr 1fr;
+
+        gap:10px;
 
     }
 
 
-    .account-grid{
+    .quick-grid{
 
         grid-template-columns:
-        1fr;
+        1fr 1fr;
+
+        gap:10px;
 
     }
 
 
     .welcome{
 
-        padding:22px;
+        padding:23px;
 
     }
 
@@ -1160,6 +1525,40 @@ body{
     .page-title h1{
 
         font-size:18px;
+
+    }
+
+
+    .stat-card{
+
+        padding:15px;
+
+    }
+
+
+    .stat-value{
+
+        font-size:21px;
+
+    }
+
+}
+
+
+@media(max-width:420px){
+
+    .stats-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .quick-grid{
+
+        grid-template-columns:
+        1fr;
 
     }
 
@@ -1215,7 +1614,7 @@ MANAGEMENT SYSTEM
 
 
 
-<!-- USER MINI -->
+<!-- MINI USER -->
 
 <div class="user-mini">
 
@@ -1263,8 +1662,6 @@ User
 <nav class="sidebar-menu">
 
 
-<!-- DASHBOARD -->
-
 <a
 href="dashboard.html"
 class="active"
@@ -1286,8 +1683,6 @@ Dashboard
 
 
 
-<!-- OVERVIEW -->
-
 <a
 href="dashboard.html"
 >
@@ -1308,8 +1703,6 @@ Overview
 
 
 
-<!-- SUPPORT -->
-
 <a
 href="support.html"
 >
@@ -1322,15 +1715,13 @@ href="support.html"
 
 <span>
 
-Support
+Support Management
 
 </span>
 
 </a>
 
 
-
-<!-- CALL -->
 
 <a
 href="call.html"
@@ -1344,7 +1735,7 @@ href="call.html"
 
 <span>
 
-Call
+Call Management
 
 </span>
 
@@ -1352,11 +1743,28 @@ Call
 
 
 
-<!-- MY ACCOUNT -->
+<a
+href="support-history.html"
+>
+
+<span class="menu-icon">
+
+📋
+
+</span>
+
+<span>
+
+Support History
+
+</span>
+
+</a>
+
+
 
 <a
 href="account.html"
-class="my-account-menu"
 >
 
 <span class="menu-icon">
@@ -1378,7 +1786,7 @@ My Account
 
 
 
-<!-- SIDEBAR BOTTOM -->
+<!-- BOTTOM -->
 
 <div class="sidebar-bottom">
 
@@ -1410,9 +1818,7 @@ Logout
 
 
 
-<!-- =====================================================
-     SIDEBAR OVERLAY
-===================================================== -->
+<!-- OVERLAY -->
 
 <div
 class="sidebar-overlay"
@@ -1428,7 +1834,9 @@ id="sidebarOverlay"
 <main class="main">
 
 
-<!-- TOPBAR -->
+<!-- =====================================================
+     TOPBAR
+===================================================== -->
 
 <header class="topbar">
 
@@ -1467,8 +1875,6 @@ LINK4 COMMUNICATION Management System
 </div>
 
 
-
-<!-- TOP USER -->
 
 <div class="top-user">
 
@@ -1521,28 +1927,65 @@ U
 <section class="welcome">
 
 
+<div class="welcome-content">
+
+
 <h2>
 
 Welcome back,
-
 <span id="welcomeName">
 
 User
 
-</span>
-
-👋
+</span> 👋
 
 </h2>
 
 
 <p>
 
-You are successfully logged in to the LINK4 COMMUNICATION
-Management System. Manage your support, calls and operations
-from your workspace.
+Manage support operations, customer service,
+call management and daily activities from
+your centralized management dashboard.
 
 </p>
+
+
+<div class="welcome-user">
+
+
+<span
+class="welcome-badge role"
+>
+
+Role:
+<span id="welcomeRole">
+
+User
+
+</span>
+
+</span>
+
+
+<span
+class="welcome-badge status"
+>
+
+Status:
+<span id="welcomeStatus">
+
+Active
+
+</span>
+
+</span>
+
+
+</div>
+
+
+</div>
 
 
 </section>
@@ -1550,32 +1993,29 @@ from your workspace.
 
 
 <!-- =====================================================
-     STATS
+     STATISTICS
 ===================================================== -->
 
-<section class="stats">
+<section class="section">
 
 
-<div class="stat-card">
+<div class="section-header">
 
 
-<div class="stat-icon">
+<div>
 
-📋
+<h2>
+
+Overview
+
+</h2>
 
 </div>
 
 
-<h3>
-
-0
-
-</h3>
-
-
 <p>
 
-Pending Support
+System activity overview
 
 </p>
 
@@ -1584,7 +2024,63 @@ Pending Support
 
 
 
+<div class="stats-grid">
+
+
+<!-- SUPPORT -->
+
 <div class="stat-card">
+
+
+<div class="stat-top">
+
+
+<div class="stat-icon">
+
+🛠️
+
+</div>
+
+
+</div>
+
+
+<div class="stat-label">
+
+Total Support
+
+</div>
+
+
+<div
+class="stat-value"
+id="totalSupport"
+>
+
+0
+
+</div>
+
+
+<div class="stat-status">
+
+Support records
+
+</div>
+
+
+</div>
+
+
+
+<!-- CALL -->
+
+<div
+class="stat-card blue"
+>
+
+
+<div class="stat-top">
 
 
 <div class="stat-icon">
@@ -1594,25 +2090,93 @@ Pending Support
 </div>
 
 
-<h3>
+</div>
+
+
+<div class="stat-label">
+
+Total Calls
+
+</div>
+
+
+<div
+class="stat-value"
+id="totalCalls"
+>
 
 0
 
-</h3>
+</div>
 
 
-<p>
+<div class="stat-status">
 
-Pending Calls
+Call records
 
-</p>
+</div>
 
 
 </div>
 
 
 
-<div class="stat-card">
+<!-- PENDING -->
+
+<div
+class="stat-card orange"
+>
+
+
+<div class="stat-top">
+
+
+<div class="stat-icon">
+
+⏳
+
+</div>
+
+
+</div>
+
+
+<div class="stat-label">
+
+Pending
+
+</div>
+
+
+<div
+class="stat-value"
+id="pendingCount"
+>
+
+0
+
+</div>
+
+
+<div class="stat-status">
+
+Waiting for action
+
+</div>
+
+
+</div>
+
+
+
+<!-- COMPLETED -->
+
+<div
+class="stat-card red"
+>
+
+
+<div class="stat-top">
 
 
 <div class="stat-icon">
@@ -1622,46 +2186,34 @@ Pending Calls
 </div>
 
 
-<h3>
-
-0
-
-</h3>
+</div>
 
 
-<p>
+<div class="stat-label">
 
 Completed
 
-</p>
+</div>
 
+
+<div
+class="stat-value"
+id="completedCount"
+>
+
+0
 
 </div>
 
 
+<div class="stat-status">
 
-<div class="stat-card">
-
-
-<div class="stat-icon">
-
-👥
+Successfully completed
 
 </div>
 
 
-<h3>
-
-Active
-
-</h3>
-
-
-<p>
-
-Account Status
-
-</p>
+</div>
 
 
 </div>
@@ -1675,8 +2227,13 @@ Account Status
      QUICK ACTIONS
 ===================================================== -->
 
-<div class="section-title">
+<section class="section">
 
+
+<div class="section-header">
+
+
+<div>
 
 <h2>
 
@@ -1684,19 +2241,21 @@ Quick Access
 
 </h2>
 
+</div>
 
-<span>
 
-Manage your workspace
+<p>
 
-</span>
+Frequently used modules
+
+</p>
 
 
 </div>
 
 
 
-<section class="quick-grid">
+<div class="quick-grid">
 
 
 <a
@@ -1712,6 +2271,8 @@ class="quick-card"
 </div>
 
 
+<div>
+
 <h3>
 
 Support Management
@@ -1721,9 +2282,11 @@ Support Management
 
 <p>
 
-View and manage pending support requests.
+Manage customer support
 
 </p>
+
+</div>
 
 
 </a>
@@ -1743,6 +2306,8 @@ class="quick-card"
 </div>
 
 
+<div>
+
 <h3>
 
 Call Management
@@ -1752,9 +2317,46 @@ Call Management
 
 <p>
 
-Manage customer calls and call operations.
+Manage customer calls
 
 </p>
+
+</div>
+
+
+</a>
+
+
+
+<a
+href="support-history.html"
+class="quick-card"
+>
+
+
+<div class="quick-icon">
+
+📋
+
+</div>
+
+
+<div>
+
+<h3>
+
+Support History
+
+</h3>
+
+
+<p>
+
+View completed records
+
+</p>
+
+</div>
 
 
 </a>
@@ -1774,6 +2376,8 @@ class="quick-card"
 </div>
 
 
+<div>
+
 <h3>
 
 My Account
@@ -1783,12 +2387,17 @@ My Account
 
 <p>
 
-View your personal account information and role.
+View your profile
 
 </p>
 
+</div>
+
 
 </a>
+
+
+</div>
 
 
 </section>
@@ -1796,108 +2405,285 @@ View your personal account information and role.
 
 
 <!-- =====================================================
-     ACCOUNT INFO
+     LOWER CONTENT
 ===================================================== -->
 
-<section class="account-card">
+<section class="section">
 
 
-<h2>
-
-Your Account
-
-</h2>
+<div class="lower-grid">
 
 
-<div class="account-grid">
+<!-- RECENT ACTIVITY -->
+
+<div class="panel">
 
 
-<div class="account-item">
+<div class="panel-title">
 
 
-<label>
+<h3>
 
-Name
+Recent Activity
 
-</label>
+</h3>
 
 
-<strong
-id="accountName"
->
+<span>
 
-User
+Latest
 
-</strong>
+</span>
 
 
 </div>
 
 
 
-<div class="account-item">
+<div class="activity-list">
 
 
-<label>
-
-Username
-
-</label>
+<div class="activity-item">
 
 
-<strong
-id="accountUsername"
->
+<div class="activity-icon">
 
--
+🛠️
+
+</div>
+
+
+<div class="activity-text">
+
+
+<strong>
+
+Support Management
 
 </strong>
+
+
+<span>
+
+Manage pending customer support requests
+
+</span>
+
+
+</div>
 
 
 </div>
 
 
 
-<div class="account-item">
+<div class="activity-item">
 
 
-<label>
+<div class="activity-icon">
 
-Role
+📞
 
-</label>
+</div>
 
 
-<strong
-id="accountRole"
->
+<div class="activity-text">
 
--
+
+<strong>
+
+Call Management
 
 </strong>
+
+
+<span>
+
+Handle customer call operations
+
+</span>
+
+
+</div>
 
 
 </div>
 
 
 
-<div class="account-item">
+<div class="activity-item">
 
 
-<label>
+<div class="activity-icon">
 
-Status
+📋
 
-</label>
+</div>
 
 
-<strong
-id="accountStatus"
->
+<div class="activity-text">
 
--
+
+<strong>
+
+Support History
 
 </strong>
+
+
+<span>
+
+Review previous support activities
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- SYSTEM STATUS -->
+
+<div class="panel">
+
+
+<div class="panel-title">
+
+
+<h3>
+
+System Status
+
+</h3>
+
+
+<span>
+
+Live
+
+</span>
+
+
+</div>
+
+
+
+<div class="system-list">
+
+
+<div class="system-row">
+
+
+<div class="system-name">
+
+
+<span class="system-dot"></span>
+
+
+Login System
+
+
+</div>
+
+
+<div class="system-status">
+
+Online
+
+</div>
+
+
+</div>
+
+
+
+<div class="system-row">
+
+
+<div class="system-name">
+
+
+<span class="system-dot"></span>
+
+
+Google Sheets
+
+
+</div>
+
+
+<div class="system-status">
+
+Connected
+
+</div>
+
+
+</div>
+
+
+
+<div class="system-row">
+
+
+<div class="system-name">
+
+
+<span class="system-dot"></span>
+
+
+Support System
+
+
+</div>
+
+
+<div class="system-status">
+
+Active
+
+</div>
+
+
+</div>
+
+
+
+<div class="system-row">
+
+
+<div class="system-name">
+
+
+<span class="system-dot"></span>
+
+
+Call System
+
+
+</div>
+
+
+<div class="system-status">
+
+Active
+
+</div>
+
+
+</div>
+
+
+</div>
 
 
 </div>
@@ -1907,6 +2693,17 @@ id="accountStatus"
 
 
 </section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+© 2026 LINK4 COMMUNICATION.
+All rights reserved.
+
+</footer>
 
 
 </main>
@@ -1919,14 +2716,25 @@ id="accountStatus"
 <script>
 
 /* =====================================================
-   GET LOGIN DATA
+   CONFIGURATION
 ===================================================== */
 
-const username =
+const API_URL =
 
-localStorage.getItem(
-    "username"
-) || "-";
+"https://script.google.com/macros/s/AKfycbxbgyIg_ddBYIs8qkQvRN3xS3-ZG451C5y_2sNbVFWdWydzb9Mc6qV5CoWB5rjs91ghjQ/exec";
+
+
+/* =====================================================
+   GET LOCAL USER DATA
+===================================================== */
+
+const username = (
+
+    localStorage.getItem(
+        "username"
+    ) || ""
+
+).trim();
 
 
 const name =
@@ -1950,97 +2758,350 @@ localStorage.getItem(
 ) || "Active";
 
 
-
 /* =====================================================
-   USER INITIAL
+   INITIALIZE USER
 ===================================================== */
 
-const initial =
+initializeUser();
 
-name
-.trim()
-.charAt(0)
-.toUpperCase();
 
+function initializeUser(){
+
+
+    const userName =
+
+    name || "User";
+
+
+    const userRole =
+
+    role || "User";
+
+
+    const userStatus =
+
+    status || "Active";
+
+
+    /* -----------------------------------------------
+       SIDEBAR
+    ------------------------------------------------ */
+
+    document.getElementById(
+        "sidebarName"
+    ).textContent =
+
+    userName;
+
+
+    document.getElementById(
+        "sidebarRole"
+    ).textContent =
+
+    userRole;
+
+
+    /* -----------------------------------------------
+       TOPBAR
+    ------------------------------------------------ */
+
+    document.getElementById(
+        "topName"
+    ).textContent =
+
+    userName;
+
+
+    document.getElementById(
+        "topRole"
+    ).textContent =
+
+    userRole;
+
+
+    /* -----------------------------------------------
+       WELCOME
+    ------------------------------------------------ */
+
+    document.getElementById(
+        "welcomeName"
+    ).textContent =
+
+    userName;
+
+
+    document.getElementById(
+        "welcomeRole"
+    ).textContent =
+
+    userRole;
+
+
+    document.getElementById(
+        "welcomeStatus"
+    ).textContent =
+
+    userStatus;
+
+
+    /* -----------------------------------------------
+       AVATAR
+    ------------------------------------------------ */
+
+    const initial =
+
+    userName
+    .trim()
+    .charAt(0)
+    .toUpperCase() || "U";
+
+
+    document.getElementById(
+        "sidebarAvatar"
+    ).textContent =
+
+    initial;
+
+
+    document.getElementById(
+        "topAvatar"
+    ).textContent =
+
+    initial;
+
+
+}
 
 
 /* =====================================================
-   SIDEBAR USER
+   LOAD ACCOUNT PHOTO
 ===================================================== */
 
-document.getElementById(
-    "sidebarName"
-).textContent = name;
+loadUserPhoto();
 
 
-document.getElementById(
-    "sidebarRole"
-).textContent = role;
+async function loadUserPhoto(){
 
 
-document.getElementById(
-    "sidebarAvatar"
-).textContent = initial;
+    if(!username){
 
+        return;
+
+    }
+
+
+    try{
+
+
+        const url =
+
+        API_URL +
+
+        "?action=getAccount" +
+
+        "&username=" +
+
+        encodeURIComponent(
+            username
+        );
+
+
+        const response =
+
+        await fetch(
+
+            url,
+
+            {
+
+                method:
+                "GET",
+
+                cache:
+                "no-store"
+
+            }
+
+        );
+
+
+        if(!response.ok){
+
+            return;
+
+        }
+
+
+        const data =
+
+        await response.json();
+
+
+        if(
+
+            data.success === true &&
+
+            data.user
+
+        ){
+
+
+            const user =
+
+            data.user;
+
+
+            /* ---------------------------------------
+               UPDATE LOCAL DATA
+            ---------------------------------------- */
+
+            if(user.name){
+
+                localStorage.setItem(
+                    "name",
+                    user.name
+                );
+
+            }
+
+
+            if(user.role){
+
+                localStorage.setItem(
+                    "role",
+                    user.role
+                );
+
+            }
+
+
+            if(user.status){
+
+                localStorage.setItem(
+                    "status",
+                    user.status
+                );
+
+            }
+
+
+            /* ---------------------------------------
+               PHOTO
+            ---------------------------------------- */
+
+            if(user.photo){
+
+                setUserPhoto(
+                    user.photo
+                );
+
+            }
+
+
+        }
+
+
+    }
+
+    catch(error){
+
+        console.log(
+            "User data loading error:",
+            error
+        );
+
+    }
+
+}
 
 
 /* =====================================================
-   TOP USER
+   SET USER PHOTO
 ===================================================== */
 
-document.getElementById(
-    "topName"
-).textContent = name;
+function setUserPhoto(photo){
 
 
-document.getElementById(
-    "topRole"
-).textContent = role;
+    const sidebarAvatar =
+
+    document.getElementById(
+        "sidebarAvatar"
+    );
 
 
-document.getElementById(
-    "topAvatar"
-).textContent = initial;
+    const topAvatar =
 
+    document.getElementById(
+        "topAvatar"
+    );
+
+
+    const sidebarImage =
+
+    document.createElement(
+        "img"
+    );
+
+
+    sidebarImage.src = photo;
+
+
+    sidebarImage.alt =
+    "Profile";
+
+
+    sidebarImage.onerror =
+
+    function(){
+
+        this.remove();
+
+    };
+
+
+    sidebarAvatar.innerHTML = "";
+
+
+    sidebarAvatar.appendChild(
+        sidebarImage
+    );
+
+
+    const topImage =
+
+    document.createElement(
+        "img"
+    );
+
+
+    topImage.src = photo;
+
+
+    topImage.alt =
+    "Profile";
+
+
+    topImage.onerror =
+
+    function(){
+
+        this.remove();
+
+    };
+
+
+    topAvatar.innerHTML = "";
+
+
+    topAvatar.appendChild(
+        topImage
+    );
+
+}
 
 
 /* =====================================================
-   WELCOME
-===================================================== */
-
-document.getElementById(
-    "welcomeName"
-).textContent = name;
-
-
-
-/* =====================================================
-   ACCOUNT
-===================================================== */
-
-document.getElementById(
-    "accountName"
-).textContent = name;
-
-
-document.getElementById(
-    "accountUsername"
-).textContent = username;
-
-
-document.getElementById(
-    "accountRole"
-).textContent = role;
-
-
-document.getElementById(
-    "accountStatus"
-).textContent = status;
-
-
-
-/* =====================================================
-   MOBILE MENU
+   MOBILE SIDEBAR
 ===================================================== */
 
 const mobileMenuBtn =
@@ -2057,52 +3118,85 @@ document.getElementById(
 );
 
 
-const sidebarOverlay =
+const overlay =
 
 document.getElementById(
     "sidebarOverlay"
 );
 
 
-
 mobileMenuBtn.addEventListener(
 
-"click",
+    "click",
 
-function(){
+    function(){
 
-    sidebar.classList.add(
-        "open"
-    );
+        sidebar.classList.add(
+            "open"
+        );
 
-    sidebarOverlay.classList.add(
-        "show"
-    );
+        overlay.classList.add(
+            "show"
+        );
 
-}
+    }
+
+);
+
+
+overlay.addEventListener(
+
+    "click",
+
+    function(){
+
+        sidebar.classList.remove(
+            "open"
+        );
+
+        overlay.classList.remove(
+            "show"
+        );
+
+    }
 
 );
 
 
+/* =====================================================
+   CLOSE MOBILE SIDEBAR
+   WHEN MENU CLICKED
+===================================================== */
 
-sidebarOverlay.addEventListener(
+document
+.querySelectorAll(
+    ".sidebar-menu a"
+)
+.forEach(
 
-"click",
+    function(link){
 
-function(){
+        link.addEventListener(
 
-    sidebar.classList.remove(
-        "open"
-    );
+            "click",
 
-    sidebarOverlay.classList.remove(
-        "show"
-    );
+            function(){
 
-}
+                sidebar.classList.remove(
+                    "open"
+                );
+
+                overlay.classList.remove(
+                    "show"
+                );
+
+            }
+
+        );
+
+    }
 
 );
-
 
 
 /* =====================================================
@@ -2111,42 +3205,114 @@ function(){
 
 document.getElementById(
     "logoutBtn"
-).addEventListener(
+)
+.addEventListener(
 
-"click",
+    "click",
 
-function(){
-
-    /* Clear login session */
-
-    localStorage.removeItem(
-        "loggedIn"
-    );
-
-    localStorage.removeItem(
-        "username"
-    );
-
-    localStorage.removeItem(
-        "name"
-    );
-
-    localStorage.removeItem(
-        "role"
-    );
-
-    localStorage.removeItem(
-        "status"
-    );
+    function(){
 
 
-    /* Go to Login */
+        /* -------------------------------------------
+           CLEAR LOGIN DATA
+        -------------------------------------------- */
 
-    window.location.replace(
-        "login.html"
-    );
+        localStorage.removeItem(
+            "loggedIn"
+        );
 
-}
+
+        localStorage.removeItem(
+            "username"
+        );
+
+
+        localStorage.removeItem(
+            "name"
+        );
+
+
+        localStorage.removeItem(
+            "role"
+        );
+
+
+        localStorage.removeItem(
+            "status"
+        );
+
+
+        /* -------------------------------------------
+           GO LOGIN
+        -------------------------------------------- */
+
+        window.location.replace(
+            "login.html"
+        );
+
+
+    }
+
+);
+
+
+/* =====================================================
+   DEMO STATISTICS
+=====================================================
+
+   এখন এগুলো Demo Data।
+   পরে Google Sheet থেকে Live Data
+   connect করা যাবে।
+
+===================================================== */
+
+document.getElementById(
+    "totalSupport"
+).textContent = "0";
+
+
+document.getElementById(
+    "totalCalls"
+).textContent = "0";
+
+
+document.getElementById(
+    "pendingCount"
+).textContent = "0";
+
+
+document.getElementById(
+    "completedCount"
+).textContent = "0";
+
+
+/* =====================================================
+   PREVENT BACK AFTER LOGOUT
+===================================================== */
+
+window.addEventListener(
+
+    "pageshow",
+
+    function(){
+
+        if(
+
+            localStorage.getItem(
+                "loggedIn"
+            )
+            !==
+            "true"
+
+        ){
+
+            window.location.replace(
+                "login.html"
+            );
+
+        }
+
+    }
 
 );
 
