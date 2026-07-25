@@ -7,24 +7,18 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#07111f">
-
-<meta name="description"
-content="LINK4 COMMUNICATION Admin Management Dashboard">
+<meta name="theme-color" content="#ffffff">
 
 <title>Admin Dashboard | LINK4 COMMUNICATION</title>
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
+href="https://fonts.gstatic.com"
+crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
-
+rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -42,14 +36,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     box-sizing:border-box;
 }
 
-
 body{
 
     font-family:"Inter",Arial,sans-serif;
 
-    background:#07111f;
+    background:#f5f7fb;
 
-    color:#fff;
+    color:#172033;
 
     min-height:100vh;
 
@@ -74,9 +67,9 @@ body{
 
     height:100vh;
 
-    background:#081522;
+    background:#ffffff;
 
-    border-right:1px solid rgba(255,255,255,.07);
+    border-right:1px solid #e8ecf2;
 
     padding:20px 15px;
 
@@ -88,6 +81,10 @@ body{
 
 }
 
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo{
 
@@ -108,15 +105,15 @@ body{
 
 .logo-icon{
 
-    width:43px;
+    width:44px;
 
-    height:43px;
+    height:44px;
 
-    border-radius:11px;
+    border-radius:12px;
 
-    background:#00d084;
+    background:#00b86b;
 
-    color:#07111f;
+    color:#ffffff;
 
     display:flex;
 
@@ -126,6 +123,8 @@ body{
 
     font-size:19px;
 
+    box-shadow:0 7px 20px rgba(0,184,107,.2);
+
 }
 
 
@@ -133,9 +132,11 @@ body{
 
     display:block;
 
-    font-size:16px;
+    font-size:17px;
 
     letter-spacing:1px;
+
+    color:#172033;
 
 }
 
@@ -144,7 +145,7 @@ body{
 
     display:block;
 
-    color:#718497;
+    color:#8b95a5;
 
     font-size:8px;
 
@@ -161,7 +162,7 @@ body{
 
 .nav-title{
 
-    color:#526779;
+    color:#a0a8b5;
 
     font-size:9px;
 
@@ -190,7 +191,7 @@ body{
 
     border-radius:9px;
 
-    color:#91a1b0;
+    color:#687385;
 
     text-decoration:none;
 
@@ -214,20 +215,20 @@ body{
 
 .nav-item:hover{
 
-    color:#fff;
+    color:#00a862;
 
-    background:rgba(0,208,132,.08);
+    background:#f0fbf6;
 
 }
 
 
 .nav-item.active{
 
-    color:#00d084;
+    color:#00a862;
 
-    background:rgba(0,208,132,.1);
+    background:#eafaf3;
 
-    border-left:3px solid #00d084;
+    font-weight:600;
 
 }
 
@@ -270,11 +271,9 @@ body{
 
     justify-content:space-between;
 
-    background:rgba(7,17,31,.9);
+    background:#ffffff;
 
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid rgba(255,255,255,.07);
+    border-bottom:1px solid #e8ecf2;
 
     position:sticky;
 
@@ -297,9 +296,9 @@ body{
 
     border-radius:9px;
 
-    background:rgba(255,255,255,.05);
+    background:#f3f6fa;
 
-    color:#fff;
+    color:#172033;
 
     cursor:pointer;
 
@@ -310,12 +309,14 @@ body{
 
     font-size:18px;
 
+    color:#172033;
+
 }
 
 
 .page-title p{
 
-    color:#687c8e;
+    color:#8b95a5;
 
     font-size:10px;
 
@@ -351,9 +352,11 @@ body{
 
     justify-content:center;
 
-    color:#91a1b0;
+    color:#687385;
 
-    background:rgba(255,255,255,.04);
+    background:#f5f7fa;
+
+    cursor:pointer;
 
 }
 
@@ -366,7 +369,7 @@ body{
 
     height:6px;
 
-    background:#00d084;
+    background:#00b86b;
 
     border-radius:50%;
 
@@ -402,9 +405,9 @@ body{
 
     justify-content:center;
 
-    background:#00d084;
+    background:#00b86b;
 
-    color:#07111f;
+    color:#ffffff;
 
     font-weight:800;
 
@@ -419,12 +422,14 @@ body{
 
     font-size:11px;
 
+    color:#172033;
+
 }
 
 
 .user-info span{
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:9px;
 
@@ -443,7 +448,7 @@ body{
 
 
 /* =====================================================
-   ADMIN WELCOME
+   WELCOME
 ===================================================== */
 
 .welcome{
@@ -452,21 +457,13 @@ body{
 
     border-radius:17px;
 
-    background:
+    background:#ffffff;
 
-    linear-gradient(
-
-        120deg,
-
-        rgba(0,208,132,.12),
-
-        rgba(0,100,255,.07)
-
-    );
-
-    border:1px solid rgba(0,208,132,.15);
+    border:1px solid #e8ecf2;
 
     margin-bottom:25px;
+
+    box-shadow:0 5px 20px rgba(31,45,61,.04);
 
 }
 
@@ -490,23 +487,27 @@ body{
 
     margin-bottom:8px;
 
+    color:#172033;
+
 }
 
 
 .welcome h1 span{
 
-    color:#00d084;
+    color:#00a862;
 
 }
 
 
 .welcome p{
 
-    color:#8193a4;
+    color:#7b8797;
 
     font-size:12px;
 
-    line-height:1.6;
+    line-height:1.7;
+
+    max-width:750px;
 
 }
 
@@ -523,11 +524,11 @@ body{
 
     border-radius:10px;
 
-    background:rgba(0,208,132,.08);
+    background:#eafaf3;
 
-    border:1px solid rgba(0,208,132,.2);
+    border:1px solid #d2f2e2;
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:10px;
 
@@ -561,9 +562,11 @@ body{
 
     border-radius:15px;
 
-    background:rgba(255,255,255,.035);
+    background:#ffffff;
 
-    border:1px solid rgba(255,255,255,.07);
+    border:1px solid #e8ecf2;
+
+    box-shadow:0 5px 20px rgba(31,45,61,.035);
 
     transition:.3s;
 
@@ -574,7 +577,9 @@ body{
 
     transform:translateY(-4px);
 
-    border-color:rgba(0,208,132,.25);
+    box-shadow:0 10px 25px rgba(31,45,61,.08);
+
+    border-color:#ccefe0;
 
 }
 
@@ -606,18 +611,20 @@ body{
 
     justify-content:center;
 
-    background:rgba(0,208,132,.1);
+    background:#eafaf3;
 
-    color:#00d084;
+    color:#00a862;
 
 }
 
 
 .stat-change{
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:9px;
+
+    font-weight:600;
 
 }
 
@@ -628,12 +635,14 @@ body{
 
     margin-bottom:5px;
 
+    color:#172033;
+
 }
 
 
 .stat-card p{
 
-    color:#718497;
+    color:#8b95a5;
 
     font-size:10px;
 
@@ -661,12 +670,14 @@ body{
 
     font-size:15px;
 
+    color:#172033;
+
 }
 
 
 .section-title span{
 
-    color:#65798b;
+    color:#929baa;
 
     font-size:10px;
 
@@ -674,7 +685,7 @@ body{
 
 
 /* =====================================================
-   ACCESS CONTROL
+   ACCESS PANEL
 ===================================================== */
 
 .access-panel{
@@ -701,9 +712,11 @@ body{
 
     border-radius:15px;
 
-    background:rgba(255,255,255,.035);
+    background:#ffffff;
 
-    border:1px solid rgba(255,255,255,.07);
+    border:1px solid #e8ecf2;
+
+    box-shadow:0 5px 20px rgba(31,45,61,.035);
 
     transition:.3s;
 
@@ -712,9 +725,11 @@ body{
 
 .access-card:hover{
 
-    border-color:rgba(0,208,132,.25);
+    border-color:#ccefe0;
 
     transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(31,45,61,.07);
 
 }
 
@@ -740,9 +755,9 @@ body{
 
     border-radius:10px;
 
-    background:rgba(0,208,132,.1);
+    background:#eafaf3;
 
-    color:#00d084;
+    color:#00a862;
 
     display:flex;
 
@@ -755,7 +770,7 @@ body{
 
 .access-status{
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:9px;
 
@@ -770,16 +785,18 @@ body{
 
     margin-bottom:6px;
 
+    color:#172033;
+
 }
 
 
 .access-card p{
 
-    color:#718497;
+    color:#7d8999;
 
     font-size:9px;
 
-    line-height:1.5;
+    line-height:1.6;
 
 }
 
@@ -796,9 +813,9 @@ body{
 
     border-radius:8px;
 
-    background:rgba(0,208,132,.1);
+    background:#eafaf3;
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:9px;
 
@@ -806,14 +823,16 @@ body{
 
     cursor:pointer;
 
+    transition:.25s;
+
 }
 
 
 .access-btn:hover{
 
-    background:#00d084;
+    background:#00b86b;
 
-    color:#07111f;
+    color:#ffffff;
 
 }
 
@@ -841,9 +860,11 @@ body{
 
     border-radius:15px;
 
-    background:rgba(255,255,255,.035);
+    background:#ffffff;
 
-    border:1px solid rgba(255,255,255,.07);
+    border:1px solid #e8ecf2;
+
+    box-shadow:0 5px 20px rgba(31,45,61,.035);
 
 }
 
@@ -862,7 +883,7 @@ body{
 
     padding:14px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid #edf0f4;
 
 }
 
@@ -888,9 +909,9 @@ body{
 
     justify-content:center;
 
-    background:rgba(0,208,132,.1);
+    background:#eafaf3;
 
-    color:#00d084;
+    color:#00a862;
 
 }
 
@@ -910,12 +931,14 @@ body{
 
     margin-bottom:4px;
 
+    color:#172033;
+
 }
 
 
 .manage-info span{
 
-    color:#718497;
+    color:#8b95a5;
 
     font-size:9px;
 
@@ -926,17 +949,28 @@ body{
 
     padding:7px 10px;
 
-    border:1px solid rgba(0,208,132,.15);
+    border:1px solid #d2f2e2;
 
     border-radius:7px;
 
-    background:rgba(0,208,132,.06);
+    background:#f1fbf6;
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:8px;
 
     cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.manage-btn:hover{
+
+    background:#00b86b;
+
+    color:#ffffff;
 
 }
 
@@ -955,7 +989,7 @@ body{
 
     padding:13px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid #edf0f4;
 
 }
 
@@ -975,7 +1009,7 @@ body{
 
     gap:9px;
 
-    color:#91a1b0;
+    color:#687385;
 
     font-size:10px;
 
@@ -988,7 +1022,7 @@ body{
 
     height:7px;
 
-    background:#00d084;
+    background:#00b86b;
 
     border-radius:50%;
 
@@ -997,9 +1031,11 @@ body{
 
 .status-online{
 
-    color:#00d084;
+    color:#00a862;
 
     font-size:9px;
+
+    font-weight:600;
 
 }
 
@@ -1025,7 +1061,7 @@ body{
 
     padding:14px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid #edf0f4;
 
 }
 
@@ -1051,9 +1087,9 @@ body{
 
     justify-content:center;
 
-    background:rgba(0,208,132,.1);
+    background:#eafaf3;
 
-    color:#00d084;
+    color:#00a862;
 
 }
 
@@ -1073,12 +1109,14 @@ body{
 
     margin-bottom:4px;
 
+    color:#172033;
+
 }
 
 
 .activity-info span{
 
-    color:#718497;
+    color:#8b95a5;
 
     font-size:9px;
 
@@ -1087,7 +1125,7 @@ body{
 
 .activity-time{
 
-    color:#526779;
+    color:#a0a8b5;
 
     font-size:9px;
 
@@ -1102,7 +1140,7 @@ body{
 
     padding:25px 30px;
 
-    color:#526779;
+    color:#9aa3af;
 
     font-size:9px;
 
@@ -1123,9 +1161,9 @@ body{
 
     inset:0;
 
-    background:rgba(0,0,0,.65);
+    background:rgba(15,23,42,.45);
 
-    backdrop-filter:blur(7px);
+    backdrop-filter:blur(5px);
 
     z-index:3000;
 
@@ -1151,15 +1189,15 @@ body{
 
     max-width:450px;
 
-    background:#0b1a29;
+    background:#ffffff;
 
-    border:1px solid rgba(255,255,255,.1);
+    border:1px solid #e8ecf2;
 
     border-radius:17px;
 
     padding:25px;
 
-    box-shadow:0 20px 70px rgba(0,0,0,.5);
+    box-shadow:0 20px 70px rgba(31,45,61,.2);
 
 }
 
@@ -1181,6 +1219,8 @@ body{
 
     font-size:16px;
 
+    color:#172033;
+
 }
 
 
@@ -1194,9 +1234,9 @@ body{
 
     border-radius:8px;
 
-    background:rgba(255,255,255,.05);
+    background:#f3f6fa;
 
-    color:#fff;
+    color:#687385;
 
     cursor:pointer;
 
@@ -1205,7 +1245,7 @@ body{
 
 .modal-text{
 
-    color:#8193a4;
+    color:#7b8797;
 
     font-size:11px;
 
@@ -1246,18 +1286,18 @@ body{
 
 .confirm-btn{
 
-    background:#00d084;
+    background:#00b86b;
 
-    color:#07111f;
+    color:#ffffff;
 
 }
 
 
 .cancel-btn{
 
-    background:rgba(255,255,255,.06);
+    background:#f1f3f6;
 
-    color:#fff;
+    color:#687385;
 
 }
 
@@ -1717,14 +1757,13 @@ body{
 
 
 <!-- =====================================================
-     SYSTEM STATS
+     STATS
 ===================================================== -->
 
 <div class="stats">
 
 
     <div class="stat-card">
-
 
         <div class="stat-top">
 
@@ -1742,18 +1781,15 @@ body{
 
         </div>
 
-
         <h3>--</h3>
 
         <p>Total Users</p>
-
 
     </div>
 
 
 
     <div class="stat-card">
-
 
         <div class="stat-top">
 
@@ -1771,18 +1807,15 @@ body{
 
         </div>
 
-
         <h3>--</h3>
 
         <p>Pending Support</p>
-
 
     </div>
 
 
 
     <div class="stat-card">
-
 
         <div class="stat-top">
 
@@ -1800,18 +1833,15 @@ body{
 
         </div>
 
-
         <h3>--</h3>
 
         <p>Pending Calls</p>
-
 
     </div>
 
 
 
     <div class="stat-card">
-
 
         <div class="stat-top">
 
@@ -1829,11 +1859,9 @@ body{
 
         </div>
 
-
         <h3>100%</h3>
 
         <p>System Status</p>
-
 
     </div>
 
@@ -1843,7 +1871,7 @@ body{
 
 
 <!-- =====================================================
-     FULL ACCESS CONTROL
+     ACCESS CONTROL
 ===================================================== -->
 
 <section class="access-panel">
@@ -1862,7 +1890,6 @@ body{
 
 
         <div class="access-card">
-
 
             <div class="access-top">
 
@@ -1900,13 +1927,11 @@ body{
 
             </button>
 
-
         </div>
 
 
 
         <div class="access-card">
-
 
             <div class="access-top">
 
@@ -1944,13 +1969,11 @@ body{
 
             </button>
 
-
         </div>
 
 
 
         <div class="access-card">
-
 
             <div class="access-top">
 
@@ -1988,13 +2011,11 @@ body{
 
             </button>
 
-
         </div>
 
 
 
         <div class="access-card">
-
 
             <div class="access-top">
 
@@ -2032,7 +2053,6 @@ body{
 
             </button>
 
-
         </div>
 
 
@@ -2050,8 +2070,6 @@ body{
 <div class="main-grid">
 
 
-<!-- MANAGEMENT -->
-
 <div class="panel">
 
 
@@ -2065,7 +2083,6 @@ body{
 
 
     <div class="manage-row">
-
 
         <div class="manage-icon">
 
@@ -2090,13 +2107,11 @@ body{
 
         </button>
 
-
     </div>
 
 
 
     <div class="manage-row">
-
 
         <div class="manage-icon">
 
@@ -2121,13 +2136,11 @@ body{
 
         </button>
 
-
     </div>
 
 
 
     <div class="manage-row">
-
 
         <div class="manage-icon">
 
@@ -2152,13 +2165,11 @@ body{
 
         </button>
 
-
     </div>
 
 
 
     <div class="manage-row">
-
 
         <div class="manage-icon">
 
@@ -2183,13 +2194,11 @@ body{
 
         </button>
 
-
     </div>
 
 
 
     <div class="manage-row">
-
 
         <div class="manage-icon">
 
@@ -2214,15 +2223,12 @@ body{
 
         </button>
 
-
     </div>
 
 
 </div>
 
 
-
-<!-- SYSTEM STATUS -->
 
 <div class="panel">
 
@@ -2238,7 +2244,6 @@ body{
 
     <div class="status-item">
 
-
         <div class="status-name">
 
             <span class="status-dot"></span>
@@ -2247,20 +2252,17 @@ body{
 
         </div>
 
-
         <span class="status-online">
 
             Online
 
         </span>
 
-
     </div>
 
 
 
     <div class="status-item">
-
 
         <div class="status-name">
 
@@ -2270,20 +2272,17 @@ body{
 
         </div>
 
-
         <span class="status-online">
 
             Online
 
         </span>
 
-
     </div>
 
 
 
     <div class="status-item">
-
 
         <div class="status-name">
 
@@ -2293,20 +2292,17 @@ body{
 
         </div>
 
-
         <span class="status-online">
 
             Connected
 
         </span>
 
-
     </div>
 
 
 
     <div class="status-item">
-
 
         <div class="status-name">
 
@@ -2316,20 +2312,17 @@ body{
 
         </div>
 
-
         <span class="status-online">
 
             Active
 
         </span>
 
-
     </div>
 
 
 
     <div class="status-item">
-
 
         <div class="status-name">
 
@@ -2339,13 +2332,11 @@ body{
 
         </div>
 
-
         <span class="status-online">
 
             Active
 
         </span>
-
 
     </div>
 
@@ -2375,7 +2366,6 @@ body{
 
     <div class="activity-row">
 
-
         <div class="activity-icon">
 
             <i class="fa-solid fa-user-plus"></i>
@@ -2387,7 +2377,11 @@ body{
 
             <strong>System ready</strong>
 
-            <span>Admin dashboard is ready for full system control.</span>
+            <span>
+
+                Admin dashboard is ready for full system control.
+
+            </span>
 
         </div>
 
@@ -2398,13 +2392,11 @@ body{
 
         </div>
 
-
     </div>
 
 
 
     <div class="activity-row">
-
 
         <div class="activity-icon">
 
@@ -2417,7 +2409,11 @@ body{
 
             <strong>Administrator access enabled</strong>
 
-            <span>Full system modules are available to the administrator.</span>
+            <span>
+
+                Full system modules are available to the administrator.
+
+            </span>
 
         </div>
 
@@ -2428,13 +2424,11 @@ body{
 
         </div>
 
-
     </div>
 
 
 
     <div class="activity-row">
-
 
         <div class="activity-icon">
 
@@ -2447,7 +2441,11 @@ body{
 
             <strong>Data connection</strong>
 
-            <span>System data will be connected with Google Apps Script.</span>
+            <span>
+
+                System data will be connected with Google Apps Script.
+
+            </span>
 
         </div>
 
@@ -2457,7 +2455,6 @@ body{
             Ready
 
         </div>
-
 
     </div>
 
@@ -2493,7 +2490,6 @@ body{
 
         <div class="modal-header">
 
-
             <h3 id="modalTitle">
 
                 Admin Access
@@ -2507,7 +2503,6 @@ body{
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
-
 
         </div>
 
@@ -2551,7 +2546,6 @@ body{
 
 <script>
 
-
 /* =====================================================
    SIDEBAR
 ===================================================== */
@@ -2559,11 +2553,8 @@ body{
 function toggleSidebar(){
 
     document
-
     .getElementById("sidebar")
-
     .classList
-
     .toggle("open");
 
 }
@@ -2581,29 +2572,21 @@ const savedName =
 if(savedName){
 
     document
-
     .getElementById("userName")
-
     .textContent = savedName;
 
 
     document
-
     .getElementById("welcomeName")
-
     .textContent = savedName;
 
 
     document
-
     .getElementById("userAvatar")
-
     .textContent =
 
     savedName
-
     .charAt(0)
-
     .toUpperCase();
 
 }
@@ -2622,39 +2605,31 @@ function openModule(page){
 
 
     document
-
     .getElementById("modalTitle")
-
     .textContent =
 
     "Open System Module";
 
 
     document
-
     .getElementById("modalText")
-
     .textContent =
 
     "Administrator full access is enabled. You can access and manage this module.";
 
 
     document
-
     .getElementById("adminModal")
-
     .classList
-
     .add("show");
 
 
     document
-
     .getElementById("confirmBtn")
-
     .onclick = function(){
 
-        window.location.href = selectedModule;
+        window.location.href =
+        selectedModule;
 
     };
 
@@ -2668,11 +2643,8 @@ function openModule(page){
 function closeModal(){
 
     document
-
     .getElementById("adminModal")
-
     .classList
-
     .remove("show");
 
 }
@@ -2683,13 +2655,9 @@ function closeModal(){
 ===================================================== */
 
 document
-
 .getElementById("adminModal")
-
 .addEventListener(
-
     "click",
-
     function(e){
 
         if(e.target === this){
@@ -2699,7 +2667,6 @@ document
         }
 
     }
-
 );
 
 
@@ -2724,61 +2691,32 @@ function logoutUser(event){
 
 
     window.location.href =
-
-        "login.html";
+    "login.html";
 
 }
 
 
 /* =====================================================
-   ADMIN SECURITY
+   LOGIN SECURITY
 ===================================================== */
 
 (function(){
-
 
     const loggedIn =
 
         localStorage.getItem("loggedIn");
 
 
-    const role =
-
-        String(
-
-            localStorage.getItem("userRole") || ""
-
-        )
-
-        .trim()
-
-        .toLowerCase();
-
-
-    /*
-
-    IMPORTANT:
-
-    FINAL ADMIN ROLE SECURITY WILL BE CONNECTED
-
-    WITH GOOGLE APPS SCRIPT LOGIN SYSTEM.
-
-    */
-
-
     if(loggedIn !== "true"){
 
         window.location.href =
-
-            "login.html";
+        "login.html";
 
         return;
 
     }
 
-
 })();
-
 
 </script>
 
