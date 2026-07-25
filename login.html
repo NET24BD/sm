@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<meta
+name="theme-color"
+content="#07111f"
+
+>
+
+<title>Login | LINK4 COMMUNICATION</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0,200,120,0.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(0,150,255,0.16),
+            transparent 30%
+        ),
+
+        #07111f;
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   LOGIN WRAPPER
+===================================================== */
+
+.login-wrapper{
+
+    width:100%;
+
+    max-width:430px;
+
+}
+
+
+/* =====================================================
+   LOGIN CARD
+===================================================== */
+
+.login-card{
+
+    width:100%;
+
+    padding:40px 32px;
+
+    background:
+        rgba(10,25,40,0.96);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    border-radius:24px;
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,0.55),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.04);
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    width:78px;
+
+    height:78px;
+
+    margin:
+        0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00c878,
+            #0099ff
+        );
+
+    font-size:25px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    box-shadow:
+
+        0 12px 35px
+        rgba(0,200,120,0.25);
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title{
+
+    text-align:center;
+
+    font-size:27px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+
+.subtitle{
+
+    text-align:center;
+
+    color:#8ea3b5;
+
+    font-size:14px;
+
+    margin-bottom:32px;
+
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#c7d3dd;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.input{
+
+    width:100%;
+
+    height:54px;
+
+    padding:
+        0 16px;
+
+    border:
+
+        1px solid
+        #263c4f;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:
+        #0b1b2a;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:
+        0.3s;
+
+}
+
+
+.input::placeholder{
+
+    color:#607487;
+
+}
+
+
+.input:focus{
+
+    border-color:
+        #00c878;
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(0,200,120,0.10);
+
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.login-button{
+
+    width:100%;
+
+    height:54px;
+
+    margin-top:5px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00c878,
+            #0099ff
+        );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:0.5px;
+
+    cursor:pointer;
+
+    transition:
+        0.3s;
+
+}
+
+
+.login-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0,200,150,0.25);
+
+}
+
+
+.login-button:disabled{
+
+    opacity:0.65;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading{
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+
+.spinner{
+
+    width:18px;
+
+    height:18px;
+
+    border:
+
+        3px solid
+        rgba(255,255,255,0.3);
+
+    border-top-color:
+        white;
+
+    border-radius:50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message{
+
+    display:none;
+
+    margin-top:18px;
+
+    padding:13px 15px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+
+.message.error{
+
+    display:block;
+
+    color:#ff8585;
+
+    background:
+        rgba(255,60,60,0.08);
+
+    border:
+        1px solid
+        rgba(255,60,60,0.25);
+
+}
+
+
+.message.success{
+
+    display:block;
+
+    color:#5dffb5;
+
+    background:
+        rgba(0,200,120,0.08);
+
+    border:
+        1px solid
+        rgba(0,200,120,0.25);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#61778a;
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(
+    max-width:480px
+){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .login-card{
+
+        padding:
+            32px 22px;
+
+        border-radius:20px;
+
+    }
+
+    .title{
+
+        font-size:24px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-wrapper">
+
+<div class="login-card">
+
+<!-- ==================================================
+     LOGO
+=================================================== -->
+
+<div class="logo">
+
+```
+L4
+```
+
+</div>
+
+<!-- ==================================================
+     TITLE
+=================================================== -->
+
+<div class="title">
+
+```
+Welcome Back
+```
+
+</div>
+
+<div class="subtitle">
+
+```
+Sign in to LINK4 COMMUNICATION
+```
+
+</div>
+
+<!-- ==================================================
+     LOGIN FORM
+=================================================== -->
+
+<form id="loginForm">
+
+<!-- USERNAME -->
+
+<div class="form-group">
+
+<label for="username">
+
+```
+Username
+```
+
+</label>
+
+<input
+
+```
+type="text"
+
+id="username"
+
+class="input"
+
+placeholder="Enter your username"
+
+autocomplete="username"
+
+required
+```
+
+>
+
+</div>
+
+<!-- PASSWORD -->
+
+<div class="form-group">
+
+<label for="password">
+
+```
+Password
+```
+
+</label>
+
+<input
+
+```
+type="password"
+
+id="password"
+
+class="input"
+
+placeholder="Enter your password"
+
+autocomplete="current-password"
+
+required
+```
+
+>
+
+</div>
+
+<!-- LOGIN BUTTON -->
+
+<button
+
+```
+type="submit"
+
+class="login-button"
+
+id="loginButton"
+```
+
+>
+
+<span id="buttonText">
+
+```
+LOGIN
+```
+
+</span>
+
+<span
+
+```
+class="loading"
+
+id="loading"
+```
+
+>
+
+```
+<span class="spinner"></span>
+
+Checking...
+```
+
+</span>
+
+</button>
+
+</form>
+
+<!-- MESSAGE -->
+
+<div
+
+```
+id="message"
+
+class="message"
+```
+
+> </div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+```
+© 2026 LINK4 COMMUNICATION
+```
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =====================================================
+   GOOGLE APPS SCRIPT WEB APP URL
+===================================================== */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxbgyIg_ddBYIs8qkQvRN3xS3-ZG451C5y_2sNbVFWdWydzb9Mc6qV5CoWB5rjs91ghjQ/exec";
+
+
+/* =====================================================
+   ROLE REDIRECT SETTINGS
+===================================================== */
+
+const ROLE_REDIRECT = {
+
+    "admin":
+        "admin.html",
+
+    "support":
+        "support.html",
+
+    "call":
+        "call.html",
+
+    "manager":
+        "manager.html",
+
+    "guest support":
+        "guest-support.html",
+
+    "guest admin":
+        "guest-admin.html"
+
+};
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const loginForm =
+    document.getElementById(
+        "loginForm"
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+
+const buttonText =
+    document.getElementById(
+        "buttonText"
+    );
+
+
+const loading =
+    document.getElementById(
+        "loading"
+    );
+
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+
+/* =====================================================
+   LOGIN FORM SUBMIT
+===================================================== */
+
+loginForm.addEventListener(
+
+    "submit",
+
+    async function(event){
+
+        event.preventDefault();
+
+
+        /* ---------------------------------------------
+           GET INPUT
+        --------------------------------------------- */
+
+        const username =
+
+            document
+            .getElementById(
+                "username"
+            )
+            .value
+            .trim();
+
+
+        const password =
+
+            document
+            .getElementById(
+                "password"
+            )
+            .value
+            .trim();
+
+
+        /* ---------------------------------------------
+           CLEAR MESSAGE
+        --------------------------------------------- */
+
+        message.className =
+            "message";
+
+        message.textContent =
+            "";
+
+
+        /* ---------------------------------------------
+           VALIDATION
+        --------------------------------------------- */
+
+        if(
+            !username ||
+            !password
+        ){
+
+            showMessage(
+
+                "Please enter your username and password.",
+
+                "error"
+
+            );
+
+            return;
+
+        }
+
+
+        /* ---------------------------------------------
+           START LOADING
+        --------------------------------------------- */
+
+        setLoading(true);
+
+
+        try{
+
+
+            /* -----------------------------------------
+               CREATE API URL
+            ------------------------------------------ */
+
+            const url =
+
+                API_URL +
+
+                "?action=login" +
+
+                "&username=" +
+
+                encodeURIComponent(
+                    username
+                ) +
+
+                "&password=" +
+
+                encodeURIComponent(
+                    password
+                );
+
+
+            /* -----------------------------------------
+               API REQUEST
+            ------------------------------------------ */
+
+            const response =
+
+                await fetch(
+                    url,
+                    {
+                        method:
+                            "GET",
+
+                        cache:
+                            "no-store"
+                    }
+                );
+
+
+            /* -----------------------------------------
+               READ JSON
+            ------------------------------------------ */
+
+            const data =
+
+                await response.json();
+
+
+            /* -----------------------------------------
+               LOGIN SUCCESS
+            ------------------------------------------ */
+
+            if(
+                data.success === true
+            ){
+
+
+                /* -------------------------------------
+                   GET ROLE
+                -------------------------------------- */
+
+                const role =
+
+                    String(
+                        data.role || ""
+                    )
+                    .trim()
+                    .toLowerCase();
+
+
+                /* -------------------------------------
+                   FIND REDIRECT
+                -------------------------------------- */
+
+                const redirectFile =
+
+                    ROLE_REDIRECT[
+                        role
+                    ];
+
+
+                /* -------------------------------------
+                   CHECK ROLE
+                -------------------------------------- */
+
+                if(
+                    !redirectFile
+                ){
+
+                    showMessage(
+
+                        "Your role is not configured. Please contact administrator.",
+
+                        "error"
+
+                    );
+
+                    setLoading(false);
+
+                    return;
+
+                }
+
+
+                /* -------------------------------------
+                   SAVE SESSION
+                -------------------------------------- */
+
+                localStorage.setItem(
+
+                    "loggedIn",
+
+                    "true"
+
+                );
+
+
+                localStorage.setItem(
+
+                    "username",
+
+                    data.username ||
+                    username
+
+                );
+
+
+                localStorage.setItem(
+
+                    "name",
+
+                    data.name ||
+                    ""
+
+                );
+
+
+                localStorage.setItem(
+
+                    "role",
+
+                    role
+
+                );
+
+
+                localStorage.setItem(
+
+                    "status",
+
+                    data.status ||
+                    "Active"
+
+                );
+
+
+                /* -------------------------------------
+                   SUCCESS MESSAGE
+                -------------------------------------- */
+
+                showMessage(
+
+                    "Login successful. Redirecting...",
+
+                    "success"
+
+                );
+
+
+                /* -------------------------------------
+                   REDIRECT
+                -------------------------------------- */
+
+                setTimeout(
+
+                    function(){
+
+                        window.location.href =
+
+                            redirectFile;
+
+                    },
+
+                    700
+
+                );
+
+
+            }
+
+            else{
+
+
+                /* -------------------------------------
+                   LOGIN FAILED
+                -------------------------------------- */
+
+                showMessage(
+
+                    data.message ||
+
+                    "Invalid username or password.",
+
+                    "error"
+
+                );
+
+
+                setLoading(false);
+
+            }
+
+
+        }
+
+        catch(error){
+
+
+            console.error(
+                "Login Error:",
+                error
+            );
+
+
+            showMessage(
+
+                "Unable to connect with server. Please check your Apps Script deployment and try again.",
+
+                "error"
+
+            );
+
+
+            setLoading(false);
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   SHOW MESSAGE
+===================================================== */
+
+function showMessage(
+
+    text,
+
+    type
+
+){
+
+    message.textContent =
+        text;
+
+    message.className =
+
+        "message " +
+        type;
+
+}
+
+
+/* =====================================================
+   LOADING STATE
+===================================================== */
+
+function setLoading(
+
+    status
+
+){
+
+    if(status){
+
+        loginButton.disabled =
+            true;
+
+        buttonText.style.display =
+            "none";
+
+        loading.style.display =
+            "flex";
+
+    }
+
+    else{
+
+        loginButton.disabled =
+            false;
+
+        buttonText.style.display =
+            "inline";
+
+        loading.style.display =
+            "none";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
