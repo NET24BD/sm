@@ -1,18 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#07111f"><title>My Account | LINK4 COMMUNICATION</title><script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#06131f"><title>My Account | LINK4 COMMUNICATION</title><script>
 (function(){
 
     if(localStorage.getItem("loggedIn") !== "true"){
-
         window.location.replace("login.html");
-
     }
 
 })();
 </script><style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
     margin:0;
@@ -20,1367 +14,679 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-
-    font-family:
-    "Segoe UI",
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    background:#07111f;
-
-    color:#ffffff;
-
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#06131f;
+    color:#fff;
     min-height:100vh;
-
 }
-
-
-/* =====================================================
-   APP
-===================================================== */
 
 .app{
-
     min-height:100vh;
-
+    display:flex;
 }
 
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
+/* SIDEBAR */
 
 .sidebar{
-
+    width:260px;
+    min-height:100vh;
     position:fixed;
-
-    top:0;
     left:0;
+    top:0;
     bottom:0;
-
-    width:255px;
-
+    z-index:100;
     padding:22px 16px;
-
-    background:#0a1928;
-
-    border-right:
-    1px solid
-    rgba(255,255,255,0.07);
-
-    z-index:1000;
-
+    background:#081a29;
+    border-right:1px solid rgba(255,255,255,.07);
     display:flex;
-
     flex-direction:column;
-
-    transition:0.3s ease;
-
+    transition:.3s;
 }
 
-
-/* =====================================================
-   BRAND
-===================================================== */
-
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
-    padding:
-    3px 8px 22px;
-
-    border-bottom:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    padding:5px 10px 25px;
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .brand-logo{
-
-    width:45px;
-
-    height:45px;
-
-    border-radius:13px;
-
+    width:48px;
+    height:48px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00d084,
-        #008cff
-    );
-
-    color:#ffffff;
-
-    font-size:16px;
-
+    border-radius:14px;
+    background:linear-gradient(135deg,#00d084,#008cff);
+    font-size:17px;
     font-weight:800;
-
 }
 
-.brand-text{
-
-    font-size:14px;
-
+.brand-name{
+    font-size:15px;
     font-weight:800;
-
     line-height:1.3;
-
 }
 
-.brand-text small{
-
+.brand-name small{
     display:block;
-
-    margin-top:4px;
-
-    color:#6d8495;
-
+    margin-top:3px;
+    color:#6f899b;
     font-size:9px;
-
-    letter-spacing:1.4px;
-
+    letter-spacing:1.5px;
 }
-
-
-/* =====================================================
-   MINI USER
-===================================================== */
 
 .user-mini{
-
     display:flex;
-
     align-items:center;
-
     gap:11px;
-
-    padding:18px 8px;
-
+    padding:15px 10px;
+    margin-bottom:15px;
 }
 
-.user-mini-avatar{
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:12px;
-
+.user-avatar,
+.top-avatar{
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00c878,
-        #008cff
-    );
-
-    font-size:14px;
-
+    background:linear-gradient(135deg,#00c878,#008cff);
     font-weight:800;
-
     overflow:hidden;
-
-    flex-shrink:0;
-
 }
 
-.user-mini-avatar img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
+.user-avatar{
+    width:40px;
+    height:40px;
+    border-radius:12px;
 }
 
-.user-mini-info{
-
+.user-info{
     min-width:0;
-
 }
 
-.user-mini-info strong{
-
+.user-info strong{
     display:block;
-
     max-width:150px;
-
     overflow:hidden;
-
     text-overflow:ellipsis;
-
     white-space:nowrap;
-
     font-size:12px;
-
 }
 
-.user-mini-info span{
-
+.user-info span{
     display:block;
-
-    margin-top:4px;
-
-    color:#6d8495;
-
+    margin-top:3px;
+    color:#6d8799;
     font-size:10px;
-
 }
-
-
-/* =====================================================
-   MENU
-===================================================== */
 
 .sidebar-menu{
-
     display:flex;
-
     flex-direction:column;
-
-    gap:6px;
-
+    gap:7px;
 }
 
 .sidebar-menu a{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
-    padding:11px 12px;
-
+    gap:13px;
+    width:100%;
+    padding:12px 13px;
     border-radius:12px;
-
-    color:#8ea2b1;
-
+    color:#91a5b4;
     text-decoration:none;
-
     font-size:12px;
-
     font-weight:600;
-
-    border:
-    1px solid
-    transparent;
-
-    transition:0.25s;
-
+    border:1px solid transparent;
+    transition:.25s;
 }
 
 .sidebar-menu a:hover{
-
-    color:#ffffff;
-
-    background:
-    rgba(255,255,255,0.045);
-
+    color:#fff;
+    background:rgba(255,255,255,.045);
+    border-color:rgba(255,255,255,.06);
     transform:translateX(3px);
-
 }
 
 .sidebar-menu a.active{
-
-    color:#ffffff;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(0,208,132,0.15),
-        rgba(0,140,255,0.10)
-    );
-
-    border-color:
-    rgba(0,208,132,0.16);
-
+    color:#fff;
+    background:linear-gradient(135deg,rgba(0,200,120,.18),rgba(0,140,255,.12));
+    border-color:rgba(0,200,120,.18);
 }
 
 .menu-icon{
-
     width:34px;
-
     height:34px;
-
-    border-radius:10px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-    rgba(255,255,255,0.045);
-
-    font-size:15px;
-
+    border-radius:10px;
+    background:rgba(255,255,255,.045);
+    font-size:16px;
+    flex-shrink:0;
 }
 
-
-/* =====================================================
-   SIDEBAR BOTTOM
-===================================================== */
-
 .sidebar-bottom{
-
     margin-top:auto;
-
-    padding-top:18px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.06);
 }
 
 .logout-btn{
-
     width:100%;
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
-    padding:11px 12px;
-
+    gap:13px;
+    padding:12px 13px;
     border-radius:12px;
-
-    border:
-    1px solid
-    rgba(255,70,70,0.12);
-
-    background:
-    rgba(255,70,70,0.045);
-
-    color:#ff9292;
-
+    border:1px solid rgba(255,70,70,.10);
+    background:rgba(255,70,70,.04);
+    color:#ff8b8b;
     cursor:pointer;
-
     font-size:12px;
-
     font-weight:600;
-
-    transition:0.25s;
-
 }
 
-.logout-btn:hover{
-
-    background:
-    rgba(255,70,70,0.10);
-
-}
-
-
-/* =====================================================
-   MAIN
-===================================================== */
+/* MAIN */
 
 .main{
-
-    margin-left:255px;
-
+    width:calc(100% - 260px);
+    margin-left:260px;
     min-height:100vh;
-
-    padding:24px;
-
+    padding:25px;
 }
 
-
-/* =====================================================
-   TOPBAR
-===================================================== */
-
 .topbar{
-
-    min-height:68px;
-
+    min-height:70px;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     gap:20px;
-
-    padding:13px 18px;
-
-    background:
-    rgba(10,25,40,0.85);
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    padding:15px 20px;
+    border:1px solid rgba(255,255,255,.06);
     border-radius:18px;
-
+    background:rgba(8,25,40,.75);
 }
 
 .page-title{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
 }
 
 .page-title h1{
-
-    font-size:21px;
-
+    font-size:22px;
     margin-bottom:4px;
-
 }
 
 .page-title p{
-
-    color:#708798;
-
+    color:#6f8798;
     font-size:11px;
-
 }
-
-.mobile-menu{
-
-    display:none;
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:11px;
-
-    background:
-    rgba(255,255,255,0.06);
-
-    color:#ffffff;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-}
-
-
-/* =====================================================
-   TOP USER
-===================================================== */
 
 .top-user{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
 }
 
-.top-user-text{
-
+.top-user-info{
     text-align:right;
-
 }
 
-.top-user-text strong{
-
+.top-user-info strong{
     display:block;
-
     font-size:12px;
-
 }
 
-.top-user-text span{
-
+.top-user-info span{
     display:block;
-
-    margin-top:3px;
-
     color:#00d084;
-
     font-size:10px;
-
+    margin-top:3px;
 }
 
 .top-avatar{
-
     width:42px;
-
     height:42px;
-
     border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00c878,
-        #008cff
-    );
-
     font-size:13px;
-
-    font-weight:800;
-
-    overflow:hidden;
-
 }
 
-.top-avatar img{
-
+.top-avatar img,
+.user-avatar img{
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
 
+/* MOBILE */
 
-/* =====================================================
-   PROFILE
-===================================================== */
+.mobile-menu-btn{
+    display:none;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:11px;
+    background:rgba(255,255,255,.05);
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
 
-.profile-card{
+/* PROFILE */
 
-    margin-top:22px;
-
-    padding:30px;
-
+.profile-hero{
+    margin-top:25px;
+    padding:35px;
     display:flex;
-
     align-items:center;
-
-    gap:25px;
-
+    gap:30px;
     border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(0,208,132,0.10),
-        rgba(0,140,255,0.07)
-    );
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    background:linear-gradient(135deg,rgba(0,200,120,.12),rgba(0,130,255,.08));
+    border:1px solid rgba(255,255,255,.07);
 }
 
-.profile-photo-box{
-
-    width:120px;
-
-    height:120px;
-
+.profile-photo-wrap{
+    width:125px;
+    height:125px;
     padding:4px;
-
     border-radius:50%;
-
     flex-shrink:0;
+    background:linear-gradient(135deg,#00d084,#008cff);
+}
 
-    background:
-    linear-gradient(
-        135deg,
-        #00d084,
-        #008cff
-    );
-
+.profile-photo,
+.default-photo{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    border:4px solid #081a29;
 }
 
 .profile-photo{
-
-    width:100%;
-
-    height:100%;
-
-    border-radius:50%;
-
     object-fit:cover;
-
-    border:
-    4px solid
-    #0a1928;
-
-    background:#122536;
-
     display:none;
-
+    background:#102638;
 }
 
 .default-photo{
-
-    width:100%;
-
-    height:100%;
-
-    border-radius:50%;
-
-    border:
-    4px solid
-    #0a1928;
-
-    background:#122536;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
+    background:#102638;
     color:#00d084;
-
-    font-size:42px;
-
-    font-weight:800;
-
+    font-size:45px;
+    font-weight:700;
 }
 
-.profile-info h2{
-
-    font-size:27px;
-
-    margin-bottom:6px;
-
+.profile-details h2{
+    font-size:28px;
+    margin-bottom:7px;
 }
 
-.profile-username{
-
+.username{
     color:#7e96a7;
-
     font-size:13px;
-
     margin-bottom:14px;
-
 }
 
-.badges{
-
+.profile-badges{
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
-
 }
 
 .badge{
-
     padding:7px 12px;
-
     border-radius:20px;
-
-    background:
-    rgba(255,255,255,0.05);
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.07);
     color:#b7c7d1;
-
     font-size:10px;
-
 }
 
-.badge-role{
-
-    color:#61e7ae;
-
+.badge.role{
+    color:#65eab2;
 }
 
-.badge-status{
-
-    color:#72bdff;
-
+.badge.status{
+    color:#70bfff;
 }
 
-
-/* =====================================================
-   SECTION
-===================================================== */
+/* SECTION */
 
 .section{
-
     margin-top:25px;
-
 }
 
-.section-header{
-
+.section-title{
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
+    gap:10px;
     margin-bottom:15px;
-
 }
 
-.section-header h2{
-
+.section-title h2{
     font-size:17px;
-
 }
 
 .section-line{
-
     flex:1;
-
     height:1px;
-
-    background:
-    rgba(255,255,255,0.07);
-
+    background:rgba(255,255,255,.06);
 }
 
-
-/* =====================================================
-   ACCOUNT GRID
-===================================================== */
+/* ACCOUNT */
 
 .account-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
-    gap:14px;
-
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
 .info-card{
-
-    padding:17px;
-
     min-height:80px;
-
+    padding:18px;
     border-radius:16px;
-
-    background:#0a1928;
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    background:#081a29;
+    border:1px solid rgba(255,255,255,.06);
 }
 
 .info-label{
-
     display:block;
-
     margin-bottom:8px;
-
-    color:#617b8d;
-
+    color:#607a8c;
     font-size:10px;
-
     text-transform:uppercase;
-
-    letter-spacing:0.7px;
-
+    letter-spacing:.7px;
 }
 
 .info-value{
-
-    color:#e8f0f4;
-
+    display:block;
+    color:#e5edf2;
     font-size:13px;
-
     font-weight:600;
-
     word-break:break-word;
-
 }
 
-
-/* =====================================================
-   PASSWORD
-===================================================== */
-
-.password-row{
-
+.password-box{
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     gap:10px;
-
 }
 
 .password-text{
-
-    flex:1;
-
-    min-width:0;
-
+    letter-spacing:2px;
     overflow:hidden;
-
     text-overflow:ellipsis;
-
 }
 
 .password-toggle{
-
-    width:34px;
-
-    height:30px;
-
-    flex-shrink:0;
-
-    border:none;
-
-    border-radius:9px;
-
-    background:
-    rgba(0,208,132,0.08);
-
-    color:#00d084;
-
+    border:0;
+    background:rgba(255,255,255,.06);
+    color:#8da5b5;
+    padding:6px 10px;
+    border-radius:8px;
     cursor:pointer;
-
-    font-size:14px;
-
+    font-size:11px;
 }
 
 .password-toggle:hover{
-
-    background:
-    rgba(0,208,132,0.16);
-
+    color:#00d084;
 }
 
-
-/* =====================================================
-   PROFESSIONS
-===================================================== */
+/* PROFESSIONS */
 
 .profession-list{
-
     display:flex;
-
     flex-direction:column;
-
-    gap:11px;
-
+    gap:12px;
 }
 
 .profession-card{
-
-    min-height:70px;
-
-    padding:13px 16px;
-
+    min-height:72px;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     gap:20px;
-
+    padding:14px 18px;
     border-radius:16px;
-
-    background:#0a1928;
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
-    transition:0.25s;
-
+    background:#081a29;
+    border:1px solid rgba(255,255,255,.06);
 }
 
-.profession-card:hover{
-
-    border-color:
-    rgba(0,208,132,0.20);
-
-    transform:translateX(3px);
-
-}
-
-.profession-left{
-
+.profession-name-area{
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
+    gap:13px;
     min-width:0;
-
 }
 
 .profession-number{
-
     width:34px;
-
     height:34px;
-
     flex-shrink:0;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:10px;
-
+    background:rgba(0,200,120,.08);
     color:#00d084;
-
-    background:
-    rgba(0,208,132,0.08);
-
     font-size:11px;
-
     font-weight:700;
-
-}
-
-.profession-text{
-
-    min-width:0;
-
 }
 
 .profession-label{
-
-    color:#617b8d;
-
+    color:#607a8c;
     font-size:9px;
-
     text-transform:uppercase;
-
     margin-bottom:4px;
-
 }
 
-.profession-name{
-
-    color:#e8f0f4;
-
+.profession-value{
+    color:#e5edf2;
     font-size:13px;
-
     font-weight:600;
+}
 
-    word-break:break-word;
-
+.company-logo-wrap{
+    width:58px;
+    height:58px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:6px;
+    border-radius:13px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
 }
 
 .company-logo{
-
-    width:58px;
-
-    height:58px;
-
-    flex-shrink:0;
-
-    padding:6px;
-
-    border-radius:12px;
-
+    width:100%;
+    height:100%;
     object-fit:contain;
-
-    background:
-    rgba(255,255,255,0.04);
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+    border-radius:8px;
 }
 
-.no-profession{
-
+.no-data{
     display:none;
-
     padding:25px;
-
     text-align:center;
-
-    color:#627b8d;
-
-    background:#0a1928;
-
     border-radius:16px;
-
+    background:#081a29;
+    color:#627b8d;
 }
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
 
 .footer{
-
-    padding:25px 0 10px;
-
+    margin-top:30px;
+    padding:20px 0;
     text-align:center;
-
-    color:#506879;
-
+    color:#4f6879;
     font-size:10px;
-
 }
 
-
-/* =====================================================
-   OVERLAY
-===================================================== */
-
-.overlay{
-
+.sidebar-overlay{
     display:none;
-
     position:fixed;
-
     inset:0;
-
-    background:
-    rgba(0,0,0,0.65);
-
-    z-index:900;
-
+    z-index:90;
+    background:rgba(0,0,0,.65);
 }
 
+/* RESPONSIVE */
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:850px){
+@media(max-width:800px){
 
     .sidebar{
-
         transform:translateX(-100%);
-
     }
 
     .sidebar.open{
-
         transform:translateX(0);
-
     }
 
-    .overlay.show{
-
+    .sidebar-overlay.show{
         display:block;
-
     }
 
     .main{
-
+        width:100%;
         margin-left:0;
-
         padding:15px;
-
     }
 
-    .mobile-menu{
-
+    .mobile-menu-btn{
         display:block;
+    }
 
+    .profile-hero{
+        padding:25px;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile-badges{
+        justify-content:center;
     }
 
 }
 
-
-@media(max-width:650px){
-
-    .top-user-text{
-
-        display:none;
-
-    }
-
-    .profile-card{
-
-        padding:25px 18px;
-
-        flex-direction:column;
-
-        text-align:center;
-
-    }
-
-    .badges{
-
-        justify-content:center;
-
-    }
+@media(max-width:600px){
 
     .account-grid{
-
         grid-template-columns:1fr;
-
     }
 
-    .profile-info h2{
+    .profile-photo-wrap{
+        width:105px;
+        height:105px;
+    }
 
+    .profile-details h2{
         font-size:23px;
+    }
 
+    .top-user-info{
+        display:none;
+    }
+
+    .page-title h1{
+        font-size:18px;
     }
 
     .profession-card{
-
-        padding:12px;
-
+        padding:13px;
     }
 
-    .company-logo{
-
+    .company-logo-wrap{
         width:50px;
-
         height:50px;
-
     }
 
 }
 
+</style></head><body><div class="app"><aside class="sidebar" id="sidebar"><div class="brand"><div class="brand-logo">L4</div><div class="brand-name">
+LINK4 COMMUNICATION
+<small>MANAGEMENT SYSTEM</small>
+</div></div><div class="user-mini"><div class="user-avatar" id="sidebarAvatar">U</div><div class="user-info"><strong id="sidebarName">User</strong>
 
-@media(max-width:420px){
+<span id="sidebarRole">User</span>
 
-    .page-title p{
-
-        display:none;
-
-    }
-
-    .profile-photo-box{
-
-        width:105px;
-
-        height:105px;
-
-    }
-
-}
-
-</style></head><body><div class="app"><!-- =====================================================
-     SIDEBAR
-===================================================== --><aside class="sidebar" id="sidebar"><div class="brand"><div class="brand-logo">
-L4
-</div><div class="brand-text">LINK4 COMMUNICATION
-
-<small>
-MANAGEMENT SYSTEM
-</small></div></div><div class="user-mini"><div class="user-mini-avatar" id="sidebarAvatar">
-U
-</div><div class="user-mini-info"><strong id="sidebarName">
-User
-</strong><span id="sidebarRole">
-User
-</span></div></div><nav class="sidebar-menu"><a href="dashboard.html"><span class="menu-icon">🏠</span>
-
+</div></div><nav class="sidebar-menu"><a href="dashboard.html">
+<span class="menu-icon">🏠</span>
 <span>Dashboard</span>
-
-</a><a href="dashboard.html"><span class="menu-icon">📊</span>
-
+</a><a href="dashboard.html">
+<span class="menu-icon">📊</span>
 <span>Overview</span>
-
-</a><a href="support.html"><span class="menu-icon">🛠️</span>
-
+</a><a href="support.html">
+<span class="menu-icon">🛠️</span>
 <span>Support</span>
-
-</a><a href="call.html"><span class="menu-icon">📞</span>
-
+</a><a href="call.html">
+<span class="menu-icon">📞</span>
 <span>Call</span>
-
-</a><a href="account.html" class="active"><span class="menu-icon">👤</span>
-
+</a><a href="account.html" class="active">
+<span class="menu-icon">👤</span>
 <span>My Account</span>
-
 </a></nav><div class="sidebar-bottom"><button class="logout-btn" id="logoutBtn"><span class="menu-icon">🚪</span>
 
 <span>Logout</span>
 
-</button></div></aside><div class="overlay" id="overlay"></div><!-- =====================================================
-     MAIN
-===================================================== --><main class="main"><header class="topbar"><div class="page-title"><button class="mobile-menu" id="mobileMenu">
-☰
-</button><div><h1>My Account</h1><p>Personal profile and professional information</p></div></div><div class="top-user"><div class="top-user-text"><strong id="topName">
-User
-</strong><span id="topRole">
-User
-</span></div><div class="top-avatar" id="topAvatar">
-U
-</div></div></header><!-- =====================================================
-     PROFILE
-===================================================== --><section class="profile-card"><div class="profile-photo-box"><img
+</button></div></aside><div class="sidebar-overlay" id="sidebarOverlay"></div><main class="main"><header class="topbar"><div class="page-title"><button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+
+<div><h1>My Account</h1><p>Personal profile and professional information</p></div></div><div class="top-user"><div class="top-user-info"><strong id="topName">User</strong>
+
+<span id="topRole">User</span>
+
+</div><div class="top-avatar" id="topAvatar">U</div></div></header><section class="profile-hero"><div class="profile-photo-wrap"><img
 id="profilePhoto"
 class="profile-photo"
 alt="Profile Photo"
 
 «»
 
-<div
-id="defaultPhoto"
-class="default-photo"
->
-U
-</div></div><div class="profile-info"><h2 id="profileName">
-User
-</h2><div
-class="profile-username"
-id="profileUsername"
->
-@username
-</div><div class="badges"><span
-class="badge badge-role"
-id="profileRole"
+<div id="defaultPhoto" class="default-photo">U</div></div><div class="profile-details"><h2 id="profileName">User</h2><div class="username" id="profileUsername">@username</div><div class="profile-badges"><span class="badge role" id="profileRole">Role</span>
 
-«»
+<span class="badge status" id="profileStatus">Status</span>
 
-Role
-</span>
+</div></div></section><section class="section"><div class="section-title"><h2>Account Information</h2><div class="section-line"></div></div><div class="account-grid"><div class="info-card"><span class="info-label">Name</span>
 
-<span
-class="badge badge-status"
-id="profileStatus"
+<span class="info-value" id="accountName">-</span>
 
-«»
+</div><div class="info-card"><span class="info-label">Username</span>
 
-Status
-</span>
+<span class="info-value" id="accountUsername">-</span>
 
-</div></div></section><!-- =====================================================
-     ACCOUNT INFORMATION
-===================================================== --><section class="section"><div class="section-header"><h2>Account Information</h2><div class="section-line"></div></div><div class="account-grid"><div class="info-card"><span class="info-label">
-Name
-</span><span
-class="info-value"
-id="accountName"
+</div><div class="info-card"><span class="info-label">Password</span>
 
-«»
+<div class="password-box"><span class="info-value password-text" id="accountPassword">••••••••</span>
 
-- 
+<button class="password-toggle" id="passwordToggle" type="button">
+Show
+</button></div></div><div class="info-card"><span class="info-label">Department</span>
 
-</span></div><div class="info-card"><span class="info-label">
-Username
-</span><span
-class="info-value"
-id="accountUsername"
+<span class="info-value" id="accountDepartment">-</span>
 
-«»
+</div><div class="info-card"><span class="info-label">Join Date</span>
 
-- 
+<span class="info-value" id="accountJoinDate">-</span>
 
-</span></div><div class="info-card"><span class="info-label">
-Password
-</span><div class="password-row"><span
-class="info-value password-text"
-id="accountPassword"
+</div><div class="info-card"><span class="info-label">Blood Group</span>
 
-«»
+<span class="info-value" id="accountBloodGroup">-</span>
 
-••••••••
-</span>
-
-<button
-class="password-toggle"
-id="passwordToggle"
-type="button"
-title="Show Password"
-
-«»
-
-👁
-</button>
-
-</div></div><div class="info-card"><span class="info-label">
-Department
-</span><span
-class="info-value"
-id="accountDepartment"
-
-«»
-
-- 
-
-</span></div><div class="info-card"><span class="info-label">
-Join Date
-</span><span
-class="info-value"
-id="accountJoinDate"
-
-«»
-
-- 
-
-</span></div><div class="info-card"><span class="info-label">
-Blood Group
-</span><span
-class="info-value"
-id="accountBloodGroup"
-
-«»
-
-- 
-
-</span></div></div></section><!-- =====================================================
-     PROFESSIONAL INFORMATION
-===================================================== --><section
-class="section"
-id="professionSection"
-><div class="section-header"><h2>Professional Information</h2><div class="section-line"></div></div><div
-class="profession-list"
-id="professionList"
->
-</div><div
-class="no-profession"
-id="noProfession"
->
+</div></div></section><section class="section" id="professionSection"><div class="section-title"><h2>Professional Information</h2><div class="section-line"></div></div><div class="profession-list" id="professionList"></div><div class="no-data" id="noProfession">
 No professional information available.
 </div></section><footer class="footer">© 2026 LINK4 COMMUNICATION. All rights reserved.
 
 </footer></main></div><script>
 
 /* =====================================================
-   API CONFIGURATION
+   API
 ===================================================== */
 
 const API_URL =
@@ -1388,145 +694,102 @@ const API_URL =
 
 
 /* =====================================================
-   GET LOGGED USERNAME
+   USERNAME
 ===================================================== */
 
-const loggedUsername = (
+const loggedUsername =
+(localStorage.getItem("username") || "").trim();
 
-    localStorage.getItem("username") || ""
 
-).trim();
+if(!loggedUsername){
+
+    window.location.replace("login.html");
+
+}
 
 
 /* =====================================================
-   LOCAL STORAGE FALLBACK
+   BASIC FALLBACK
 ===================================================== */
 
-const localName =
-localStorage.getItem("name") || "User";
-
-const localRole =
-localStorage.getItem("role") || "User";
-
-const localStatus =
-localStorage.getItem("status") || "Active";
-
-
-/* =====================================================
-   CURRENT PASSWORD
-===================================================== */
-
-let currentPassword = "";
-
-let passwordVisible = false;
-
-
-/* =====================================================
-   INITIAL UI
-===================================================== */
-
-setUserUI({
+const fallbackUser = {
 
     username:loggedUsername,
 
-    name:localName,
+    name:localStorage.getItem("name") || "User",
 
-    role:localRole,
+    role:localStorage.getItem("role") || "User",
 
-    status:localStatus
+    status:localStorage.getItem("status") || "Active"
 
-});
+};
+
+
+displayUserData(fallbackUser);
 
 
 /* =====================================================
    LOAD ACCOUNT
 ===================================================== */
 
-loadAccount();
+loadUserAccount();
 
 
-async function loadAccount(){
-
-    if(!loggedUsername){
-
-        return;
-
-    }
-
+async function loadUserAccount(){
 
     try{
 
         const url =
-
         API_URL +
-
         "?action=getaccount" +
-
         "&username=" +
-
-        encodeURIComponent(
-            loggedUsername
-        );
+        encodeURIComponent(loggedUsername) +
+        "&_=" +
+        Date.now();
 
 
         const response =
-
-        await fetch(
-
-            url,
-
-            {
-                method:"GET",
-                cache:"no-store"
-            }
-
-        );
+        await fetch(url,{
+            method:"GET",
+            cache:"no-store"
+        });
 
 
         if(!response.ok){
 
-            throw new Error(
-                "API request failed"
-            );
+            throw new Error("HTTP Error: "+response.status);
 
         }
 
 
         const data =
-
         await response.json();
 
 
-        if(
+        console.log("ACCOUNT API:",data);
 
-            data.success === true &&
 
-            data.user
+        if(data.success === true){
 
-        ){
-
-            displayAccount(
-                data.user
-            );
+            displayUserData(data.user);
 
         }
 
         else{
 
             console.error(
-                data.message ||
-                "Account not found"
+                "Account Error:",
+                data.message
             );
 
         }
-
 
     }
 
     catch(error){
 
         console.error(
-            "Account Error:",
+            "Account loading error:",
             error
         );
 
@@ -1536,202 +799,125 @@ async function loadAccount(){
 
 
 /* =====================================================
-   SET USER UI
+   DISPLAY USER
 ===================================================== */
 
-function setUserUI(user){
+function displayUserData(user){
+
+    if(!user){
+        return;
+    }
+
 
     const name =
-    user.name || "User";
+    String(user.name || "User").trim();
+
 
     const username =
-    user.username ||
-    loggedUsername ||
-    "-";
+    String(user.username || loggedUsername || "-").trim();
+
 
     const role =
-    user.role || "User";
+    String(user.role || "User").trim();
+
 
     const status =
-    user.status || "Active";
+    String(user.status || "Active").trim();
 
 
-    document.getElementById(
-        "sidebarName"
-    ).textContent = name;
+    /* BASIC */
 
+    document.getElementById("sidebarName").textContent =
+    name;
 
-    document.getElementById(
-        "sidebarRole"
-    ).textContent = role;
+    document.getElementById("sidebarRole").textContent =
+    role;
 
+    document.getElementById("topName").textContent =
+    name;
 
-    document.getElementById(
-        "topName"
-    ).textContent = name;
+    document.getElementById("topRole").textContent =
+    role;
 
+    document.getElementById("profileName").textContent =
+    name;
 
-    document.getElementById(
-        "topRole"
-    ).textContent = role;
-
-
-    document.getElementById(
-        "profileName"
-    ).textContent = name;
-
-
-    document.getElementById(
-        "profileUsername"
-    ).textContent =
+    document.getElementById("profileUsername").textContent =
     "@" + username;
 
+    document.getElementById("profileRole").textContent =
+    role;
 
-    document.getElementById(
-        "profileRole"
-    ).textContent = role;
-
-
-    document.getElementById(
-        "profileStatus"
-    ).textContent = status;
+    document.getElementById("profileStatus").textContent =
+    status;
 
 
-    document.getElementById(
-        "accountName"
-    ).textContent = name;
+    /* ACCOUNT */
 
+    document.getElementById("accountName").textContent =
+    name;
 
-    document.getElementById(
-        "accountUsername"
-    ).textContent = username;
+    document.getElementById("accountUsername").textContent =
+    username;
 
-
-    const initial =
-
-    name
-    .trim()
-    .charAt(0)
-    .toUpperCase() || "U";
-
-
-    document.getElementById(
-        "sidebarAvatar"
-    ).textContent = initial;
-
-
-    document.getElementById(
-        "topAvatar"
-    ).textContent = initial;
-
-
-    document.getElementById(
-        "defaultPhoto"
-    ).textContent = initial;
-
-}
-
-
-/* =====================================================
-   DISPLAY ACCOUNT
-===================================================== */
-
-function displayAccount(user){
-
-    setUserUI(user);
-
-
-    /* -----------------------------------------------
-       PASSWORD
-    ------------------------------------------------ */
-
-    currentPassword =
-    String(
-        user.password || ""
-    ).trim();
-
-
-    passwordVisible = false;
-
-    updatePassword();
-
-
-    /* -----------------------------------------------
-       BASIC INFORMATION
-    ------------------------------------------------ */
-
-    document.getElementById(
-        "accountDepartment"
-    ).textContent =
-
+    document.getElementById("accountDepartment").textContent =
     user.department || "-";
 
-
-    document.getElementById(
-        "accountJoinDate"
-    ).textContent =
-
+    document.getElementById("accountJoinDate").textContent =
     user.joinDate || "-";
 
-
-    document.getElementById(
-        "accountBloodGroup"
-    ).textContent =
-
+    document.getElementById("accountBloodGroup").textContent =
     user.bloodGroup || "-";
 
 
-    /* -----------------------------------------------
-       PROFILE PHOTO
-    ------------------------------------------------ */
+    /* PASSWORD */
 
-    loadProfilePhoto(
-        user.photo
-    );
+    const password =
+    String(user.password || "");
 
 
-    /* -----------------------------------------------
-       PROFESSIONS
-    ------------------------------------------------ */
-
-    const professions = [
-
-        {
-            name:user.profession1,
-            logo:user.professionCompanyLG1
-        },
-
-        {
-            name:user.profession2,
-            logo:user.professionCompanyLG2
-        },
-
-        {
-            name:user.profession3,
-            logo:user.professionCompanyLG3
-        },
-
-        {
-            name:user.profession4,
-            logo:user.professionCompanyLG4
-        },
-
-        {
-            name:user.profession5,
-            logo:user.professionCompanyLG5
-        },
-
-        {
-            name:user.profession6,
-            logo:user.professionCompanyLG6
-        }
-
-    ];
+    const passwordElement =
+    document.getElementById("accountPassword");
 
 
-    renderProfessions(
-        professions
-    );
+    passwordElement.dataset.password =
+    password;
+
+
+    passwordElement.textContent =
+    password ? "••••••••" : "-";
+
+
+    document.getElementById("passwordToggle").textContent =
+    "Show";
+
+
+    /* INITIAL */
+
+    const initial =
+    name.charAt(0).toUpperCase() || "U";
+
+
+    document.getElementById("sidebarAvatar").textContent =
+    initial;
+
+
+    document.getElementById("topAvatar").textContent =
+    initial;
+
+
+    document.getElementById("defaultPhoto").textContent =
+    initial;
+
+
+    /* PHOTO */
+
+    loadProfilePhoto(user.photo);
+
+
+    /* PROFESSIONS */
+
+    renderProfessions(user);
 
 }
 
@@ -1743,63 +929,245 @@ function displayAccount(user){
 function loadProfilePhoto(photo){
 
     const photoUrl =
-
-    String(
-        photo || ""
-    ).trim();
+    String(photo || "").trim();
 
 
-    const image =
-
-    document.getElementById(
-        "profilePhoto"
-    );
+    const img =
+    document.getElementById("profilePhoto");
 
 
     const defaultPhoto =
-
-    document.getElementById(
-        "defaultPhoto"
-    );
+    document.getElementById("defaultPhoto");
 
 
     if(!photoUrl){
 
-        image.style.display =
-        "none";
+        img.style.display = "none";
 
-        defaultPhoto.style.display =
-        "flex";
+        defaultPhoto.style.display = "flex";
 
         return;
 
     }
 
 
-    image.onload = function(){
+    img.onload = function(){
 
-        image.style.display =
+        img.style.display = "block";
+
+        defaultPhoto.style.display = "none";
+
+    };
+
+
+    img.onerror = function(){
+
+        img.style.display = "none";
+
+        defaultPhoto.style.display = "flex";
+
+    };
+
+
+    img.src =
+    photoUrl;
+
+}
+
+
+/* =====================================================
+   PROFESSIONS
+===================================================== */
+
+function renderProfessions(user){
+
+    const list =
+    document.getElementById("professionList");
+
+
+    const section =
+    document.getElementById("professionSection");
+
+
+    const noData =
+    document.getElementById("noProfession");
+
+
+    list.innerHTML = "";
+
+
+    const items = [
+
+        [user.profession1,user.professionCompanyLG1],
+
+        [user.profession2,user.professionCompanyLG2],
+
+        [user.profession3,user.professionCompanyLG3],
+
+        [user.profession4,user.professionCompanyLG4],
+
+        [user.profession5,user.professionCompanyLG5],
+
+        [user.profession6,user.professionCompanyLG6]
+
+    ];
+
+
+    let count = 0;
+
+
+    items.forEach(function(item){
+
+        const profession =
+        String(item[0] || "").trim();
+
+
+        const logo =
+        String(item[1] || "").trim();
+
+
+        if(!profession){
+
+            return;
+
+        }
+
+
+        count++;
+
+
+        const card =
+        document.createElement("div");
+
+
+        card.className =
+        "profession-card";
+
+
+        const left =
+        document.createElement("div");
+
+
+        left.className =
+        "profession-name-area";
+
+
+        const number =
+        document.createElement("div");
+
+
+        number.className =
+        "profession-number";
+
+
+        number.textContent =
+        count;
+
+
+        const text =
+        document.createElement("div");
+
+
+        const label =
+        document.createElement("div");
+
+
+        label.className =
+        "profession-label";
+
+
+        label.textContent =
+        "Profession";
+
+
+        const value =
+        document.createElement("div");
+
+
+        value.className =
+        "profession-value";
+
+
+        value.textContent =
+        profession;
+
+
+        text.appendChild(label);
+
+        text.appendChild(value);
+
+        left.appendChild(number);
+
+        left.appendChild(text);
+
+        card.appendChild(left);
+
+
+        /* LOGO */
+
+        if(logo){
+
+            const logoWrap =
+            document.createElement("div");
+
+
+            logoWrap.className =
+            "company-logo-wrap";
+
+
+            const logoImg =
+            document.createElement("img");
+
+
+            logoImg.className =
+            "company-logo";
+
+
+            logoImg.src =
+            logo;
+
+
+            logoImg.alt =
+            "Company Logo";
+
+
+            logoImg.onerror =
+            function(){
+
+                logoWrap.style.display =
+                "none";
+
+            };
+
+
+            logoWrap.appendChild(logoImg);
+
+            card.appendChild(logoWrap);
+
+        }
+
+
+        list.appendChild(card);
+
+    });
+
+
+    if(count === 0){
+
+        section.style.display =
+        "none";
+
+    }
+
+    else{
+
+        section.style.display =
         "block";
 
-        defaultPhoto.style.display =
+        noData.style.display =
         "none";
 
-    };
-
-
-    image.onerror = function(){
-
-        image.style.display =
-        "none";
-
-        defaultPhoto.style.display =
-        "flex";
-
-    };
-
-
-    image.src =
-    photoUrl;
+    }
 
 }
 
@@ -1808,429 +1176,107 @@ function loadProfilePhoto(photo){
    PASSWORD SHOW / HIDE
 ===================================================== */
 
-function updatePassword(){
+document.getElementById("passwordToggle")
+.addEventListener("click",function(){
 
     const passwordElement =
-
-    document.getElementById(
-        "accountPassword"
-    );
+    document.getElementById("accountPassword");
 
 
-    const button =
-
-    document.getElementById(
-        "passwordToggle"
-    );
+    const password =
+    passwordElement.dataset.password || "";
 
 
-    if(!currentPassword){
+    if(!password){
 
         passwordElement.textContent =
-        "Not available";
-
-        button.style.display =
-        "none";
+        "-";
 
         return;
 
     }
 
 
-    button.style.display =
-    "block";
+    const isHidden =
+    passwordElement.textContent === "••••••••";
 
 
-    if(passwordVisible){
+    if(isHidden){
 
         passwordElement.textContent =
-        currentPassword;
+        password;
 
-        button.textContent =
-        "🙈";
-
-        button.title =
-        "Hide Password";
+        this.textContent =
+        "Hide";
 
     }
 
     else{
 
         passwordElement.textContent =
+        "••••••••";
 
-        "•".repeat(
-            Math.max(
-                currentPassword.length,
-                8
-            )
-        );
-
-        button.textContent =
-        "👁";
-
-        button.title =
-        "Show Password";
+        this.textContent =
+        "Show";
 
     }
 
-}
-
-
-document.getElementById(
-    "passwordToggle"
-).addEventListener(
-
-    "click",
-
-    function(){
-
-        passwordVisible =
-        !passwordVisible;
-
-        updatePassword();
-
-    }
-
-);
+});
 
 
 /* =====================================================
-   RENDER PROFESSIONS
+   MOBILE MENU
 ===================================================== */
 
-function renderProfessions(professions){
-
-    const list =
-
-    document.getElementById(
-        "professionList"
-    );
-
-
-    const section =
-
-    document.getElementById(
-        "professionSection"
-    );
-
-
-    const noProfession =
-
-    document.getElementById(
-        "noProfession"
-    );
-
-
-    list.innerHTML = "";
-
-
-    let count = 0;
-
-
-    professions.forEach(
-
-        function(item){
-
-            const profession =
-
-            String(
-                item.name || ""
-            ).trim();
-
-
-            const logo =
-
-            String(
-                item.logo || ""
-            ).trim();
-
-
-            /* ---------------------------------------
-               EMPTY PROFESSION HIDDEN
-            ---------------------------------------- */
-
-            if(!profession){
-
-                return;
-
-            }
-
-
-            count++;
-
-
-            const card =
-
-            document.createElement(
-                "div"
-            );
-
-            card.className =
-            "profession-card";
-
-
-            /* ---------------------------------------
-               LEFT
-            ---------------------------------------- */
-
-            const left =
-
-            document.createElement(
-                "div"
-            );
-
-            left.className =
-            "profession-left";
-
-
-            const number =
-
-            document.createElement(
-                "div"
-            );
-
-            number.className =
-            "profession-number";
-
-            number.textContent =
-            count;
-
-
-            const text =
-
-            document.createElement(
-                "div"
-            );
-
-            text.className =
-            "profession-text";
-
-
-            const label =
-
-            document.createElement(
-                "div"
-            );
-
-            label.className =
-            "profession-label";
-
-            label.textContent =
-            "Profession";
-
-
-            const name =
-
-            document.createElement(
-                "div"
-            );
-
-            name.className =
-            "profession-name";
-
-            name.textContent =
-            profession;
-
-
-            text.appendChild(
-                label
-            );
-
-            text.appendChild(
-                name
-            );
-
-
-            left.appendChild(
-                number
-            );
-
-            left.appendChild(
-                text
-            );
-
-
-            card.appendChild(
-                left
-            );
-
-
-            /* ---------------------------------------
-               COMPANY LOGO RIGHT
-            ---------------------------------------- */
-
-            if(logo){
-
-                const logoImage =
-
-                document.createElement(
-                    "img"
-                );
-
-                logoImage.className =
-                "company-logo";
-
-                logoImage.src =
-                logo;
-
-                logoImage.alt =
-                "Company Logo";
-
-
-                logoImage.onerror =
-
-                function(){
-
-                    logoImage.remove();
-
-                };
-
-
-                card.appendChild(
-                    logoImage
-                );
-
-            }
-
-
-            list.appendChild(
-                card
-            );
-
-        }
-
-    );
-
-
-    /* -----------------------------------------------
-       SHOW / HIDE PROFESSIONAL SECTION
-    ------------------------------------------------ */
-
-    if(count === 0){
-
-        section.style.display =
-        "none";
-
-        noProfession.style.display =
-        "none";
-
-    }
-
-    else{
-
-        section.style.display =
-        "block";
-
-        noProfession.style.display =
-        "none";
-
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE SIDEBAR
-===================================================== */
-
-const mobileMenu =
-
-document.getElementById(
-    "mobileMenu"
-);
+const mobileMenuBtn =
+document.getElementById("mobileMenuBtn");
 
 
 const sidebar =
-
-document.getElementById(
-    "sidebar"
-);
+document.getElementById("sidebar");
 
 
 const overlay =
-
-document.getElementById(
-    "overlay"
-);
+document.getElementById("sidebarOverlay");
 
 
-mobileMenu.addEventListener(
+mobileMenuBtn.addEventListener("click",function(){
 
-    "click",
+    sidebar.classList.add("open");
 
-    function(){
+    overlay.classList.add("show");
 
-        sidebar.classList.add(
-            "open"
-        );
-
-        overlay.classList.add(
-            "show"
-        );
-
-    }
-
-);
+});
 
 
-overlay.addEventListener(
+overlay.addEventListener("click",function(){
 
-    "click",
+    sidebar.classList.remove("open");
 
-    function(){
+    overlay.classList.remove("show");
 
-        sidebar.classList.remove(
-            "open"
-        );
-
-        overlay.classList.remove(
-            "show"
-        );
-
-    }
-
-);
+});
 
 
 /* =====================================================
    LOGOUT
 ===================================================== */
 
-document.getElementById(
-    "logoutBtn"
-).addEventListener(
+document.getElementById("logoutBtn")
+.addEventListener("click",function(){
 
-    "click",
+    localStorage.removeItem("loggedIn");
 
-    function(){
+    localStorage.removeItem("username");
 
-        localStorage.removeItem(
-            "loggedIn"
-        );
+    localStorage.removeItem("name");
 
-        localStorage.removeItem(
-            "username"
-        );
+    localStorage.removeItem("role");
 
-        localStorage.removeItem(
-            "name"
-        );
+    localStorage.removeItem("status");
 
-        localStorage.removeItem(
-            "role"
-        );
+    window.location.replace("login.html");
 
-        localStorage.removeItem(
-            "status"
-        );
-
-
-        window.location.replace(
-            "login.html"
-        );
-
-    }
-
-);
+});
 
 </script></body></html>
