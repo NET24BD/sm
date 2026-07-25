@@ -1,26 +1,41 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#071522"><title>My Account | LINK4 COMMUNICATION</title><script>
+<!DOCTYPE html>
+<html lang="en">
 
-/* =====================================================
-   LOGIN SECURITY
-===================================================== */
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+content="#071522">
+
+<title>My Account | LINK4 COMMUNICATION</title>
+
+
+<script>
 
 (function(){
 
     if(
-        localStorage.getItem("loggedIn") !== "true"
+        localStorage.getItem("loggedIn")
+        !==
+        "true"
     ){
 
-        window.location.replace("login.html");
+        window.location.replace(
+            "login.html"
+        );
 
     }
 
 })();
 
-</script><style>
+</script>
 
-/* =====================================================
-   RESET
-===================================================== */
+
+<style>
 
 *{
     margin:0;
@@ -29,16 +44,11 @@
 }
 
 
-/* =====================================================
-   BODY
-===================================================== */
-
 body{
 
     font-family:
     "Segoe UI",
     Arial,
-    Helvetica,
     sans-serif;
 
     background:
@@ -51,10 +61,6 @@ body{
 }
 
 
-/* =====================================================
-   APP
-===================================================== */
-
 .app{
 
     min-height:100vh;
@@ -64,47 +70,34 @@ body{
 }
 
 
-/* =====================================================
-   SIDEBAR
-===================================================== */
+/* SIDEBAR */
 
 .sidebar{
 
-    width:260px;
-
-    min-height:100vh;
+    width:250px;
 
     position:fixed;
 
     left:0;
-
     top:0;
-
     bottom:0;
 
     z-index:100;
 
-    padding:22px 16px;
+    padding:20px 15px;
 
-    background:
-    #0a1b2a;
+    background:#0a1b2a;
 
     border-right:
     1px solid
-    rgba(255,255,255,0.07);
+    rgba(255,255,255,.07);
 
     display:flex;
 
     flex-direction:column;
 
-    transition:0.3s;
-
 }
 
-
-/* =====================================================
-   BRAND
-===================================================== */
 
 .brand{
 
@@ -115,20 +108,21 @@ body{
     gap:12px;
 
     padding:
-    5px 10px 25px;
+    5px 8px 22px;
 
     border-bottom:
     1px solid
-    rgba(255,255,255,0.06);
+    rgba(255,255,255,.06);
 
 }
 
 
 .brand-logo{
 
-    width:48px;
+    width:45px;
+    height:45px;
 
-    height:48px;
+    border-radius:13px;
 
     display:flex;
 
@@ -136,7 +130,7 @@ body{
 
     justify-content:center;
 
-    border-radius:14px;
+    font-weight:800;
 
     background:
     linear-gradient(
@@ -145,22 +139,14 @@ body{
         #008cff
     );
 
-    color:#ffffff;
-
-    font-size:17px;
-
-    font-weight:800;
-
 }
 
 
 .brand-name{
 
-    font-size:15px;
+    font-size:13px;
 
     font-weight:800;
-
-    line-height:1.3;
 
 }
 
@@ -169,20 +155,16 @@ body{
 
     display:block;
 
-    margin-top:3px;
+    margin-top:4px;
 
-    color:#6f899b;
+    color:#71899a;
 
-    font-size:9px;
+    font-size:8px;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.3px;
 
 }
 
-
-/* =====================================================
-   MINI USER
-===================================================== */
 
 .user-mini{
 
@@ -190,11 +172,9 @@ body{
 
     align-items:center;
 
-    gap:11px;
+    gap:10px;
 
-    padding:15px 10px;
-
-    margin-bottom:15px;
+    padding:17px 8px;
 
 }
 
@@ -202,7 +182,6 @@ body{
 .user-avatar{
 
     width:40px;
-
     height:40px;
 
     border-radius:12px;
@@ -213,31 +192,14 @@ body{
 
     justify-content:center;
 
+    font-weight:800;
+
     background:
     linear-gradient(
         135deg,
         #00c878,
         #008cff
     );
-
-    color:#ffffff;
-
-    font-size:14px;
-
-    font-weight:800;
-
-    overflow:hidden;
-
-}
-
-
-.user-avatar img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
 
 }
 
@@ -253,7 +215,7 @@ body{
 
     display:block;
 
-    max-width:150px;
+    max-width:145px;
 
     overflow:hidden;
 
@@ -272,16 +234,12 @@ body{
 
     margin-top:3px;
 
-    color:#6d8799;
+    color:#71899a;
 
     font-size:10px;
 
 }
 
-
-/* =====================================================
-   SIDEBAR MENU
-===================================================== */
 
 .sidebar-menu{
 
@@ -289,7 +247,7 @@ body{
 
     flex-direction:column;
 
-    gap:7px;
+    gap:6px;
 
 }
 
@@ -300,15 +258,13 @@ body{
 
     align-items:center;
 
-    gap:13px;
+    gap:12px;
 
-    width:100%;
+    padding:11px;
 
-    padding:12px 13px;
+    border-radius:11px;
 
-    border-radius:12px;
-
-    color:#91a5b4;
+    color:#8fa5b4;
 
     text-decoration:none;
 
@@ -316,53 +272,26 @@ body{
 
     font-weight:600;
 
-    border:
-    1px solid
-    transparent;
-
-    transition:0.25s;
+    transition:.25s;
 
 }
 
 
-.sidebar-menu a:hover{
-
-    color:#ffffff;
-
-    background:
-    rgba(255,255,255,0.045);
-
-    border-color:
-    rgba(255,255,255,0.06);
-
-    transform:
-    translateX(3px);
-
-}
-
-
+.sidebar-menu a:hover,
 .sidebar-menu a.active{
 
     color:#ffffff;
 
     background:
-    linear-gradient(
-        135deg,
-        rgba(0,200,120,0.18),
-        rgba(0,140,255,0.12)
-    );
-
-    border-color:
-    rgba(0,200,120,0.18);
+    rgba(0,208,132,.10);
 
 }
 
 
 .menu-icon{
 
-    width:34px;
-
-    height:34px;
+    width:32px;
+    height:32px;
 
     display:flex;
 
@@ -370,31 +299,17 @@ body{
 
     justify-content:center;
 
-    border-radius:10px;
+    border-radius:9px;
 
     background:
-    rgba(255,255,255,0.045);
-
-    font-size:16px;
-
-    flex-shrink:0;
+    rgba(255,255,255,.04);
 
 }
 
 
-/* =====================================================
-   SIDEBAR BOTTOM
-===================================================== */
-
 .sidebar-bottom{
 
     margin-top:auto;
-
-    padding-top:20px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,0.06);
 
 }
 
@@ -403,72 +318,49 @@ body{
 
     width:100%;
 
+    padding:12px;
+
     display:flex;
 
     align-items:center;
 
-    gap:13px;
+    gap:12px;
 
-    padding:12px 13px;
-
-    border-radius:12px;
+    border-radius:11px;
 
     border:
     1px solid
-    rgba(255,70,70,0.10);
+    rgba(255,70,70,.12);
 
     background:
-    rgba(255,70,70,0.04);
+    rgba(255,70,70,.05);
 
     color:#ff8b8b;
 
     cursor:pointer;
 
-    font-size:12px;
-
-    font-weight:600;
-
-    transition:0.25s;
-
 }
 
 
-.logout-btn:hover{
-
-    background:
-    rgba(255,70,70,0.10);
-
-    border-color:
-    rgba(255,70,70,0.20);
-
-}
-
-
-/* =====================================================
-   MAIN
-===================================================== */
+/* MAIN */
 
 .main{
 
     width:
-    calc(100% - 260px);
+    calc(100% - 250px);
 
-    margin-left:260px;
+    margin-left:250px;
 
-    min-height:100vh;
-
-    padding:25px;
+    padding:22px;
 
 }
 
 
-/* =====================================================
-   TOPBAR
-===================================================== */
-
 .topbar{
 
-    min-height:70px;
+    min-height:68px;
+
+    padding:14px 18px;
 
     display:flex;
 
@@ -476,22 +368,13 @@ body{
 
     justify-content:space-between;
 
-    gap:20px;
+    border-radius:17px;
 
-    padding:
-    15px 20px;
+    background:#0a1b2a;
 
     border:
     1px solid
-    rgba(255,255,255,0.06);
-
-    border-radius:18px;
-
-    background:
-    rgba(8,25,40,0.80);
-
-    backdrop-filter:
-    blur(15px);
+    rgba(255,255,255,.06);
 
 }
 
@@ -509,53 +392,21 @@ body{
 
 .page-title h1{
 
-    font-size:22px;
-
-    margin-bottom:4px;
+    font-size:21px;
 
 }
 
 
 .page-title p{
 
-    color:#6f8798;
+    color:#71899a;
 
-    font-size:11px;
+    font-size:10px;
 
-}
-
-
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.mobile-menu-btn{
-
-    display:none;
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:11px;
-
-    background:
-    rgba(255,255,255,0.05);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:18px;
+    margin-top:3px;
 
 }
 
-
-/* =====================================================
-   TOP USER
-===================================================== */
 
 .top-user{
 
@@ -586,32 +437,27 @@ body{
 
 .top-user-info span{
 
-    display:block;
-
     color:#00d084;
 
     font-size:10px;
-
-    margin-top:3px;
-
-    text-transform:capitalize;
 
 }
 
 
 .top-avatar{
 
-    width:42px;
+    width:40px;
+    height:40px;
 
-    height:42px;
-
-    border-radius:12px;
+    border-radius:11px;
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    font-weight:800;
 
     background:
     linear-gradient(
@@ -620,73 +466,70 @@ body{
         #008cff
     );
 
-    font-size:13px;
+}
 
-    font-weight:800;
 
-    overflow:hidden;
+/* MOBILE BUTTON */
+
+.mobile-menu-btn{
+
+    display:none;
+
+    width:40px;
+    height:40px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    color:#fff;
+
+    cursor:pointer;
 
 }
 
 
-.top-avatar img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-/* =====================================================
-   PROFILE HERO
-===================================================== */
+/* PROFILE */
 
 .profile-hero{
 
-    margin-top:25px;
+    margin-top:22px;
 
-    padding:35px;
+    padding:30px;
 
     display:flex;
 
     align-items:center;
 
-    gap:30px;
+    gap:25px;
 
-    border-radius:22px;
+    border-radius:20px;
 
     background:
     linear-gradient(
         135deg,
-        rgba(0,200,120,0.12),
-        rgba(0,130,255,0.08)
+        rgba(0,208,132,.10),
+        rgba(0,140,255,.07)
     );
 
     border:
     1px solid
-    rgba(255,255,255,0.07);
+    rgba(255,255,255,.07);
 
 }
 
 
-/* =====================================================
-   PROFILE PHOTO
-===================================================== */
-
 .profile-photo-wrap{
 
-    width:125px;
-
-    height:125px;
+    width:115px;
+    height:115px;
 
     padding:4px;
 
     border-radius:50%;
-
-    flex-shrink:0;
 
     background:
     linear-gradient(
@@ -695,37 +538,29 @@ body{
         #008cff
     );
 
+    flex-shrink:0;
+
 }
 
 
-.profile-photo{
+.profile-photo,
+.default-photo{
 
     width:100%;
-
     height:100%;
 
     border-radius:50%;
 
     object-fit:cover;
 
-    display:block;
-
-    background:#102638;
-
     border:
     4px solid
-    #081a29;
+    #0a1b2a;
 
 }
 
 
 .default-photo{
-
-    width:100%;
-
-    height:100%;
-
-    border-radius:50%;
 
     display:flex;
 
@@ -735,39 +570,29 @@ body{
 
     background:#102638;
 
-    border:
-    4px solid
-    #081a29;
-
-    font-size:45px;
-
-    font-weight:700;
-
     color:#00d084;
+
+    font-size:42px;
+
+    font-weight:800;
 
 }
 
-
-/* =====================================================
-   PROFILE DETAILS
-===================================================== */
 
 .profile-details h2{
 
-    font-size:28px;
-
-    margin-bottom:7px;
+    font-size:27px;
 
 }
 
 
-.profile-details .username{
+.username{
 
-    color:#7e96a7;
+    color:#71899a;
 
-    font-size:13px;
+    font-size:12px;
 
-    margin-bottom:14px;
+    margin:6px 0 12px;
 
 }
 
@@ -776,30 +601,23 @@ body{
 
     display:flex;
 
-    flex-wrap:wrap;
+    gap:7px;
 
-    gap:8px;
+    flex-wrap:wrap;
 
 }
 
 
 .badge{
 
-    padding:
-    7px 12px;
+    padding:6px 11px;
 
     border-radius:20px;
 
+    font-size:9px;
+
     background:
-    rgba(255,255,255,0.05);
-
-    border:
-    1px solid
-    rgba(255,255,255,0.07);
-
-    color:#b7c7d1;
-
-    font-size:10px;
+    rgba(255,255,255,.05);
 
 }
 
@@ -808,9 +626,6 @@ body{
 
     color:#65eab2;
 
-    border-color:
-    rgba(0,200,120,0.18);
-
 }
 
 
@@ -818,19 +633,14 @@ body{
 
     color:#70bfff;
 
-    border-color:
-    rgba(0,140,255,0.18);
-
 }
 
 
-/* =====================================================
-   SECTION
-===================================================== */
+/* SECTION */
 
 .section{
 
-    margin-top:25px;
+    margin-top:23px;
 
 }
 
@@ -843,14 +653,14 @@ body{
 
     gap:10px;
 
-    margin-bottom:15px;
+    margin-bottom:13px;
 
 }
 
 
 .section-title h2{
 
-    font-size:17px;
+    font-size:16px;
 
 }
 
@@ -862,14 +672,12 @@ body{
     height:1px;
 
     background:
-    rgba(255,255,255,0.06);
+    rgba(255,255,255,.06);
 
 }
 
 
-/* =====================================================
-   ACCOUNT GRID
-===================================================== */
+/* ACCOUNT GRID */
 
 .account-grid{
 
@@ -878,38 +686,22 @@ body{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:15px;
+    gap:13px;
 
 }
 
 
 .info-card{
 
-    min-height:80px;
+    padding:17px;
 
-    padding:18px;
+    border-radius:14px;
 
-    border-radius:16px;
-
-    background:
-    #0a1b2a;
+    background:#0a1b2a;
 
     border:
     1px solid
-    rgba(255,255,255,0.06);
-
-    transition:0.25s;
-
-}
-
-
-.info-card:hover{
-
-    border-color:
-    rgba(0,200,120,0.20);
-
-    transform:
-    translateY(-2px);
+    rgba(255,255,255,.06);
 
 }
 
@@ -918,24 +710,20 @@ body{
 
     display:block;
 
-    margin-bottom:8px;
+    color:#637d8e;
 
-    color:#607a8c;
-
-    font-size:10px;
+    font-size:9px;
 
     text-transform:uppercase;
 
-    letter-spacing:0.7px;
+    margin-bottom:7px;
 
 }
 
 
 .info-value{
 
-    display:block;
-
-    color:#e5edf2;
+    color:#e7eef3;
 
     font-size:13px;
 
@@ -946,24 +734,7 @@ body{
 }
 
 
-/* =====================================================
-   PASSWORD SHOW
-===================================================== */
-
-.password-value{
-
-    color:#00d084;
-
-    letter-spacing:1px;
-
-    word-break:break-all;
-
-}
-
-
-/* =====================================================
-   PROFESSIONAL INFORMATION
-===================================================== */
+/* PROFESSION */
 
 .profession-list{
 
@@ -971,14 +742,16 @@ body{
 
     flex-direction:column;
 
-    gap:12px;
+    gap:10px;
 
 }
 
 
 .profession-card{
 
-    min-height:72px;
+    min-height:68px;
+
+    padding:12px 16px;
 
     display:flex;
 
@@ -986,56 +759,34 @@ body{
 
     justify-content:space-between;
 
-    gap:20px;
+    gap:15px;
 
-    padding:
-    14px 18px;
+    border-radius:14px;
 
-    border-radius:16px;
-
-    background:
-    #0a1b2a;
+    background:#0a1b2a;
 
     border:
     1px solid
-    rgba(255,255,255,0.06);
-
-    transition:0.25s;
+    rgba(255,255,255,.06);
 
 }
 
 
-.profession-card:hover{
-
-    border-color:
-    rgba(0,200,120,0.18);
-
-    transform:
-    translateX(3px);
-
-}
-
-
-.profession-name-area{
+.profession-left{
 
     display:flex;
 
     align-items:center;
 
-    gap:13px;
-
-    min-width:0;
+    gap:12px;
 
 }
 
 
 .profession-number{
 
-    width:34px;
-
-    height:34px;
-
-    flex-shrink:0;
+    width:32px;
+    height:32px;
 
     display:flex;
 
@@ -1043,64 +794,52 @@ body{
 
     justify-content:center;
 
-    border-radius:10px;
+    border-radius:9px;
 
     background:
-    rgba(0,200,120,0.08);
+    rgba(0,208,132,.09);
 
     color:#00d084;
 
     font-size:11px;
 
-    font-weight:700;
-
-}
-
-
-.profession-text{
-
-    min-width:0;
+    font-weight:800;
 
 }
 
 
 .profession-label{
 
-    color:#607a8c;
+    color:#637d8e;
 
-    font-size:9px;
+    font-size:8px;
 
     text-transform:uppercase;
-
-    margin-bottom:4px;
 
 }
 
 
 .profession-value{
 
-    color:#e5edf2;
+    margin-top:3px;
+
+    color:#e7eef3;
 
     font-size:13px;
 
     font-weight:600;
 
-    word-break:break-word;
-
 }
 
 
-/* =====================================================
-   COMPANY LOGO
-===================================================== */
-
 .company-logo-wrap{
 
-    width:58px;
+    width:52px;
+    height:52px;
 
-    height:58px;
+    padding:5px;
 
-    flex-shrink:0;
+    border-radius:11px;
 
     display:flex;
 
@@ -1108,16 +847,12 @@ body{
 
     justify-content:center;
 
-    padding:6px;
-
-    border-radius:13px;
-
     background:
-    rgba(255,255,255,0.04);
+    rgba(255,255,255,.04);
 
     border:
     1px solid
-    rgba(255,255,255,0.07);
+    rgba(255,255,255,.07);
 
 }
 
@@ -1125,55 +860,31 @@ body{
 .company-logo{
 
     width:100%;
-
     height:100%;
 
     object-fit:contain;
 
-    border-radius:8px;
+    border-radius:7px;
 
 }
 
 
-/* =====================================================
-   LOADING
-===================================================== */
-
-.loading{
-
-    padding:30px;
-
-    text-align:center;
-
-    color:#6f8798;
-
-    font-size:12px;
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
 .footer{
 
-    margin-top:30px;
-
-    padding:20px 0;
+    padding:25px 0;
 
     text-align:center;
 
-    color:#4f6879;
+    color:#4e6879;
 
-    font-size:10px;
+    font-size:9px;
 
 }
 
 
-/* =====================================================
-   OVERLAY
-===================================================== */
+/* OVERLAY */
 
 .sidebar-overlay{
 
@@ -1186,14 +897,12 @@ body{
     z-index:90;
 
     background:
-    rgba(0,0,0,0.65);
+    rgba(0,0,0,.65);
 
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* RESPONSIVE */
 
 @media(max-width:800px){
 
@@ -1201,6 +910,8 @@ body{
 
         transform:
         translateX(-100%);
+
+        transition:.3s;
 
     }
 
@@ -1226,7 +937,7 @@ body{
 
         margin-left:0;
 
-        padding:15px;
+        padding:14px;
 
     }
 
@@ -1240,11 +951,11 @@ body{
 
     .profile-hero{
 
-        padding:25px;
-
         flex-direction:column;
 
         text-align:center;
+
+        padding:25px;
 
     }
 
@@ -1267,22 +978,6 @@ body{
     }
 
 
-    .profile-photo-wrap{
-
-        width:105px;
-
-        height:105px;
-
-    }
-
-
-    .profile-details h2{
-
-        font-size:23px;
-
-    }
-
-
     .top-user-info{
 
         display:none;
@@ -1290,378 +985,488 @@ body{
     }
 
 
-    .page-title h1{
+    .profile-photo-wrap{
 
-        font-size:18px;
+        width:100px;
+        height:100px;
+
+    }
+
+
+    .profile-details h2{
+
+        font-size:22px;
 
     }
 
 
     .profession-card{
 
-        padding:13px;
+        padding:11px;
 
     }
 
-
-    .company-logo-wrap{
-
-        width:50px;
-
-        height:50px;
-
-    }
 
 }
 
-</style></head><body><div class="app"><!-- =====================================================
-     SIDEBAR
-===================================================== --><aside
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<aside
 class="sidebar"
 id="sidebar"
-><div class="brand"><div class="brand-logo">L4
+>
 
-</div><div class="brand-name">LINK4 COMMUNICATION
+<div class="brand">
 
-<small>MANAGEMENT SYSTEM
+<div class="brand-logo">
+L4
+</div>
 
-</small></div></div><!-- MINI USER --><div class="user-mini"><div
+<div class="brand-name">
+
+LINK4 COMMUNICATION
+
+<small>
+MANAGEMENT SYSTEM
+</small>
+
+</div>
+
+</div>
+
+
+<div class="user-mini">
+
+<div
 class="user-avatar"
 id="sidebarAvatar"
->U
+>
+U
+</div>
 
-</div><div class="user-info"><strong
-id="sidebarName"
+<div class="user-info">
 
-«»
-
+<strong id="sidebarName">
 User
+</strong>
 
-</strong><span
-id="sidebarRole"
-
-«»
-
+<span id="sidebarRole">
 User
+</span>
 
-</span></div></div><!-- MENU --><nav class="sidebar-menu"><a href="dashboard.html"><span class="menu-icon">🏠
+</div>
 
-</span><span>Dashboard
+</div>
 
-</span></a><a href="dashboard.html"><span class="menu-icon">📊
 
-</span><span>Overview
+<nav class="sidebar-menu">
 
-</span></a><a href="support.html"><span class="menu-icon">🛠️
+<a href="dashboard.html">
+<span class="menu-icon">🏠</span>
+Dashboard
+</a>
 
-</span><span>Support
 
-</span></a><a href="call.html"><span class="menu-icon">📞
+<a href="support.html">
+<span class="menu-icon">🛠️</span>
+Support
+</a>
 
-</span><span>Call
 
-</span></a><a
+<a href="call.html">
+<span class="menu-icon">📞</span>
+Call
+</a>
+
+
+<a
 href="account.html"
 class="active"
+>
+<span class="menu-icon">👤</span>
+My Account
+</a>
 
-«»
+</nav>
 
-<span class="menu-icon">👤
 
-</span><span>My Account
+<div class="sidebar-bottom">
 
-</span></a></nav><!-- BOTTOM --><div class="sidebar-bottom"><button
+<button
 class="logout-btn"
 id="logoutBtn"
+>
 
-«»
+<span>🚪</span>
 
-<span class="menu-icon">🚪
+Logout
 
-</span><span>Logout
+</button>
 
-</span></button></div></aside><!-- OVERLAY --><div
+</div>
+
+</aside>
+
+
+<div
 class="sidebar-overlay"
 id="sidebarOverlay"
-></div><!-- =====================================================
-     MAIN
-===================================================== --><main class="main"><!-- TOPBAR --><header class="topbar"><div class="page-title"><button
+></div>
+
+
+<main class="main">
+
+
+<header class="topbar">
+
+<div class="page-title">
+
+<button
 class="mobile-menu-btn"
 id="mobileMenuBtn"
-
-«»
-
+>
 ☰
+</button>
 
-</button><div><h1>My Account
+<div>
 
-</h1><p>Personal profile and professional information
+<h1>
+My Account
+</h1>
 
-</p></div></div><div class="top-user"><div class="top-user-info"><strong
-id="topName"
+<p>
+Personal profile and professional information
+</p>
 
-«»
+</div>
 
+</div>
+
+
+<div class="top-user">
+
+<div class="top-user-info">
+
+<strong id="topName">
 User
+</strong>
 
-</strong><span
-id="topRole"
-
-«»
-
+<span id="topRole">
 User
+</span>
 
-</span></div><div
+</div>
+
+<div
 class="top-avatar"
 id="topAvatar"
->U
+>
+U
+</div>
 
-</div></div></header><!-- =====================================================
-     PROFILE HERO
-===================================================== --><section class="profile-hero"><div class="profile-photo-wrap"><img
+</div>
+
+</header>
+
+
+<section class="profile-hero">
+
+
+<div class="profile-photo-wrap">
+
+
+<img
 id="profilePhoto"
 class="profile-photo"
 alt="Profile Photo"
 style="display:none;"
+>
 
-«»
 
 <div
 id="defaultPhoto"
 class="default-photo"
->U
+>
+U
+</div>
 
-</div></div><div class="profile-details"><h2
-id="profileName"
->User
 
-</h2><div
+</div>
+
+
+<div class="profile-details">
+
+<h2 id="profileName">
+User
+</h2>
+
+<div
 class="username"
 id="profileUsername"
->@username
+>
+@username
+</div>
 
-</div><div class="profile-badges"><span
+
+<div class="profile-badges">
+
+<span
 class="badge role"
 id="profileRole"
-
-«»
-
+>
 Role
+</span>
 
-</span><span
+<span
 class="badge status"
 id="profileStatus"
-
-«»
-
+>
 Status
+</span>
 
-</span></div></div></section><!-- =====================================================
-     ACCOUNT INFORMATION
-===================================================== --><section class="section"><div class="section-title"><h2>Account Information
+</div>
 
-</h2><div class="section-line"></div></div><div class="account-grid"><div class="info-card"><span class="info-label">Name
+</div>
 
-</span><span
+</section>
+
+
+<section class="section">
+
+
+<div class="section-title">
+
+<h2>
+Account Information
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+
+<div class="account-grid">
+
+
+<div class="info-card">
+
+<span class="info-label">
+Name
+</span>
+
+<span
 class="info-value"
 id="accountName"
+>
+-
+</span>
 
-«»
+</div>
 
-- 
 
-</span></div><div class="info-card"><span class="info-label">Username
+<div class="info-card">
 
-</span><span
+<span class="info-label">
+Username
+</span>
+
+<span
 class="info-value"
 id="accountUsername"
+>
+-
+</span>
 
-«»
+</div>
 
-- 
 
-</span></div><div class="info-card"><span class="info-label">Password
+<div class="info-card">
 
-</span><span
-class="info-value password-value"
+<span class="info-label">
+Password
+</span>
+
+<span
+class="info-value"
 id="accountPassword"
+>
+-
+</span>
 
-«»
+</div>
 
-- 
 
-</span></div><div class="info-card"><span class="info-label">Department
+<div class="info-card">
 
-</span><span
+<span class="info-label">
+Department
+</span>
+
+<span
 class="info-value"
 id="accountDepartment"
+>
+-
+</span>
 
-«»
+</div>
 
-- 
 
-</span></div><div class="info-card"><span class="info-label">Join Date
+<div class="info-card">
 
-</span><span
+<span class="info-label">
+Join Date
+</span>
+
+<span
 class="info-value"
 id="accountJoinDate"
+>
+-
+</span>
 
-«»
+</div>
 
-- 
 
-</span></div><div class="info-card"><span class="info-label">Blood Group
+<div class="info-card">
 
-</span><span
+<span class="info-label">
+Blood Group
+</span>
+
+<span
 class="info-value"
 id="accountBloodGroup"
+>
+-
+</span>
 
-«»
+</div>
 
-- 
 
-</span></div></div></section><!-- =====================================================
-     PROFESSIONAL INFORMATION
-===================================================== --><section
+</div>
+
+</section>
+
+
+<section
 class="section"
 id="professionSection"
 style="display:none;"
-><div class="section-title"><h2>Professional Information
+>
 
-</h2><div class="section-line"></div></div><div
+
+<div class="section-title">
+
+<h2>
+Professional Information
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+
+<div
 class="profession-list"
 id="professionList"
-></div></section><!-- FOOTER --><footer class="footer">© 2026 LINK4 COMMUNICATION. All rights reserved.
+></div>
 
-</footer></main></div><script>
+
+</section>
+
+
+<footer class="footer">
+
+© 2026 LINK4 COMMUNICATION.
+All rights reserved.
+
+</footer>
+
+
+</main>
+
+</div>
+
+
+<script>
+
 
 /* =====================================================
-   API CONFIGURATION
+   API
 ===================================================== */
 
 const API_URL =
-
 "https://script.google.com/macros/s/AKfycbxbgyIg_ddBYIs8qkQvRN3xS3-ZG451C5y_2sNbVFWdWydzb9Mc6qV5CoWB5rjs91ghjQ/exec";
 
 
 /* =====================================================
-   GET LOGGED USERNAME
+   USERNAME
 ===================================================== */
 
-const loggedUsername =
-
+const username =
 (
     localStorage.getItem("username")
     || ""
-)
-.trim();
-
-
-/* =====================================================
-   LOCAL STORAGE FALLBACK
-===================================================== */
-
-const localName =
-
-localStorage.getItem("name")
-|| "User";
-
-
-const localRole =
-
-localStorage.getItem("role")
-|| "User";
-
-
-const localStatus =
-
-localStorage.getItem("status")
-|| "Active";
-
-
-/* =====================================================
-   INITIAL DISPLAY
-===================================================== */
-
-setBasicUserData({
-
-    username:
-    loggedUsername,
-
-    name:
-    localName,
-
-    role:
-    localRole,
-
-    status:
-    localStatus
-
-});
+).trim();
 
 
 /* =====================================================
    LOAD ACCOUNT
 ===================================================== */
 
-loadUserAccount();
+if(username){
+
+    loadAccount();
+
+}
 
 
-async function loadUserAccount(){
+/* =====================================================
+   LOAD ACCOUNT DATA
+===================================================== */
 
-    if(!loggedUsername){
-
-        return;
-
-    }
-
+async function loadAccount(){
 
     try{
 
         const url =
-
         API_URL +
-
-        "?action=getaccount" +
-
+        "?action=getAccount" +
         "&username=" +
-
-        encodeURIComponent(
-            loggedUsername
-        );
+        encodeURIComponent(username);
 
 
         const response =
-
         await fetch(
-
             url,
-
             {
                 method:"GET",
                 cache:"no-store"
             }
-
         );
 
 
-        if(!response.ok){
-
-            throw new Error(
-                "Server Error"
-            );
-
-        }
-
-
         const data =
-
         await response.json();
 
 
-        if(data.success === true){
+        if(
+            data.success === true
+            &&
+            data.user
+        ){
 
-            displayUserData(
+            displayUser(
                 data.user
             );
 
@@ -1675,16 +1480,13 @@ async function loadUserAccount(){
 
         }
 
-    }
 
+    }
     catch(error){
 
         console.error(
-
-            "Account loading error:",
-
+            "Account Error:",
             error
-
         );
 
     }
@@ -1693,184 +1495,161 @@ async function loadUserAccount(){
 
 
 /* =====================================================
-   BASIC USER DATA
+   DISPLAY USER
 ===================================================== */
 
-function setBasicUserData(user){
+function displayUser(user){
+
 
     const name =
-
-    user.name
-    || "User";
+    user.name || "User";
 
 
-    const username =
-
-    user.username
-    || loggedUsername
-    || "-";
+    const userName =
+    user.username || username;
 
 
     const role =
-
-    user.role
-    || "User";
+    user.role || "User";
 
 
     const status =
+    user.status || "Active";
 
-    user.status
-    || "Active";
 
+    /* BASIC */
 
     document.getElementById(
         "sidebarName"
-    ).textContent = name;
+    ).textContent =
+    name;
 
 
     document.getElementById(
         "sidebarRole"
-    ).textContent = role;
+    ).textContent =
+    role;
 
 
     document.getElementById(
         "topName"
-    ).textContent = name;
+    ).textContent =
+    name;
 
 
     document.getElementById(
         "topRole"
-    ).textContent = role;
+    ).textContent =
+    role;
 
 
     document.getElementById(
         "profileName"
-    ).textContent = name;
+    ).textContent =
+    name;
 
 
     document.getElementById(
         "profileUsername"
     ).textContent =
-
-    "@" + username;
+    "@" + userName;
 
 
     document.getElementById(
         "profileRole"
-    ).textContent = role;
+    ).textContent =
+    role;
 
 
     document.getElementById(
         "profileStatus"
-    ).textContent = status;
+    ).textContent =
+    status;
 
+
+    /* ACCOUNT */
 
     document.getElementById(
         "accountName"
-    ).textContent = name;
+    ).textContent =
+    name;
 
 
     document.getElementById(
         "accountUsername"
-    ).textContent = username;
+    ).textContent =
+    userName;
+
+
+    /* PASSWORD SHOW */
+
+    document.getElementById(
+        "accountPassword"
+    ).textContent =
+    user.password || "-";
 
 
     document.getElementById(
         "accountDepartment"
     ).textContent =
-
-    user.department
-    || "-";
+    user.department || "-";
 
 
     document.getElementById(
         "accountJoinDate"
     ).textContent =
-
-    user.joinDate
-    || "-";
+    user.joinDate || "-";
 
 
     document.getElementById(
         "accountBloodGroup"
     ).textContent =
+    user.bloodGroup || "-";
 
-    user.bloodGroup
-    || "-";
 
+    /* INITIAL */
 
     const initial =
-
     name
     .trim()
     .charAt(0)
-    .toUpperCase()
-    || "U";
+    .toUpperCase() ||
+    "U";
 
 
     document.getElementById(
         "sidebarAvatar"
-    ).textContent = initial;
+    ).textContent =
+    initial;
 
 
     document.getElementById(
         "topAvatar"
-    ).textContent = initial;
+    ).textContent =
+    initial;
 
 
     document.getElementById(
         "defaultPhoto"
-    ).textContent = initial;
-
-}
-
-
-/* =====================================================
-   DISPLAY COMPLETE USER DATA
-===================================================== */
-
-function displayUserData(user){
-
-    setBasicUserData(user);
+    ).textContent =
+    initial;
 
 
-    /* =================================================
-       PASSWORD SHOW
-    ================================================= */
-
-    const passwordElement =
-
-    document.getElementById(
-        "accountPassword"
-    );
-
-
-    passwordElement.textContent =
-
-    user.password
-    || "-";
-
-
-    /* =================================================
-       PROFILE PHOTO
-    ================================================= */
+    /* PHOTO */
 
     const photo =
-
     String(
         user.photo || ""
     ).trim();
 
 
-    const profilePhoto =
-
+    const photoElement =
     document.getElementById(
         "profilePhoto"
     );
 
 
-    const defaultPhoto =
-
+    const defaultElement =
     document.getElementById(
         "defaultPhoto"
     );
@@ -1878,92 +1657,62 @@ function displayUserData(user){
 
     if(photo){
 
-        profilePhoto.src = photo;
+        photoElement.src =
+        photo;
 
-        profilePhoto.style.display =
+        photoElement.style.display =
         "block";
 
-        defaultPhoto.style.display =
+        defaultElement.style.display =
         "none";
 
 
-        profilePhoto.onerror =
-
+        photoElement.onerror =
         function(){
 
-            profilePhoto.style.display =
+            photoElement.style.display =
             "none";
 
-            defaultPhoto.style.display =
+            defaultElement.style.display =
             "flex";
 
         };
 
     }
 
-    else{
 
-        profilePhoto.style.display =
-        "none";
-
-        defaultPhoto.style.display =
-        "flex";
-
-    }
-
-
-    /* =================================================
-       PROFESSIONS
-    ================================================= */
+    /* PROFESSIONS */
 
     const professions = [
 
         {
-            name:
-            user.profession1,
-
-            logo:
-            user.professionCompanyLG1
+            name:user.profession1,
+            logo:user.professionCompanyLG1
         },
 
         {
-            name:
-            user.profession2,
-
-            logo:
-            user.professionCompanyLG2
+            name:user.profession2,
+            logo:user.professionCompanyLG2
         },
 
         {
-            name:
-            user.profession3,
-
-            logo:
-            user.professionCompanyLG3
+            name:user.profession3,
+            logo:user.professionCompanyLG3
         },
 
         {
-            name:
-            user.profession4,
-
-            logo:
-            user.professionCompanyLG4
+            name:user.profession4,
+            logo:user.professionCompanyLG4
         },
 
         {
-            name:
-            user.profession5,
-
-            logo:
-            user.professionCompanyLG5
+            name:user.profession5,
+            logo:user.professionCompanyLG5
         },
 
         {
-            name:
-            user.profession6,
-
-            logo:
-            user.professionCompanyLG6
+            name:user.profession6,
+            logo:user.professionCompanyLG6
         }
 
     ];
@@ -1977,251 +1726,227 @@ function displayUserData(user){
 
 
 /* =====================================================
-   RENDER PROFESSIONS
+   PROFESSIONS
 ===================================================== */
 
-function renderProfessions(professions){
-
-    const list =
-
-    document.getElementById(
-        "professionList"
-    );
+function renderProfessions(items){
 
 
     const section =
-
     document.getElementById(
         "professionSection"
     );
 
 
-    list.innerHTML = "";
+    const list =
+    document.getElementById(
+        "professionList"
+    );
 
 
-    let count = 0;
+    list.innerHTML =
+    "";
 
 
-    professions.forEach(
-
-        function(item){
-
-            const profession =
-
-            String(
-                item.name || ""
-            ).trim();
+    let count =
+    0;
 
 
-            const logo =
-
-            String(
-                item.logo || ""
-            ).trim();
+    items.forEach(
+    function(item){
 
 
-            /* =========================================
-               EMPTY PROFESSION HIDE
-            ========================================= */
-
-            if(!profession){
-
-                return;
-
-            }
+        const profession =
+        String(
+            item.name || ""
+        ).trim();
 
 
-            count++;
+        const logo =
+        String(
+            item.logo || ""
+        ).trim();
 
 
-            const card =
+        /* EMPTY PROFESSION HIDE */
 
+        if(!profession){
+
+            return;
+
+        }
+
+
+        count++;
+
+
+        const card =
+        document.createElement(
+            "div"
+        );
+
+
+        card.className =
+        "profession-card";
+
+
+        const left =
+        document.createElement(
+            "div"
+        );
+
+
+        left.className =
+        "profession-left";
+
+
+        const number =
+        document.createElement(
+            "div"
+        );
+
+
+        number.className =
+        "profession-number";
+
+
+        number.textContent =
+        count;
+
+
+        const text =
+        document.createElement(
+            "div"
+        );
+
+
+        const label =
+        document.createElement(
+            "div"
+        );
+
+
+        label.className =
+        "profession-label";
+
+
+        label.textContent =
+        "Profession";
+
+
+        const value =
+        document.createElement(
+            "div"
+        );
+
+
+        value.className =
+        "profession-value";
+
+
+        value.textContent =
+        profession;
+
+
+        text.appendChild(
+            label
+        );
+
+
+        text.appendChild(
+            value
+        );
+
+
+        left.appendChild(
+            number
+        );
+
+
+        left.appendChild(
+            text
+        );
+
+
+        card.appendChild(
+            left
+        );
+
+
+        /* COMPANY LOGO */
+
+        if(logo){
+
+            const logoWrap =
             document.createElement(
                 "div"
             );
 
 
-            card.className =
-            "profession-card";
+            logoWrap.className =
+            "company-logo-wrap";
 
 
-            /* =========================================
-               LEFT SIDE
-            ========================================= */
-
-            const left =
-
+            const image =
             document.createElement(
-                "div"
+                "img"
             );
 
 
-            left.className =
-            "profession-name-area";
+            image.className =
+            "company-logo";
 
 
-            const number =
-
-            document.createElement(
-                "div"
-            );
+            image.src =
+            logo;
 
 
-            number.className =
-            "profession-number";
+            image.alt =
+            "Company Logo";
 
 
-            number.textContent =
-            count;
+            image.onerror =
+            function(){
+
+                logoWrap.style.display =
+                "none";
+
+            };
 
 
-            const text =
-
-            document.createElement(
-                "div"
-            );
-
-
-            text.className =
-            "profession-text";
-
-
-            const label =
-
-            document.createElement(
-                "div"
-            );
-
-
-            label.className =
-            "profession-label";
-
-
-            label.textContent =
-            "Profession";
-
-
-            const value =
-
-            document.createElement(
-                "div"
-            );
-
-
-            value.className =
-            "profession-value";
-
-
-            value.textContent =
-            profession;
-
-
-            text.appendChild(
-                label
-            );
-
-
-            text.appendChild(
-                value
-            );
-
-
-            left.appendChild(
-                number
-            );
-
-
-            left.appendChild(
-                text
+            logoWrap.appendChild(
+                image
             );
 
 
             card.appendChild(
-                left
-            );
-
-
-            /* =========================================
-               COMPANY LOGO
-            ========================================= */
-
-            if(logo){
-
-                const logoWrap =
-
-                document.createElement(
-                    "div"
-                );
-
-
-                logoWrap.className =
-                "company-logo-wrap";
-
-
-                const logoImage =
-
-                document.createElement(
-                    "img"
-                );
-
-
-                logoImage.className =
-                "company-logo";
-
-
-                logoImage.src =
-                logo;
-
-
-                logoImage.alt =
-                "Company Logo";
-
-
-                logoImage.onerror =
-
-                function(){
-
-                    logoWrap.remove();
-
-                };
-
-
-                logoWrap.appendChild(
-                    logoImage
-                );
-
-
-                card.appendChild(
-                    logoWrap
-                );
-
-            }
-
-
-            list.appendChild(
-                card
+                logoWrap
             );
 
         }
 
-    );
+
+        list.appendChild(
+            card
+        );
 
 
-    /* =================================================
-       HIDE SECTION IF NO PROFESSION
-    ================================================= */
+    });
 
-    if(count === 0){
+
+    /* SHOW ONLY IF PROFESSION EXISTS */
+
+    if(count > 0){
 
         section.style.display =
-        "none";
+        "block";
 
     }
 
     else{
 
         section.style.display =
-        "block";
+        "none";
 
     }
 
@@ -2229,66 +1954,55 @@ function renderProfessions(professions){
 
 
 /* =====================================================
-   MOBILE SIDEBAR
+   MOBILE MENU
 ===================================================== */
 
 const mobileMenuBtn =
-
 document.getElementById(
     "mobileMenuBtn"
 );
 
 
 const sidebar =
-
 document.getElementById(
     "sidebar"
 );
 
 
 const overlay =
-
 document.getElementById(
     "sidebarOverlay"
 );
 
 
 mobileMenuBtn.addEventListener(
+"click",
+function(){
 
-    "click",
+    sidebar.classList.add(
+        "open"
+    );
 
-    function(){
+    overlay.classList.add(
+        "show"
+    );
 
-        sidebar.classList.add(
-            "open"
-        );
-
-        overlay.classList.add(
-            "show"
-        );
-
-    }
-
-);
+});
 
 
 overlay.addEventListener(
+"click",
+function(){
 
-    "click",
+    sidebar.classList.remove(
+        "open"
+    );
 
-    function(){
+    overlay.classList.remove(
+        "show"
+    );
 
-        sidebar.classList.remove(
-            "open"
-        );
-
-        overlay.classList.remove(
-            "show"
-        );
-
-    }
-
-);
+});
 
 
 /* =====================================================
@@ -2298,38 +2012,40 @@ overlay.addEventListener(
 document.getElementById(
     "logoutBtn"
 ).addEventListener(
+"click",
+function(){
 
-    "click",
+    localStorage.removeItem(
+        "loggedIn"
+    );
 
-    function(){
+    localStorage.removeItem(
+        "username"
+    );
 
-        localStorage.removeItem(
-            "loggedIn"
-        );
+    localStorage.removeItem(
+        "name"
+    );
 
-        localStorage.removeItem(
-            "username"
-        );
+    localStorage.removeItem(
+        "role"
+    );
 
-        localStorage.removeItem(
-            "name"
-        );
-
-        localStorage.removeItem(
-            "role"
-        );
-
-        localStorage.removeItem(
-            "status"
-        );
+    localStorage.removeItem(
+        "status"
+    );
 
 
-        window.location.replace(
-            "login.html"
-        );
+    window.location.replace(
+        "login.html"
+    );
 
-    }
+});
 
-);
 
-</script></body></html>
+</script>
+
+
+</body>
+
+</html>
