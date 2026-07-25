@@ -1,30 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
->
+<meta name="theme-color" content="#07111f">
 
-<meta
-name="theme-color"
-content="#07111f"
+<title>Login | System Menagment</title>
 
->
-
-<title>Login | LINK4 COMMUNICATION</title>
 
 <style>
 
-/* =====================================================
+/* ================================
    RESET
-===================================================== */
+================================ */
 
 *{
     margin:0;
@@ -33,9 +25,9 @@ content="#07111f"
 }
 
 
-/* =====================================================
+/* ================================
    BODY
-===================================================== */
+================================ */
 
 body{
 
@@ -43,93 +35,76 @@ body{
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     padding:20px;
 
     font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    Arial,
+    Helvetica,
+    sans-serif;
 
     background:
 
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(0,200,120,0.16),
-            transparent 30%
-        ),
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(0,200,120,0.18),
+        transparent 32%
+    ),
 
-        radial-gradient(
-            circle at 90% 90%,
-            rgba(0,150,255,0.16),
-            transparent 30%
-        ),
+    radial-gradient(
+        circle at 90% 90%,
+        rgba(0,130,255,0.18),
+        transparent 32%
+    ),
 
-        #07111f;
-
-    color:white;
+    #07111f;
 
 }
 
 
-/* =====================================================
-   LOGIN WRAPPER
-===================================================== */
-
-.login-wrapper{
-
-    width:100%;
-
-    max-width:430px;
-
-}
-
-
-/* =====================================================
+/* ================================
    LOGIN CARD
-===================================================== */
+================================ */
 
 .login-card{
 
     width:100%;
 
+    max-width:420px;
+
     padding:40px 32px;
 
     background:
-        rgba(10,25,40,0.96);
+    rgba(10,25,40,0.96);
 
     border:
-        1px solid
-        rgba(255,255,255,0.09);
+    1px solid
+    rgba(255,255,255,0.10);
 
     border-radius:24px;
 
     box-shadow:
-
-        0 25px 70px
-        rgba(0,0,0,0.55),
-
-        inset 0 1px 0
-        rgba(255,255,255,0.04);
+    0 25px 70px
+    rgba(0,0,0,0.55);
 
 }
 
 
-/* =====================================================
+/* ================================
    LOGO
-===================================================== */
+================================ */
 
 .logo{
 
-    width:78px;
+    width:75px;
 
-    height:78px;
+    height:75px;
 
     margin:
-        0 auto 20px;
+    0 auto 20px;
 
     display:flex;
 
@@ -137,41 +112,37 @@ body{
 
     justify-content:center;
 
-    border-radius:22px;
+    border-radius:20px;
 
     background:
+    linear-gradient(
+        135deg,
+        #00c878,
+        #0099ff
+    );
 
-        linear-gradient(
-            135deg,
-            #00c878,
-            #0099ff
-        );
+    color:white;
 
-    font-size:25px;
+    font-size:24px;
 
-    font-weight:800;
+    font-weight:bold;
 
     letter-spacing:1px;
-
-    box-shadow:
-
-        0 12px 35px
-        rgba(0,200,120,0.25);
 
 }
 
 
-/* =====================================================
+/* ================================
    TITLE
-===================================================== */
+================================ */
 
-.title{
+h1{
 
     text-align:center;
 
-    font-size:27px;
+    color:white;
 
-    font-weight:700;
+    font-size:27px;
 
     margin-bottom:8px;
 
@@ -182,214 +153,143 @@ body{
 
     text-align:center;
 
-    color:#8ea3b5;
+    color:#8fa4b7;
 
     font-size:14px;
 
-    margin-bottom:32px;
+    margin-bottom:30px;
 
 }
 
 
-/* =====================================================
-   FORM GROUP
-===================================================== */
+/* ================================
+   INPUT GROUP
+================================ */
 
-.form-group{
+.input-group{
 
     margin-bottom:20px;
 
 }
 
 
-.form-group label{
+.input-group label{
 
     display:block;
 
-    margin-bottom:8px;
-
-    color:#c7d3dd;
+    color:#cbd6df;
 
     font-size:14px;
 
     font-weight:600;
 
+    margin-bottom:8px;
+
 }
 
 
-/* =====================================================
-   INPUT
-===================================================== */
-
-.input{
+.input-group input{
 
     width:100%;
 
-    height:54px;
+    height:52px;
 
     padding:
-        0 16px;
+    0 15px;
 
     border:
-
-        1px solid
-        #263c4f;
+    1px solid
+    #263c4f;
 
     border-radius:12px;
 
     outline:none;
 
-    background:
-        #0b1b2a;
+    background:#0b1b2a;
 
     color:white;
 
     font-size:15px;
 
-    transition:
-        0.3s;
-
 }
 
 
-.input::placeholder{
+.input-group input::placeholder{
 
     color:#607487;
 
 }
 
 
-.input:focus{
+.input-group input:focus{
 
-    border-color:
-        #00c878;
+    border-color:#00c878;
 
     box-shadow:
-
-        0 0 0 3px
-        rgba(0,200,120,0.10);
+    0 0 0 3px
+    rgba(0,200,120,0.10);
 
 }
 
 
-/* =====================================================
+/* ================================
    LOGIN BUTTON
-===================================================== */
+================================ */
 
-.login-button{
+.login-btn{
 
     width:100%;
 
-    height:54px;
-
-    margin-top:5px;
+    height:52px;
 
     border:none;
 
     border-radius:12px;
 
     background:
-
-        linear-gradient(
-            135deg,
-            #00c878,
-            #0099ff
-        );
+    linear-gradient(
+        135deg,
+        #00c878,
+        #0099ff
+    );
 
     color:white;
 
     font-size:15px;
 
-    font-weight:700;
-
-    letter-spacing:0.5px;
+    font-weight:bold;
 
     cursor:pointer;
 
-    transition:
-        0.3s;
+    transition:0.3s;
 
 }
 
 
-.login-button:hover{
+.login-btn:hover{
 
     transform:
-        translateY(-2px);
+    translateY(-2px);
 
     box-shadow:
-
-        0 12px 30px
-        rgba(0,200,150,0.25);
+    0 12px 30px
+    rgba(0,200,150,0.25);
 
 }
 
 
-.login-button:disabled{
+.login-btn:disabled{
 
-    opacity:0.65;
+    opacity:0.6;
 
     cursor:not-allowed;
 
-    transform:none;
-
 }
 
 
-/* =====================================================
-   LOADING
-===================================================== */
-
-.loading{
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-}
-
-
-.spinner{
-
-    width:18px;
-
-    height:18px;
-
-    border:
-
-        3px solid
-        rgba(255,255,255,0.3);
-
-    border-top-color:
-        white;
-
-    border-radius:50%;
-
-    animation:
-        spin 0.8s linear infinite;
-
-}
-
-
-@keyframes spin{
-
-    to{
-
-        transform:
-            rotate(360deg);
-
-    }
-
-}
-
-
-/* =====================================================
+/* ================================
    MESSAGE
-===================================================== */
+================================ */
 
 .message{
 
@@ -397,15 +297,13 @@ body{
 
     margin-top:18px;
 
-    padding:13px 15px;
+    padding:12px;
 
     border-radius:10px;
 
     text-align:center;
 
     font-size:13px;
-
-    line-height:1.5;
 
 }
 
@@ -414,14 +312,14 @@ body{
 
     display:block;
 
-    color:#ff8585;
+    color:#ff7777;
 
     background:
-        rgba(255,60,60,0.08);
+    rgba(255,50,50,0.08);
 
     border:
-        1px solid
-        rgba(255,60,60,0.25);
+    1px solid
+    rgba(255,50,50,0.25);
 
 }
 
@@ -430,61 +328,48 @@ body{
 
     display:block;
 
-    color:#5dffb5;
+    color:#4dffae;
 
     background:
-        rgba(0,200,120,0.08);
+    rgba(0,200,120,0.08);
 
     border:
-        1px solid
-        rgba(0,200,120,0.25);
+    1px solid
+    rgba(0,200,120,0.25);
 
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* ================================
+   LOADING
+================================ */
+
+.loading{
+
+    display:none;
+
+}
+
 
 .footer{
 
-    text-align:center;
-
     margin-top:25px;
 
-    color:#61778a;
+    text-align:center;
+
+    color:#607487;
 
     font-size:12px;
 
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(
-    max-width:480px
-){
-
-    body{
-
-        padding:15px;
-
-    }
+@media(max-width:480px){
 
     .login-card{
 
         padding:
-            32px 22px;
-
-        border-radius:20px;
-
-    }
-
-    .title{
-
-        font-size:24px;
+        32px 22px;
 
     }
 
@@ -494,582 +379,529 @@ body{
 
 </head>
 
+
 <body>
 
-<div class="login-wrapper">
 
 <div class="login-card">
 
-<!-- ==================================================
-     LOGO
-=================================================== -->
+
+<!-- LOGO -->
 
 <div class="logo">
 
-```
-L4
-```
+    SM
 
 </div>
 
-<!-- ==================================================
-     TITLE
-=================================================== -->
 
-<div class="title">
+<h1>
 
-```
-Welcome Back
-```
+    Welcome Back
 
-</div>
+</h1>
+
 
 <div class="subtitle">
 
-```
-Sign in to LINK4 COMMUNICATION
-```
+    Sign in to System Menagment
 
 </div>
 
-<!-- ==================================================
-     LOGIN FORM
-=================================================== -->
+
+<!-- LOGIN FORM -->
 
 <form id="loginForm">
 
-<!-- USERNAME -->
 
-<div class="form-group">
+<div class="input-group">
 
 <label for="username">
 
-```
 Username
-```
 
 </label>
 
 <input
 
-```
 type="text"
 
 id="username"
 
-class="input"
-
-placeholder="Enter your username"
+placeholder="Enter username"
 
 autocomplete="username"
 
 required
-```
 
 >
 
 </div>
 
-<!-- PASSWORD -->
 
-<div class="form-group">
+<div class="input-group">
 
 <label for="password">
 
-```
 Password
-```
 
 </label>
 
 <input
 
-```
 type="password"
 
 id="password"
 
-class="input"
-
-placeholder="Enter your password"
+placeholder="Enter password"
 
 autocomplete="current-password"
 
 required
-```
 
 >
 
 </div>
 
-<!-- LOGIN BUTTON -->
 
 <button
 
-```
 type="submit"
 
-class="login-button"
+id="loginBtn"
 
-id="loginButton"
-```
+class="login-btn"
 
 >
 
-<span id="buttonText">
+<span id="btnText">
 
-```
 LOGIN
-```
 
 </span>
 
-<span
-
-```
-class="loading"
-
-id="loading"
-```
-
->
-
-```
-<span class="spinner"></span>
+<span id="loadingText" class="loading">
 
 Checking...
-```
 
 </span>
 
 </button>
 
+
 </form>
+
 
 <!-- MESSAGE -->
 
 <div
 
-```
 id="message"
 
 class="message"
-```
 
-> </div>
+></div>
 
-<!-- FOOTER -->
 
 <div class="footer">
 
-```
-© 2026 LINK4 COMMUNICATION
-```
+© 2026 System Menagment
 
 </div>
 
-</div>
 
 </div>
+
+
 
 <script>
 
-/* =====================================================
-   GOOGLE APPS SCRIPT WEB APP URL
-===================================================== */
+
+/* =================================================
+   GOOGLE APPS SCRIPT URL
+================================================= */
 
 const API_URL =
 "https://script.google.com/macros/s/AKfycbxbgyIg_ddBYIs8qkQvRN3xS3-ZG451C5y_2sNbVFWdWydzb9Mc6qV5CoWB5rjs91ghjQ/exec";
 
 
-/* =====================================================
-   ROLE REDIRECT SETTINGS
-===================================================== */
+
+/* =================================================
+   ROLE REDIRECT
+================================================= */
 
 const ROLE_REDIRECT = {
 
     "admin":
-        "admin.html",
+    "admin.html",
 
     "support":
-        "support.html",
+    "support.html",
 
     "call":
-        "call.html",
+    "call.html",
 
     "manager":
-        "manager.html",
+    "manager.html",
 
     "guest support":
-        "guest-support.html",
+    "guest-support.html",
 
     "guest admin":
-        "guest-admin.html"
+    "guest-admin.html"
 
 };
 
 
-/* =====================================================
-   ELEMENTS
-===================================================== */
+
+/* =================================================
+   GET ELEMENTS
+================================================= */
 
 const loginForm =
-    document.getElementById(
-        "loginForm"
-    );
+document.getElementById(
+    "loginForm"
+);
 
 
-const loginButton =
-    document.getElementById(
-        "loginButton"
-    );
+const loginBtn =
+document.getElementById(
+    "loginBtn"
+);
 
 
-const buttonText =
-    document.getElementById(
-        "buttonText"
-    );
+const btnText =
+document.getElementById(
+    "btnText"
+);
 
 
-const loading =
-    document.getElementById(
-        "loading"
-    );
+const loadingText =
+document.getElementById(
+    "loadingText"
+);
 
 
 const message =
-    document.getElementById(
-        "message"
-    );
+document.getElementById(
+    "message"
+);
 
 
-/* =====================================================
-   LOGIN FORM SUBMIT
-===================================================== */
+
+/* =================================================
+   LOGIN
+================================================= */
 
 loginForm.addEventListener(
 
-    "submit",
+"submit",
 
-    async function(event){
+async function(event){
 
-        event.preventDefault();
+    event.preventDefault();
 
 
-        /* ---------------------------------------------
-           GET INPUT
-        --------------------------------------------- */
+    /* ---------------------------------------------
+       GET USERNAME
+    --------------------------------------------- */
 
-        const username =
+    const username =
 
-            document
-            .getElementById(
-                "username"
-            )
-            .value
-            .trim();
+    document
+    .getElementById("username")
+    .value
+    .trim();
 
 
-        const password =
+    /* ---------------------------------------------
+       GET PASSWORD
+    --------------------------------------------- */
 
-            document
-            .getElementById(
-                "password"
-            )
-            .value
-            .trim();
+    const password =
 
+    document
+    .getElementById("password")
+    .value
+    .trim();
 
-        /* ---------------------------------------------
-           CLEAR MESSAGE
-        --------------------------------------------- */
 
-        message.className =
-            "message";
+    /* ---------------------------------------------
+       CLEAR MESSAGE
+    --------------------------------------------- */
 
-        message.textContent =
-            "";
+    message.className =
+    "message";
 
+    message.innerText =
+    "";
 
-        /* ---------------------------------------------
-           VALIDATION
-        --------------------------------------------- */
 
-        if(
-            !username ||
-            !password
-        ){
+    /* ---------------------------------------------
+       VALIDATION
+    --------------------------------------------- */
 
-            showMessage(
+    if(
+        username === "" ||
+        password === ""
+    ){
 
-                "Please enter your username and password.",
+        showMessage(
 
-                "error"
+            "Please enter username and password.",
 
-            );
+            "error"
 
-            return;
+        );
 
-        }
+        return;
 
+    }
 
-        /* ---------------------------------------------
-           START LOADING
-        --------------------------------------------- */
 
-        setLoading(true);
+    /* ---------------------------------------------
+       LOADING
+    --------------------------------------------- */
 
+    loginBtn.disabled =
+    true;
 
-        try{
+    btnText.style.display =
+    "none";
 
+    loadingText.style.display =
+    "inline";
 
-            /* -----------------------------------------
-               CREATE API URL
-            ------------------------------------------ */
 
-            const url =
+    try{
 
-                API_URL +
 
-                "?action=login" +
+        /* -----------------------------------------
+           CREATE URL
+        ------------------------------------------ */
 
-                "&username=" +
+        const loginURL =
 
-                encodeURIComponent(
-                    username
-                ) +
+        API_URL +
 
-                "&password=" +
+        "?action=login" +
 
-                encodeURIComponent(
-                    password
-                );
+        "&username=" +
 
+        encodeURIComponent(
+            username
+        ) +
 
-            /* -----------------------------------------
-               API REQUEST
-            ------------------------------------------ */
+        "&password=" +
 
-            const response =
+        encodeURIComponent(
+            password
+        );
 
-                await fetch(
-                    url,
-                    {
-                        method:
-                            "GET",
 
-                        cache:
-                            "no-store"
-                    }
-                );
+        /* -----------------------------------------
+           SEND REQUEST
+        ------------------------------------------ */
 
+        const response =
 
-            /* -----------------------------------------
-               READ JSON
-            ------------------------------------------ */
+        await fetch(
 
-            const data =
+            loginURL,
 
-                await response.json();
+            {
 
+                method:"GET",
 
-            /* -----------------------------------------
-               LOGIN SUCCESS
-            ------------------------------------------ */
-
-            if(
-                data.success === true
-            ){
-
-
-                /* -------------------------------------
-                   GET ROLE
-                -------------------------------------- */
-
-                const role =
-
-                    String(
-                        data.role || ""
-                    )
-                    .trim()
-                    .toLowerCase();
-
-
-                /* -------------------------------------
-                   FIND REDIRECT
-                -------------------------------------- */
-
-                const redirectFile =
-
-                    ROLE_REDIRECT[
-                        role
-                    ];
-
-
-                /* -------------------------------------
-                   CHECK ROLE
-                -------------------------------------- */
-
-                if(
-                    !redirectFile
-                ){
-
-                    showMessage(
-
-                        "Your role is not configured. Please contact administrator.",
-
-                        "error"
-
-                    );
-
-                    setLoading(false);
-
-                    return;
-
-                }
-
-
-                /* -------------------------------------
-                   SAVE SESSION
-                -------------------------------------- */
-
-                localStorage.setItem(
-
-                    "loggedIn",
-
-                    "true"
-
-                );
-
-
-                localStorage.setItem(
-
-                    "username",
-
-                    data.username ||
-                    username
-
-                );
-
-
-                localStorage.setItem(
-
-                    "name",
-
-                    data.name ||
-                    ""
-
-                );
-
-
-                localStorage.setItem(
-
-                    "role",
-
-                    role
-
-                );
-
-
-                localStorage.setItem(
-
-                    "status",
-
-                    data.status ||
-                    "Active"
-
-                );
-
-
-                /* -------------------------------------
-                   SUCCESS MESSAGE
-                -------------------------------------- */
-
-                showMessage(
-
-                    "Login successful. Redirecting...",
-
-                    "success"
-
-                );
-
-
-                /* -------------------------------------
-                   REDIRECT
-                -------------------------------------- */
-
-                setTimeout(
-
-                    function(){
-
-                        window.location.href =
-
-                            redirectFile;
-
-                    },
-
-                    700
-
-                );
-
+                cache:"no-store"
 
             }
 
-            else{
+        );
 
 
-                /* -------------------------------------
-                   LOGIN FAILED
-                -------------------------------------- */
+        /* -----------------------------------------
+           GET RESPONSE
+        ------------------------------------------ */
+
+        const data =
+
+        await response.json();
+
+
+        /* -----------------------------------------
+           SUCCESS
+        ------------------------------------------ */
+
+        if(
+            data.success === true
+        ){
+
+
+            /* GET ROLE */
+
+            const role =
+
+            String(
+                data.role || ""
+            )
+            .trim()
+            .toLowerCase();
+
+
+            /* FIND FILE */
+
+            const redirectFile =
+
+            ROLE_REDIRECT[
+                role
+            ];
+
+
+            /* ROLE NOT FOUND */
+
+            if(
+                !redirectFile
+            ){
 
                 showMessage(
 
-                    data.message ||
-
-                    "Invalid username or password.",
+                    "Role not configured: " +
+                    role,
 
                     "error"
 
                 );
 
+                resetLogin();
 
-                setLoading(false);
+                return;
 
             }
 
 
-        }
+            /* -------------------------------------
+               SAVE LOGIN DATA
+            -------------------------------------- */
 
-        catch(error){
-
-
-            console.error(
-                "Login Error:",
-                error
+            localStorage.setItem(
+                "loggedIn",
+                "true"
             );
 
 
+            localStorage.setItem(
+                "username",
+                data.username || username
+            );
+
+
+            localStorage.setItem(
+                "name",
+                data.name || ""
+            );
+
+
+            localStorage.setItem(
+                "role",
+                role
+            );
+
+
+            localStorage.setItem(
+                "status",
+                data.status || "Active"
+            );
+
+
+            /* -------------------------------------
+               SUCCESS MESSAGE
+            -------------------------------------- */
+
             showMessage(
 
-                "Unable to connect with server. Please check your Apps Script deployment and try again.",
+                "Login successful. Redirecting...",
+
+                "success"
+
+            );
+
+
+            /* -------------------------------------
+               REDIRECT
+            -------------------------------------- */
+
+            setTimeout(
+
+            function(){
+
+                window.location.href =
+                redirectFile;
+
+            },
+
+            700
+
+            );
+
+
+        }
+
+        else{
+
+
+            /* -------------------------------------
+               LOGIN FAILED
+            -------------------------------------- */
+
+            showMessage(
+
+                data.message ||
+
+                "Invalid username or password.",
 
                 "error"
 
             );
 
 
-            setLoading(false);
+            resetLogin();
 
         }
 
+
     }
+
+    catch(error){
+
+
+        console.error(
+            error
+        );
+
+
+        showMessage(
+
+            "Server connection failed. Please try again.",
+
+            "error"
+
+        );
+
+
+        resetLogin();
+
+    }
+
+}
 
 );
 
 
-/* =====================================================
+
+/* =================================================
    SHOW MESSAGE
-===================================================== */
+================================================= */
 
 function showMessage(
 
@@ -1079,56 +911,38 @@ function showMessage(
 
 ){
 
-    message.textContent =
-        text;
+    message.innerText =
+    text;
 
     message.className =
 
-        "message " +
-        type;
+    "message " +
+    type;
 
 }
 
 
-/* =====================================================
-   LOADING STATE
-===================================================== */
 
-function setLoading(
+/* =================================================
+   RESET LOGIN BUTTON
+================================================= */
 
-    status
+function resetLogin(){
 
-){
+    loginBtn.disabled =
+    false;
 
-    if(status){
+    btnText.style.display =
+    "inline";
 
-        loginButton.disabled =
-            true;
-
-        buttonText.style.display =
-            "none";
-
-        loading.style.display =
-            "flex";
-
-    }
-
-    else{
-
-        loginButton.disabled =
-            false;
-
-        buttonText.style.display =
-            "inline";
-
-        loading.style.display =
-            "none";
-
-    }
+    loadingText.style.display =
+    "none";
 
 }
+
 
 </script>
+
 
 </body>
 
