@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#07111f">
+
+<meta name="description"
+content="LINK4 COMMUNICATION Management System - Professional support, call, customer and operations management platform.">
+
+<title>LINK4 COMMUNICATION | Management System</title>
+
+<!-- GOOGLE FONT -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#07111f;
+
+    color:#ffffff;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+
+    height:600px;
+
+    background:rgba(0,200,140,0.08);
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    top:-250px;
+
+    left:-200px;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+
+    height:500px;
+
+    background:rgba(0,120,255,0.08);
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    bottom:-250px;
+
+    right:-150px;
+
+    z-index:-2;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+    background:rgba(7,17,31,0.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.07);
+
+}
+
+.nav-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    height:76px;
+
+    padding:0 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+}
+
+.logo-icon{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(135deg,#00d084,#00a86b);
+
+    color:#06131d;
+
+    font-size:20px;
+
+    box-shadow:0 10px 30px rgba(0,208,132,0.25);
+
+}
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo-text strong{
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+}
+
+.logo-text span{
+
+    font-size:10px;
+
+    color:#8fa3b8;
+
+    letter-spacing:2px;
+
+    margin-top:2px;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+.nav-links a{
+
+    color:#aebdca;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    transition:0.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#00d084;
+
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:11px 19px;
+
+    border-radius:10px;
+
+    color:#07111f !important;
+
+    background:#00d084;
+
+    font-weight:700 !important;
+
+    box-shadow:0 8px 25px rgba(0,208,132,0.2);
+
+    transition:0.3s;
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#10e99a;
+
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,0.04);
+
+    color:white;
+
+    font-size:19px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    padding:145px 25px 80px;
+
+    display:grid;
+
+    grid-template-columns:1.1fr 0.9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+/* HERO TEXT */
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 13px;
+
+    border-radius:50px;
+
+    background:rgba(0,208,132,0.08);
+
+    border:1px solid rgba(0,208,132,0.2);
+
+    color:#00d084;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+
+}
+
+.status-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#00d084;
+
+    box-shadow:0 0 12px #00d084;
+
+}
+
+
+.hero h1{
+
+    font-size:clamp(42px,6vw,72px);
+
+    line-height:1.05;
+
+    letter-spacing:-3px;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1 span{
+
+    color:#00d084;
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+    color:#9badbd;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+
+}
+
+.primary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 23px;
+
+    background:#00d084;
+
+    color:#06131d;
+
+    text-decoration:none;
+
+    border-radius:11px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:0.3s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(0,208,132,0.22);
+
+}
+
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 23px;
+
+    background:rgba(255,255,255,0.04);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    text-decoration:none;
+
+    border-radius:11px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:0.3s;
+
+}
+
+.secondary-btn:hover{
+
+    background:rgba(255,255,255,0.08);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =====================================================
+   HERO DASHBOARD CARD
+===================================================== */
+
+.hero-visual{
+
+    position:relative;
+
+}
+
+.dashboard-card{
+
+    width:100%;
+
+    max-width:500px;
+
+    margin:auto;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,0.09),
+        rgba(255,255,255,0.025)
+    );
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,0.35),
+
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    transform:perspective(1000px) rotateY(-4deg) rotateX(2deg);
+
+}
+
+
+/* CARD HEADER */
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.card-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.card-title-icon{
+
+    width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(0,208,132,0.12);
+
+    color:#00d084;
+
+}
+
+.card-title strong{
+
+    font-size:14px;
+
+}
+
+.card-title small{
+
+    display:block;
+
+    color:#7f92a5;
+
+    font-size:10px;
+
+    margin-top:3px;
+
+}
+
+.live{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#00d084;
+
+    font-size:10px;
+
+    font-weight:600;
+
+}
+
+
+/* STATS */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+.stat{
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+}
+
+.stat i{
+
+    color:#00d084;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+
+}
+
+.stat h3{
+
+    font-size:24px;
+
+    margin-bottom:4px;
+
+}
+
+.stat p{
+
+    color:#8193a4;
+
+    font-size:10px;
+
+}
+
+
+/* ACTIVITY */
+
+.activity{
+
+    padding:17px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.035);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+}
+
+.activity-title{
+
+    font-size:12px;
+
+    font-weight:600;
+
+    margin-bottom:14px;
+
+}
+
+.activity-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:10px 0;
+
+    border-bottom:1px solid rgba(255,255,255,0.05);
+
+}
+
+.activity-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.activity-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+}
+
+.activity-icon{
+
+    width:27px;
+
+    height:27px;
+
+    border-radius:8px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,208,132,0.1);
+
+    color:#00d084;
+
+    font-size:10px;
+
+}
+
+.activity-left span{
+
+    font-size:10px;
+
+    color:#a7b6c3;
+
+}
+
+.activity-status{
+
+    font-size:9px;
+
+    color:#00d084;
+
+}
+
+
+/* FLOATING BADGES */
+
+.float-card{
+
+    position:absolute;
+
+    padding:12px 15px;
+
+    border-radius:12px;
+
+    background:rgba(15,29,45,0.92);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+
+}
+
+.float-card.one{
+
+    top:15%;
+
+    right:-30px;
+
+}
+
+.float-card.two{
+
+    bottom:10%;
+
+    left:-35px;
+
+}
+
+.float-card strong{
+
+    display:block;
+
+    font-size:14px;
+
+}
+
+.float-card span{
+
+    color:#7f93a5;
+
+    font-size:9px;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:100px 25px;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    max-width:650px;
+
+    margin:0 auto 55px;
+
+}
+
+.section-heading span{
+
+    color:#00d084;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.section-heading h2{
+
+    font-size:36px;
+
+    letter-spacing:-1px;
+
+    margin:13px 0;
+
+}
+
+.section-heading p{
+
+    color:#8497a9;
+
+    line-height:1.7;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.feature-card{
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.035);
+
+    border:1px solid rgba(255,255,255,0.07);
+
+    transition:0.35s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:rgba(0,208,132,0.3);
+
+    background:rgba(0,208,132,0.04);
+
+}
+
+.feature-icon{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,208,132,0.1);
+
+    color:#00d084;
+
+    font-size:19px;
+
+    margin-bottom:22px;
+
+}
+
+.feature-card h3{
+
+    font-size:17px;
+
+    margin-bottom:10px;
+
+}
+
+.feature-card p{
+
+    color:#8193a4;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   MANAGEMENT MODULES
+===================================================== */
+
+.modules{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.module{
+
+    padding:23px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,0.035);
+
+    border:1px solid rgba(255,255,255,0.07);
+
+    transition:0.3s;
+
+}
+
+.module:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(0,208,132,0.25);
+
+}
+
+.module i{
+
+    color:#00d084;
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+}
+
+.module h4{
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+.module p{
+
+    color:#7f92a5;
+
+    font-size:11px;
+
+    line-height:1.6;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+    max-width:1200px;
+
+    margin:40px auto 100px;
+
+    padding:55px 40px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        rgba(0,208,132,0.12),
+
+        rgba(0,130,255,0.08)
+
+    );
+
+    border:1px solid rgba(0,208,132,0.15);
+
+}
+
+.cta h2{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+.cta p{
+
+    color:#8ea1b2;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    border-top:1px solid rgba(255,255,255,0.07);
+
+    padding:35px 25px;
+
+}
+
+.footer-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.footer-brand{
+
+    color:#8ea0b1;
+
+    font-size:12px;
+
+}
+
+.footer-brand strong{
+
+    color:#fff;
+
+}
+
+.footer-copy{
+
+    color:#617487;
+
+    font-size:11px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:76px;
+
+        left:0;
+
+        width:100%;
+
+        padding:20px 25px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        background:#081522;
+
+        border-bottom:1px solid rgba(255,255,255,0.07);
+
+    }
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+    .nav-links a{
+
+        padding:10px 0;
+
+    }
+
+    .login-btn{
+
+        justify-content:center;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:55px;
+
+    }
+
+    .hero p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .float-card.one{
+
+        right:-5px;
+
+    }
+
+    .float-card.two{
+
+        left:-5px;
+
+    }
+
+    .features{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .modules{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .nav-container{
+
+        padding:0 18px;
+
+    }
+
+    .hero{
+
+        padding-left:18px;
+
+        padding-right:18px;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+    .dashboard-card{
+
+        padding:16px;
+
+    }
+
+    .float-card{
+
+        display:none;
+
+    }
+
+    .section{
+
+        padding:75px 18px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:29px;
+
+    }
+
+    .features{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .modules{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cta{
+
+        margin:20px 18px 70px;
+
+        padding:40px 22px;
+
+    }
+
+    .cta h2{
+
+        font-size:26px;
+
+    }
+
+    .footer-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+.dashboard-card{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">
+
+<i class="fa-solid fa-network-wired"></i>
+
+</div>
+
+<div class="logo-text">
+
+<strong>LINK4</strong>
+
+<span>COMMUNICATION</span>
+
+</div>
+
+</a>
+
+<nav class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+
+<a href="#features">Features</a>
+
+<a href="#modules">Modules</a>
+
+<a href="#about">About</a>
+
+<a href="login.html" class="login-btn">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</a>
+
+</nav>
+
+<button class="menu-btn" onclick="toggleMenu()">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main id="home">
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+
+<span class="status-dot"></span>
+
+Professional Management Platform
+
+</div>
+
+<h1>
+
+Manage Smarter.<br>
+
+Work <span>Faster.</span>
+
+</h1>
+
+<p>
+
+Welcome to the LINK4 COMMUNICATION Management System —
+a centralized platform designed to manage support operations,
+customer requests, calls, team activities and operational history
+from one professional workspace.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="login.html" class="primary-btn">
+
+<i class="fa-solid fa-arrow-right-to-bracket"></i>
+
+Access System
+
+</a>
+
+<a href="#features" class="secondary-btn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+Explore Platform
+
+</a>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD PREVIEW -->
+
+<div class="hero-visual">
+
+<div class="dashboard-card">
+
+<div class="card-header">
+
+<div class="card-title">
+
+<div class="card-title-icon">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<div>
+
+<strong>Management Overview</strong>
+
+<small>LINK4 Operations Center</small>
+
+</div>
+
+</div>
+
+<div class="live">
+
+<span class="status-dot"></span>
+
+LIVE
+
+</div>
+
+</div>
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>24</h3>
+
+<p>Active Support</p>
+
+</div>
+
+<div class="stat">
+
+<i class="fa-solid fa-phone"></i>
+
+<h3>18</h3>
+
+<p>Pending Calls</p>
+
+</div>
+
+<div class="stat">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>156</h3>
+
+<p>Customers</p>
+
+</div>
+
+<div class="stat">
+
+<i class="fa-solid fa-check-double"></i>
+
+<h3>92%</h3>
+
+<p>Completed</p>
+
+</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-title">
+
+Recent Operations
+
+</div>
+
+<div class="activity-row">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-ticket"></i>
+
+</div>
+
+<span>New support request received</span>
+
+</div>
+
+<div class="activity-status">
+
+Active
+
+</div>
+
+</div>
+
+<div class="activity-row">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-phone-volume"></i>
+
+</div>
+
+<span>Customer call completed</span>
+
+</div>
+
+<div class="activity-status">
+
+Done
+
+</div>
+
+</div>
+
+<div class="activity-row">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+</div>
+
+<span>History record updated</span>
+
+</div>
+
+<div class="activity-status">
+
+Logged
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="float-card one">
+
+<strong>99.9%</strong>
+
+<span>System Availability</span>
+
+</div>
+
+<div class="float-card two">
+
+<strong><i class="fa-solid fa-shield-halved"></i> Secure</strong>
+
+<span>Protected Workspace</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="section" id="features">
+
+<div class="section-heading">
+
+<span>Powerful Features</span>
+
+<h2>Everything You Need in One System</h2>
+
+<p>
+
+A centralized management environment that helps teams
+organize daily operations, handle customer requests and
+maintain a clear activity history.
+
+</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+<h3>Support Management</h3>
+
+<p>
+
+Manage incoming customer support requests,
+track pending tasks and coordinate support activities
+efficiently.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-phone-volume"></i>
+
+</div>
+
+<h3>Call Management</h3>
+
+<p>
+
+Organize customer calls, follow-up activities and
+communication tasks from a centralized workspace.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+</div>
+
+<h3>Support History</h3>
+
+<p>
+
+Keep a clear record of completed support and call
+activities for better tracking and future reference.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-users-gear"></i>
+
+</div>
+
+<h3>Team Operations</h3>
+
+<p>
+
+Help different teams manage their assigned responsibilities
+and work together through a structured workflow.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+</div>
+
+<h3>Performance Overview</h3>
+
+<p>
+
+Monitor important operational information through
+simple and organized dashboard insights.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+</div>
+
+<h3>Secure Access</h3>
+
+<p>
+
+Controlled login access helps protect internal management
+pages and keeps the workspace organized.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     MODULES
+===================================================== -->
+
+<section class="section" id="modules">
+
+<div class="section-heading">
+
+<span>Management Modules</span>
+
+<h2>Built for Complete Operations</h2>
+
+<p>
+
+LINK4 brings essential management functions together
+to create a more connected and efficient workflow.
+
+</p>
+
+</div>
+
+<div class="modules">
+
+<div class="module">
+
+<i class="fa-solid fa-file-circle-plus"></i>
+
+<h4>New Entry</h4>
+
+<p>
+
+Create and submit new customer support requests
+for processing.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-headset"></i>
+
+<h4>Pending Support</h4>
+
+<p>
+
+Review and process support requests waiting
+for team action.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-phone"></i>
+
+<h4>Pending Call</h4>
+
+<p>
+
+Manage customer calls and follow-up communication
+tasks.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<h4>History</h4>
+
+<p>
+
+Review completed support and operational records
+in one place.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-user"></i>
+
+<h4>User Account</h4>
+
+<p>
+
+Manage personal account information and
+access details.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h4>Dashboard</h4>
+
+<p>
+
+Get a quick overview of system activity and
+important operations.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-users"></i>
+
+<h4>Customer Management</h4>
+
+<p>
+
+Organize customer-related information and
+service activities.
+
+</p>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-gears"></i>
+
+<h4>Operations</h4>
+
+<p>
+
+Maintain a structured workflow for daily
+management operations.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="section" id="about">
+
+<div class="section-heading">
+
+<span>About LINK4</span>
+
+<h2>A Better Way to Manage Work</h2>
+
+<p>
+
+LINK4 COMMUNICATION Management System is designed
+to simplify internal workflows, improve team coordination
+and provide a structured environment for managing
+customer support and operational activities.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<h2>Ready to Access the Management System?</h2>
+
+<p>
+
+Login to your secure LINK4 workspace and start managing
+your daily operations from one centralized platform.
+
+</p>
+
+<a href="login.html" class="primary-btn">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login to System
+
+</a>
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<strong>LINK4 COMMUNICATION</strong>
+
+<br>
+
+Professional Management System
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 LINK4 COMMUNICATION. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+</script>
+
+</body>
+
+</html>
