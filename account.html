@@ -1,33 +1,53 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#07111f"><title>My Account | System Menagment</title><script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#06131f"><title>My Account | LINK4 COMMUNICATION</title><script>
+
+/* =====================================================
+   LOGIN SECURITY
+===================================================== */
+
 (function(){
 
-    if(localStorage.getItem("loggedIn") !== "true"){
+    const loggedIn =
+        localStorage.getItem("loggedIn");
+
+    if(loggedIn !== "true"){
 
         window.location.replace("login.html");
 
     }
 
 })();
+
 </script><style>
 
-/* ================================
+/* =====================================================
    RESET
-================================ */
+===================================================== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 body{
 
     font-family:
+
     "Segoe UI",
     Arial,
+    Helvetica,
     sans-serif;
 
-    background:#07111f;
+    background:#06131f;
 
     color:#ffffff;
 
@@ -36,55 +56,61 @@ body{
 }
 
 
-/* ================================
+/* =====================================================
    APP
-================================ */
+===================================================== */
 
 .app{
 
     min-height:100vh;
 
+    display:flex;
+
 }
 
 
-/* ================================
+/* =====================================================
    SIDEBAR
-================================ */
+===================================================== */
 
 .sidebar{
 
-    width:250px;
+    width:260px;
 
-    height:100vh;
+    min-height:100vh;
 
     position:fixed;
 
+    left:0;
+
     top:0;
 
-    left:0;
+    bottom:0;
 
     z-index:1000;
 
-    padding:20px 15px;
+    padding:22px 16px;
 
-    background:#0a1826;
+    background:#081a29;
 
     border-right:
+
     1px solid
-    rgba(255,255,255,.07);
+
+    rgba(255,255,255,0.07);
 
     display:flex;
 
     flex-direction:column;
 
-    transition:.3s ease;
+    transition:0.3s ease;
 
 }
 
 
-/* ================================
+/* =====================================================
    BRAND
-================================ */
+===================================================== */
 
 .brand{
 
@@ -95,19 +121,23 @@ body{
     gap:12px;
 
     padding:
-    5px 8px 22px;
+
+    5px 10px 24px;
 
     border-bottom:
+
     1px solid
-    rgba(255,255,255,.06);
+
+    rgba(255,255,255,0.06);
 
 }
 
+
 .brand-logo{
 
-    width:45px;
+    width:48px;
 
-    height:45px;
+    height:48px;
 
     display:flex;
 
@@ -115,47 +145,56 @@ body{
 
     justify-content:center;
 
-    border-radius:13px;
+    border-radius:14px;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #00d084,
+
         #008cff
+
     );
 
-    font-weight:800;
-
-    font-size:16px;
-
-}
-
-.brand-title{
-
-    font-size:14px;
+    font-size:17px;
 
     font-weight:800;
 
 }
 
-.brand-title small{
+
+.brand-name{
+
+    font-size:15px;
+
+    font-weight:800;
+
+    line-height:1.3;
+
+}
+
+
+.brand-name small{
 
     display:block;
 
-    margin-top:4px;
+    margin-top:3px;
 
-    color:#6f8798;
+    color:#6f899b;
 
-    font-size:8px;
+    font-size:9px;
 
     letter-spacing:1.5px;
 
 }
 
 
-/* ================================
-   USER MINI
-================================ */
+/* =====================================================
+   MINI USER
+===================================================== */
 
 .user-mini{
 
@@ -163,11 +202,14 @@ body{
 
     align-items:center;
 
-    gap:10px;
+    gap:11px;
 
-    padding:18px 8px;
+    padding:15px 10px;
+
+    margin-bottom:15px;
 
 }
+
 
 .user-avatar{
 
@@ -184,21 +226,30 @@ body{
     justify-content:center;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #00c878,
+
         #008cff
+
     );
+
+    font-size:14px;
 
     font-weight:800;
 
 }
+
 
 .user-info{
 
     min-width:0;
 
 }
+
 
 .user-info strong{
 
@@ -208,13 +259,14 @@ body{
 
     overflow:hidden;
 
-    white-space:nowrap;
-
     text-overflow:ellipsis;
+
+    white-space:nowrap;
 
     font-size:12px;
 
 }
+
 
 .user-info span{
 
@@ -222,16 +274,16 @@ body{
 
     margin-top:3px;
 
-    color:#6e8798;
+    color:#6d8799;
 
     font-size:10px;
 
 }
 
 
-/* ================================
-   MENU
-================================ */
+/* =====================================================
+   SIDEBAR MENU
+===================================================== */
 
 .sidebar-menu{
 
@@ -239,9 +291,10 @@ body{
 
     flex-direction:column;
 
-    gap:6px;
+    gap:7px;
 
 }
+
 
 .sidebar-menu a{
 
@@ -249,13 +302,15 @@ body{
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
-    padding:11px 12px;
+    width:100%;
 
-    border-radius:11px;
+    padding:12px 13px;
 
-    color:#8da1af;
+    border-radius:12px;
+
+    color:#91a5b4;
 
     text-decoration:none;
 
@@ -264,43 +319,63 @@ body{
     font-weight:600;
 
     border:
+
     1px solid
+
     transparent;
 
-    transition:.2s;
+    transition:0.25s ease;
 
 }
+
 
 .sidebar-menu a:hover{
 
-    color:white;
+    color:#ffffff;
 
     background:
-    rgba(255,255,255,.04);
+
+    rgba(255,255,255,0.045);
+
+    border-color:
+
+    rgba(255,255,255,0.06);
+
+    transform:
+
+    translateX(3px);
 
 }
+
 
 .sidebar-menu a.active{
 
-    color:white;
+    color:#ffffff;
 
     background:
+
     linear-gradient(
+
         135deg,
-        rgba(0,208,132,.15),
-        rgba(0,140,255,.10)
+
+        rgba(0,200,120,0.18),
+
+        rgba(0,140,255,0.12)
+
     );
 
     border-color:
-    rgba(0,208,132,.15);
+
+    rgba(0,200,120,0.18);
 
 }
 
+
 .menu-icon{
 
-    width:32px;
+    width:34px;
 
-    height:32px;
+    height:34px;
 
     display:flex;
 
@@ -308,48 +383,63 @@ body{
 
     justify-content:center;
 
-    border-radius:9px;
+    border-radius:10px;
 
     background:
-    rgba(255,255,255,.04);
 
-    font-size:15px;
+    rgba(255,255,255,0.045);
+
+    font-size:16px;
+
+    flex-shrink:0;
 
 }
 
 
-/* ================================
+/* =====================================================
    SIDEBAR BOTTOM
-================================ */
+===================================================== */
 
 .sidebar-bottom{
 
     margin-top:auto;
 
+    padding-top:20px;
+
+    border-top:
+
+    1px solid
+
+    rgba(255,255,255,0.06);
+
 }
+
 
 .logout-btn{
 
     width:100%;
 
-    padding:11px 12px;
-
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
-    border-radius:11px;
+    padding:12px 13px;
+
+    border-radius:12px;
 
     border:
+
     1px solid
-    rgba(255,70,70,.12);
+
+    rgba(255,70,70,0.10);
 
     background:
-    rgba(255,70,70,.04);
 
-    color:#ff8585;
+    rgba(255,70,70,0.04);
+
+    color:#ff8b8b;
 
     cursor:pointer;
 
@@ -357,34 +447,50 @@ body{
 
     font-weight:600;
 
+    transition:0.25s;
+
 }
 
 
-/* ================================
+.logout-btn:hover{
+
+    background:
+
+    rgba(255,70,70,0.10);
+
+    border-color:
+
+    rgba(255,70,70,0.20);
+
+}
+
+
+/* =====================================================
    MAIN
-================================ */
+===================================================== */
 
 .main{
 
-    margin-left:250px;
+    width:
+
+    calc(100% - 260px);
+
+    margin-left:260px;
 
     min-height:100vh;
 
-    padding:22px;
+    padding:25px;
 
 }
 
 
-/* ================================
+/* =====================================================
    TOPBAR
-================================ */
+===================================================== */
 
 .topbar{
 
-    min-height:65px;
-
-    padding:
-    12px 18px;
+    min-height:70px;
 
     display:flex;
 
@@ -392,17 +498,30 @@ body{
 
     justify-content:space-between;
 
-    gap:15px;
+    gap:20px;
 
-    background:#0a1826;
+    padding:
+
+    15px 20px;
 
     border:
-    1px solid
-    rgba(255,255,255,.06);
 
-    border-radius:16px;
+    1px solid
+
+    rgba(255,255,255,0.06);
+
+    border-radius:18px;
+
+    background:
+
+    rgba(8,25,40,0.75);
+
+    backdrop-filter:
+
+    blur(15px);
 
 }
+
 
 .page-title{
 
@@ -414,47 +533,28 @@ body{
 
 }
 
+
 .page-title h1{
 
-    font-size:21px;
+    font-size:22px;
+
+    margin-bottom:4px;
 
 }
+
 
 .page-title p{
 
-    margin-top:3px;
+    color:#6f8798;
 
-    color:#718898;
-
-    font-size:10px;
-
-}
-
-.mobile-menu-btn{
-
-    display:none;
-
-    width:40px;
-
-    height:40px;
-
-    border:0;
-
-    border-radius:10px;
-
-    background:
-    rgba(255,255,255,.05);
-
-    color:white;
-
-    font-size:18px;
+    font-size:11px;
 
 }
 
 
-/* ================================
+/* =====================================================
    TOP USER
-================================ */
+===================================================== */
 
 .top-user{
 
@@ -466,11 +566,13 @@ body{
 
 }
 
+
 .top-user-info{
 
     text-align:right;
 
 }
+
 
 .top-user-info strong{
 
@@ -480,25 +582,29 @@ body{
 
 }
 
+
 .top-user-info span{
 
     display:block;
-
-    margin-top:3px;
 
     color:#00d084;
 
     font-size:10px;
 
+    margin-top:3px;
+
+    text-transform:capitalize;
+
 }
+
 
 .top-avatar{
 
-    width:40px;
+    width:42px;
 
-    height:40px;
+    height:42px;
 
-    border-radius:11px;
+    border-radius:12px;
 
     display:flex;
 
@@ -507,73 +613,122 @@ body{
     justify-content:center;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #00c878,
+
         #008cff
+
     );
+
+    font-size:13px;
 
     font-weight:800;
 
 }
 
 
-/* ================================
-   PROFILE
-================================ */
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-.profile-card{
+.mobile-menu-btn{
 
-    margin-top:22px;
+    display:none;
 
-    padding:28px;
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:
+
+    rgba(255,255,255,0.05);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+/* =====================================================
+   PROFILE HERO
+===================================================== */
+
+.profile-hero{
+
+    margin-top:25px;
+
+    padding:35px;
 
     display:flex;
 
     align-items:center;
 
-    gap:25px;
+    gap:30px;
+
+    border-radius:22px;
 
     background:
+
     linear-gradient(
+
         135deg,
-        rgba(0,208,132,.10),
-        rgba(0,140,255,.07)
+
+        rgba(0,200,120,0.12),
+
+        rgba(0,130,255,0.08)
+
     );
 
     border:
-    1px solid
-    rgba(255,255,255,.07);
 
-    border-radius:20px;
+    1px solid
+
+    rgba(255,255,255,0.07);
 
 }
 
 
-/* ================================
-   PHOTO
-================================ */
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
 
 .profile-photo-wrap{
 
-    width:110px;
+    width:125px;
 
-    height:110px;
-
-    flex-shrink:0;
+    height:125px;
 
     padding:4px;
 
     border-radius:50%;
 
+    flex-shrink:0;
+
     background:
+
     linear-gradient(
+
         135deg,
+
         #00d084,
+
         #008cff
+
     );
 
 }
+
 
 .profile-photo{
 
@@ -581,17 +736,22 @@ body{
 
     height:100%;
 
-    object-fit:cover;
-
     border-radius:50%;
 
-    border:
-    4px solid
-    #0a1826;
+    object-fit:cover;
 
     display:none;
 
+    background:#102638;
+
+    border:
+
+    4px solid
+
+    #081a29;
+
 }
+
 
 .default-photo{
 
@@ -601,178 +761,211 @@ body{
 
     border-radius:50%;
 
-    border:
-    4px solid
-    #0a1826;
-
-    background:#102638;
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
 
+    background:#102638;
+
+    border:
+
+    4px solid
+
+    #081a29;
+
+    font-size:45px;
+
+    font-weight:700;
+
     color:#00d084;
-
-    font-size:38px;
-
-    font-weight:800;
 
 }
 
 
-/* ================================
-   PROFILE TEXT
-================================ */
+/* =====================================================
+   PROFILE DETAILS
+===================================================== */
 
 .profile-details h2{
 
-    font-size:26px;
+    font-size:28px;
+
+    margin-bottom:7px;
 
 }
 
-.profile-username{
 
-    margin-top:5px;
+.profile-details .username{
 
-    color:#71899a;
+    color:#7e96a7;
 
-    font-size:12px;
+    font-size:13px;
+
+    margin-bottom:14px;
 
 }
 
-.badges{
+
+.profile-badges{
 
     display:flex;
 
-    gap:8px;
-
     flex-wrap:wrap;
 
-    margin-top:13px;
+    gap:8px;
 
 }
+
 
 .badge{
 
     padding:
-    6px 11px;
+
+    7px 12px;
 
     border-radius:20px;
 
-    font-size:10px;
-
     background:
-    rgba(255,255,255,.05);
+
+    rgba(255,255,255,0.05);
 
     border:
+
     1px solid
-    rgba(255,255,255,.07);
+
+    rgba(255,255,255,0.07);
+
+    color:#b7c7d1;
+
+    font-size:10px;
 
 }
+
 
 .badge.role{
 
-    color:#5de9ae;
+    color:#65eab2;
+
+    border-color:
+
+    rgba(0,200,120,0.18);
 
 }
+
 
 .badge.status{
 
-    color:#67baff;
+    color:#70bfff;
+
+    border-color:
+
+    rgba(0,140,255,0.18);
 
 }
 
 
-/* ================================
+/* =====================================================
    SECTION
-================================ */
+===================================================== */
 
 .section{
 
-    margin-top:23px;
+    margin-top:25px;
 
 }
 
-.section-header{
+
+.section-title{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:10px;
 
-    margin-bottom:13px;
+    margin-bottom:15px;
+
+}
+
+
+.section-title h2{
+
+    font-size:17px;
 
 }
 
-.section-header h2{
-
-    font-size:16px;
-
-}
 
 .section-line{
 
-    height:1px;
-
     flex:1;
 
+    height:1px;
+
     background:
-    rgba(255,255,255,.06);
+
+    rgba(255,255,255,0.06);
 
 }
 
 
-/* ================================
-   ACCOUNT GRID
-================================ */
+/* =====================================================
+   ACCOUNT INFORMATION
+===================================================== */
 
 .account-grid{
 
     display:grid;
 
     grid-template-columns:
+
     repeat(2,1fr);
 
-    gap:13px;
+    gap:15px;
 
 }
+
 
 .info-card{
 
-    padding:17px;
+    min-height:80px;
 
-    min-height:75px;
+    padding:18px;
 
-    background:#0a1826;
+    border-radius:16px;
+
+    background:#081a29;
 
     border:
-    1px solid
-    rgba(255,255,255,.06);
 
-    border-radius:14px;
+    1px solid
+
+    rgba(255,255,255,0.06);
 
 }
+
 
 .info-label{
 
     display:block;
 
-    margin-bottom:7px;
+    margin-bottom:8px;
 
-    color:#637c8d;
+    color:#607a8c;
 
-    font-size:9px;
+    font-size:10px;
 
     text-transform:uppercase;
 
-    letter-spacing:.7px;
+    letter-spacing:0.7px;
 
 }
 
+
 .info-value{
+
+    display:block;
 
     color:#e5edf2;
 
@@ -785,11 +978,11 @@ body{
 }
 
 
-/* ================================
+/* =====================================================
    PASSWORD
-================================ */
+===================================================== */
 
-.password-box{
+.password-row{
 
     display:flex;
 
@@ -801,7 +994,10 @@ body{
 
 }
 
+
 .password-text{
+
+    flex:1;
 
     overflow:hidden;
 
@@ -809,21 +1005,26 @@ body{
 
 }
 
+
 .password-toggle{
 
     flex-shrink:0;
 
     padding:
-    6px 10px;
+
+    6px 11px;
 
     border-radius:8px;
 
     border:
+
     1px solid
-    rgba(0,208,132,.15);
+
+    rgba(0,200,120,0.18);
 
     background:
-    rgba(0,208,132,.06);
+
+    rgba(0,200,120,0.07);
 
     color:#00d084;
 
@@ -831,14 +1032,14 @@ body{
 
     font-size:10px;
 
-    font-weight:600;
+    font-weight:700;
 
 }
 
 
-/* ================================
-   PROFESSIONS
-================================ */
+/* =====================================================
+   PROFESSIONAL INFORMATION
+===================================================== */
 
 .profession-list{
 
@@ -846,16 +1047,14 @@ body{
 
     flex-direction:column;
 
-    gap:10px;
+    gap:12px;
 
 }
 
+
 .profession-card{
 
-    min-height:68px;
-
-    padding:
-    12px 15px;
+    min-height:72px;
 
     display:flex;
 
@@ -863,29 +1062,52 @@ body{
 
     justify-content:space-between;
 
-    gap:15px;
+    gap:20px;
 
-    background:#0a1826;
+    padding:
+
+    14px 18px;
+
+    border-radius:16px;
+
+    background:#081a29;
 
     border:
-    1px solid
-    rgba(255,255,255,.06);
 
-    border-radius:14px;
+    1px solid
+
+    rgba(255,255,255,0.06);
+
+    transition:0.25s;
 
 }
 
-.profession-left{
+
+.profession-card:hover{
+
+    border-color:
+
+    rgba(0,200,120,0.18);
+
+    transform:
+
+    translateX(3px);
+
+}
+
+
+.profession-name-area{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
     min-width:0;
 
 }
+
 
 .profession-number{
 
@@ -901,48 +1123,63 @@ body{
 
     justify-content:center;
 
-    border-radius:9px;
+    border-radius:10px;
+
+    background:
+
+    rgba(0,200,120,0.08);
 
     color:#00d084;
 
-    background:
-    rgba(0,208,132,.07);
-
     font-size:11px;
 
-    font-weight:800;
+    font-weight:700;
 
 }
 
+
+.profession-text{
+
+    min-width:0;
+
+}
+
+
 .profession-label{
 
-    color:#637c8d;
+    color:#607a8c;
 
     font-size:9px;
 
     text-transform:uppercase;
 
+    margin-bottom:4px;
+
 }
+
 
 .profession-value{
 
-    margin-top:3px;
-
-    color:#e7eef2;
+    color:#e5edf2;
 
     font-size:13px;
 
     font-weight:600;
 
+    word-break:break-word;
+
 }
+
+
+/* =====================================================
+   COMPANY LOGO
+===================================================== */
 
 .company-logo-wrap{
 
-    width:55px;
+    width:58px;
 
-    height:55px;
-
-    padding:6px;
+    height:58px;
 
     flex-shrink:0;
 
@@ -952,16 +1189,22 @@ body{
 
     justify-content:center;
 
-    border-radius:11px;
+    padding:6px;
+
+    border-radius:13px;
 
     background:
-    rgba(255,255,255,.04);
+
+    rgba(255,255,255,0.04);
 
     border:
+
     1px solid
-    rgba(255,255,255,.07);
+
+    rgba(255,255,255,0.07);
 
 }
+
 
 .company-logo{
 
@@ -971,71 +1214,91 @@ body{
 
     object-fit:contain;
 
-    border-radius:7px;
+    border-radius:8px;
 
 }
 
 
-/* ================================
-   OVERLAY
-================================ */
+/* =====================================================
+   LOADING
+===================================================== */
 
-.sidebar-overlay{
+.loading{
 
-    display:none;
-
-}
-
-
-/* ================================
-   FOOTER
-================================ */
-
-.footer{
-
-    padding:25px 0 10px;
+    padding:30px;
 
     text-align:center;
 
-    color:#506878;
+    color:#6f8798;
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    margin-top:30px;
+
+    padding:20px 0;
+
+    text-align:center;
+
+    color:#4f6879;
 
     font-size:10px;
 
 }
 
 
-/* ================================
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.sidebar-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:900;
+
+    background:
+
+    rgba(0,0,0,0.65);
+
+}
+
+
+/* =====================================================
    RESPONSIVE
-================================ */
+===================================================== */
 
 @media(max-width:800px){
 
     .sidebar{
 
         transform:
+
         translateX(-100%);
 
     }
 
+
     .sidebar.open{
 
         transform:
+
         translateX(0);
 
     }
 
-    .sidebar-overlay{
-
-        position:fixed;
-
-        inset:0;
-
-        z-index:900;
-
-        background:
-        rgba(0,0,0,.65);
-
-    }
 
     .sidebar-overlay.show{
 
@@ -1043,13 +1306,17 @@ body{
 
     }
 
+
     .main{
+
+        width:100%;
 
         margin-left:0;
 
-        padding:14px;
+        padding:15px;
 
     }
+
 
     .mobile-menu-btn{
 
@@ -1057,7 +1324,10 @@ body{
 
     }
 
-    .profile-card{
+
+    .profile-hero{
+
+        padding:25px;
 
         flex-direction:column;
 
@@ -1065,7 +1335,8 @@ body{
 
     }
 
-    .badges{
+
+    .profile-badges{
 
         justify-content:center;
 
@@ -1082,118 +1353,159 @@ body{
 
     }
 
+
+    .profile-photo-wrap{
+
+        width:105px;
+
+        height:105px;
+
+    }
+
+
+    .profile-details h2{
+
+        font-size:23px;
+
+    }
+
+
     .top-user-info{
 
         display:none;
 
     }
 
-    .profile-card{
 
-        padding:22px;
+    .page-title h1{
 
-    }
-
-    .profile-details h2{
-
-        font-size:22px;
+        font-size:18px;
 
     }
+
 
     .profession-card{
 
-        padding:11px;
+        padding:13px;
+
+    }
+
+
+    .company-logo-wrap{
+
+        width:50px;
+
+        height:50px;
 
     }
 
 }
 
-</style></head><body><div class="app"><!-- ================================
+</style></head><body><div class="app"><!-- =====================================================
      SIDEBAR
-================================ --><aside
+===================================================== --><aside
 class="sidebar"
 id="sidebar"
-><div class="brand"><div class="brand-logo">
-L4
-</div><div class="brand-title">LINK4 COMMUNICATION
+><div class="brand"><div class="brand-logo">L4
 
-<small>
-MANAGEMENT SYSTEM
-</small></div></div><div class="user-mini"><div
+</div><div class="brand-name">LINK4 COMMUNICATION
+
+<small>MANAGEMENT SYSTEM
+
+</small></div></div><!-- MINI USER --><div class="user-mini"><div
 class="user-avatar"
 id="sidebarAvatar"
->
-U
-</div><div class="user-info"><strong id="sidebarName">
+>U
+
+</div><div class="user-info"><strong
+id="sidebarName"
+
+«»
+
 User
-</strong><span id="sidebarRole">
+
+</strong><span
+id="sidebarRole"
+
+«»
+
 User
-</span></div></div><nav class="sidebar-menu"><a href="dashboard.html"><span class="menu-icon">🏠</span>
 
-Dashboard
+</span></div></div><!-- MENU --><nav class="sidebar-menu"><a href="dashboard.html"><span class="menu-icon">🏠
 
-</a><a href="dashboard.html"><span class="menu-icon">📊</span>
+</span><span>Dashboard
 
-Overview
+</span></a><a href="dashboard.html"><span class="menu-icon">📊
 
-</a><a href="support.html"><span class="menu-icon">🛠️</span>
+</span><span>Overview
 
-Support
+</span></a><a href="support.html"><span class="menu-icon">🛠️
 
-</a><a href="call.html"><span class="menu-icon">📞</span>
+</span><span>Support
 
-Call
+</span></a><a href="call.html"><span class="menu-icon">📞
 
-</a><a
+</span><span>Call
+
+</span></a><a
 href="account.html"
 class="active"
 
 «»
 
-<span class="menu-icon">👤</span>
+<span class="menu-icon">👤
 
-My Account
+</span><span>My Account
 
-</a></nav><div class="sidebar-bottom"><button
+</span></a></nav><!-- BOTTOM --><div class="sidebar-bottom"><button
 class="logout-btn"
 id="logoutBtn"
 
 «»
 
-<span class="menu-icon">🚪</span>
+<span class="menu-icon">🚪
 
-Logout
+</span><span>Logout
 
-</button></div></aside><div
+</span></button></div></aside><!-- OVERLAY --><div
 class="sidebar-overlay"
 id="sidebarOverlay"
-></div><!-- ================================
+></div><!-- =====================================================
      MAIN
-================================ --><main class="main"><header class="topbar"><div class="page-title"><button
+===================================================== --><main class="main"><!-- TOPBAR --><header class="topbar"><div class="page-title"><button
 class="mobile-menu-btn"
 id="mobileMenuBtn"
 
 «»
 
 ☰
-</button>
 
-<div><h1>
-My Account
-</h1><p>
-Personal profile and professional information
-</p></div></div><div class="top-user"><div class="top-user-info"><strong id="topName">
+</button><div><h1>My Account
+
+</h1><p>Personal profile and professional information
+
+</p></div></div><div class="top-user"><div class="top-user-info"><strong
+id="topName"
+
+«»
+
 User
-</strong><span id="topRole">
+
+</strong><span
+id="topRole"
+
+«»
+
 User
+
 </span></div><div
 class="top-avatar"
 id="topAvatar"
->
-U
-</div></div></header><!-- ================================
-     PROFILE
-================================ --><section class="profile-card"><div class="profile-photo-wrap"><img
+>U
+
+</div></div></header><!-- =====================================================
+     PROFILE HERO
+===================================================== --><section class="profile-hero"><div class="profile-photo-wrap"><img
 id="profilePhoto"
 class="profile-photo"
 alt="Profile Photo"
@@ -1203,69 +1515,69 @@ alt="Profile Photo"
 <div
 id="defaultPhoto"
 class="default-photo"
->
-U
-</div></div><div class="profile-details"><h2 id="profileName">
-User
+>U
+
+</div></div><div class="profile-details"><h2
+id="profileName"
+>User
+
 </h2><div
-class="profile-username"
+class="username"
 id="profileUsername"
->
-@username
-</div><div class="badges"><span
+>@username
+
+</div><div class="profile-badges"><span
 class="badge role"
 id="profileRole"
 
 «»
 
 Role
-</span>
 
-<span
+</span><span
 class="badge status"
 id="profileStatus"
 
 «»
 
 Status
-</span>
 
-</div></div></section><!-- ================================
+</span></div></div></section><!-- =====================================================
      ACCOUNT INFORMATION
-================================ --><section class="section"><div class="section-header"><h2>
-Account Information
-</h2><div class="section-line"></div></div><div class="account-grid"><div class="info-card"><span class="info-label">
-Name
+===================================================== --><section class="section"><div class="section-title"><h2>Account Information
+
+</h2><div class="section-line"></div></div><div class="account-grid"><div class="info-card"><span class="info-label">Name
+
 </span><span
 class="info-value"
 id="accountName"
 
 «»
 
-- 
+—
 
-</span></div><div class="info-card"><span class="info-label">
-Username
+</span></div><div class="info-card"><span class="info-label">Username
+
 </span><span
 class="info-value"
 id="accountUsername"
 
 «»
 
-- 
+—
 
-</span></div><div class="info-card"><span class="info-label">
-Password
-</span><div class="password-box"><span
+</span></div><div class="info-card"><span class="info-label">Password
+
+</span><div class="password-row"><span
 class="info-value password-text"
 id="accountPassword"
+data-password=""
 
 «»
 
 ••••••••
-</span>
 
-<button
+</span><button
 class="password-toggle"
 id="passwordToggle"
 type="button"
@@ -1273,55 +1585,53 @@ type="button"
 «»
 
 Show
-</button>
 
-</div></div><div class="info-card"><span class="info-label">
-Department
+</button></div></div><div class="info-card"><span class="info-label">Department
+
 </span><span
 class="info-value"
 id="accountDepartment"
 
 «»
 
-- 
+—
 
-</span></div><div class="info-card"><span class="info-label">
-Join Date
+</span></div><div class="info-card"><span class="info-label">Join Date
+
 </span><span
 class="info-value"
 id="accountJoinDate"
 
 «»
 
-- 
+—
 
-</span></div><div class="info-card"><span class="info-label">
-Blood Group
+</span></div><div class="info-card"><span class="info-label">Blood Group
+
 </span><span
 class="info-value"
 id="accountBloodGroup"
 
 «»
 
-- 
+—
 
-</span></div></div></section><!-- ================================
+</span></div></div></section><!-- =====================================================
      PROFESSIONAL INFORMATION
-================================ --><section
+===================================================== --><section
 class="section"
 id="professionSection"
-><div class="section-header"><h2>
-Professional Information
+><div class="section-title"><h2>Professional Information
+
 </h2><div class="section-line"></div></div><div
 class="profession-list"
 id="professionList"
->
-</div></section><footer class="footer">© 2026 LINK4 COMMUNICATION. All rights reserved.
+></div></section><!-- FOOTER --><footer class="footer">© 2026 LINK4 COMMUNICATION. All rights reserved.
 
 </footer></main></div><script>
 
 /* =====================================================
-   API
+   API CONFIG
 ===================================================== */
 
 const API_URL =
@@ -1330,46 +1640,72 @@ const API_URL =
 
 
 /* =====================================================
-   USERNAME
+   GET LOGGED USERNAME
 ===================================================== */
 
-const username =
+const loggedUsername =
 
 (
-    localStorage.getItem("username")
+
+    localStorage.getItem(
+        "username"
+    )
+
     || ""
-).trim();
+
+)
+
+.trim();
 
 
 /* =====================================================
-   INITIAL LOCAL DATA
+   LOCAL DATA
 ===================================================== */
 
 const localName =
 
-localStorage.getItem("name")
+localStorage.getItem(
+    "name"
+)
+
 || "User";
+
 
 const localRole =
 
-localStorage.getItem("role")
+localStorage.getItem(
+    "role"
+)
+
 || "User";
+
 
 const localStatus =
 
-localStorage.getItem("status")
+localStorage.getItem(
+    "status"
+)
+
 || "Active";
 
 
-setBasicData({
+/* =====================================================
+   INITIAL UI
+===================================================== */
 
-    username:username,
+setBasicUserData({
 
-    name:localName,
+    username:
+    loggedUsername,
 
-    role:localRole,
+    name:
+    localName,
 
-    status:localStatus
+    role:
+    localRole,
+
+    status:
+    localStatus
 
 });
 
@@ -1378,28 +1714,39 @@ setBasicData({
    LOAD ACCOUNT
 ===================================================== */
 
-loadAccount();
+loadUserAccount();
 
 
-async function loadAccount(){
+async function loadUserAccount(){
 
-    if(!username){
+
+    if(!loggedUsername){
 
         return;
 
     }
 
+
     try{
+
 
         const url =
 
         API_URL
+
         +
+
         "?action=getaccount"
+
         +
+
         "&username="
+
         +
-        encodeURIComponent(username);
+
+        encodeURIComponent(
+            loggedUsername
+        );
 
 
         const response =
@@ -1409,11 +1756,25 @@ async function loadAccount(){
             url,
 
             {
-                method:"GET",
-                cache:"no-store"
+
+                method:
+                "GET",
+
+                cache:
+                "no-store"
+
             }
 
         );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Network error"
+            );
+
+        }
 
 
         const data =
@@ -1421,10 +1782,20 @@ async function loadAccount(){
         await response.json();
 
 
-        if(data.success === true){
+        if(
 
-            displayUser(
+            data.success === true
+
+            &&
+
+            data.user
+
+        ){
+
+            displayUserData(
+
                 data.user
+
             );
 
         }
@@ -1432,19 +1803,29 @@ async function loadAccount(){
         else{
 
             console.error(
+
                 data.message
+                ||
+                "Account not found."
+
             );
 
         }
+
 
     }
 
     catch(error){
 
+
         console.error(
-            "Account Error:",
+
+            "Account loading error:",
+
             error
+
         );
+
 
     }
 
@@ -1452,119 +1833,193 @@ async function loadAccount(){
 
 
 /* =====================================================
-   BASIC DATA
+   SET BASIC USER DATA
 ===================================================== */
 
-function setBasicData(user){
+function setBasicUserData(user){
+
 
     const name =
-    user.name || "User";
 
-    const userName =
-    user.username || username || "-";
+    user.name
+
+    ||
+
+    "User";
+
+
+    const username =
+
+    user.username
+
+    ||
+
+    loggedUsername
+
+    ||
+
+    "—";
+
 
     const role =
-    user.role || "User";
+
+    user.role
+
+    ||
+
+    "User";
+
 
     const status =
-    user.status || "Active";
 
+    user.status
+
+    ||
+
+    "Active";
+
+
+    /* SIDEBAR */
 
     document.getElementById(
         "sidebarName"
-    ).textContent = name;
+    ).textContent =
+
+    name;
 
 
     document.getElementById(
         "sidebarRole"
-    ).textContent = role;
+    ).textContent =
 
+    role;
+
+
+    /* TOPBAR */
 
     document.getElementById(
         "topName"
-    ).textContent = name;
+    ).textContent =
+
+    name;
 
 
     document.getElementById(
         "topRole"
-    ).textContent = role;
+    ).textContent =
 
+    role;
+
+
+    /* PROFILE */
 
     document.getElementById(
         "profileName"
-    ).textContent = name;
+    ).textContent =
+
+    name;
 
 
     document.getElementById(
         "profileUsername"
     ).textContent =
-    "@" + userName;
+
+    "@" + username;
 
 
     document.getElementById(
         "profileRole"
-    ).textContent = role;
+    ).textContent =
+
+    role;
 
 
     document.getElementById(
         "profileStatus"
-    ).textContent = status;
+    ).textContent =
 
+    status;
+
+
+    /* ACCOUNT */
 
     document.getElementById(
         "accountName"
-    ).textContent = name;
+    ).textContent =
+
+    name;
 
 
     document.getElementById(
         "accountUsername"
-    ).textContent = userName;
+    ).textContent =
 
+    username;
+
+
+    /* INITIAL */
 
     const initial =
 
     name
+
     .trim()
+
     .charAt(0)
+
     .toUpperCase()
-    || "U";
+
+    ||
+
+    "U";
 
 
     document.getElementById(
         "sidebarAvatar"
-    ).textContent = initial;
+    ).textContent =
+
+    initial;
 
 
     document.getElementById(
         "topAvatar"
-    ).textContent = initial;
+    ).textContent =
+
+    initial;
 
 
     document.getElementById(
         "defaultPhoto"
-    ).textContent = initial;
+    ).textContent =
+
+    initial;
 
 }
 
 
 /* =====================================================
-   DISPLAY USER
+   DISPLAY FULL USER DATA
 ===================================================== */
 
-function displayUser(user){
-
-    setBasicData(user);
+function displayUserData(user){
 
 
-    /* ================================
-       PASSWORD
-    ================================= */
+    setBasicUserData(user);
+
+
+    /* PASSWORD */
 
     const password =
 
     String(
-        user.password || ""
-    );
+
+        user.password
+
+        ||
+
+        ""
+
+    ).trim();
 
 
     const passwordElement =
@@ -1575,61 +2030,151 @@ function displayUser(user){
 
 
     passwordElement.dataset.password =
+
     password;
 
 
     passwordElement.textContent =
+
     "••••••••";
 
 
     document.getElementById(
         "passwordToggle"
     ).textContent =
+
     "Show";
 
 
-    /* ================================
-       DEPARTMENT
-    ================================= */
+    /* DEPARTMENT */
 
     document.getElementById(
         "accountDepartment"
     ).textContent =
 
-    user.department || "-";
+    user.department
+
+    ||
+
+    "—";
 
 
-    /* ================================
-       JOIN DATE
-    ================================= */
+    /* JOIN DATE */
 
     document.getElementById(
         "accountJoinDate"
     ).textContent =
 
-    user.joinDate || "-";
+    user.joinDate
+
+    ||
+
+    "—";
 
 
-    /* ================================
-       BLOOD GROUP
-    ================================= */
+    /* BLOOD GROUP */
 
     document.getElementById(
         "accountBloodGroup"
     ).textContent =
 
-    user.bloodGroup || "-";
+    user.bloodGroup
+
+    ||
+
+    "—";
 
 
-    /* ================================
-       PHOTO
-    ================================= */
+    /* PHOTO */
 
-    const photo =
+    loadProfilePhoto(
 
-    String(
-        user.photo || ""
-    ).trim();
+        user.photo
+
+    );
+
+
+    /* PROFESSIONS */
+
+    const professions = [
+
+        {
+
+            name:
+            user.profession1,
+
+            logo:
+            user.professionCompanyLG1
+
+        },
+
+        {
+
+            name:
+            user.profession2,
+
+            logo:
+            user.professionCompanyLG2
+
+        },
+
+        {
+
+            name:
+            user.profession3,
+
+            logo:
+            user.professionCompanyLG3
+
+        },
+
+        {
+
+            name:
+            user.profession4,
+
+            logo:
+            user.professionCompanyLG4
+
+        },
+
+        {
+
+            name:
+            user.profession5,
+
+            logo:
+            user.professionCompanyLG5
+
+        },
+
+        {
+
+            name:
+            user.profession6,
+
+            logo:
+            user.professionCompanyLG6
+
+        }
+
+    ];
+
+
+    renderProfessions(
+
+        professions
+
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PROFILE PHOTO
+===================================================== */
+
+function loadProfilePhoto(photo){
 
 
     const image =
@@ -1646,30 +2191,20 @@ function displayUser(user){
     );
 
 
-    if(photo){
+    const photoUrl =
 
-        image.src = photo;
+    String(
 
-        image.style.display =
-        "block";
+        photo
 
-        defaultPhoto.style.display =
-        "none";
+        ||
+
+        ""
+
+    ).trim();
 
 
-        image.onerror = function(){
-
-            image.style.display =
-            "none";
-
-            defaultPhoto.style.display =
-            "flex";
-
-        };
-
-    }
-
-    else{
+    if(!photoUrl){
 
         image.style.display =
         "none";
@@ -1677,51 +2212,40 @@ function displayUser(user){
         defaultPhoto.style.display =
         "flex";
 
+        return;
+
     }
 
 
-    /* ================================
-       PROFESSIONS
-    ================================= */
+    image.onload =
 
-    const professions = [
+    function(){
 
-        {
-            name:user.profession1,
-            logo:user.professionCompanyLG1
-        },
+        image.style.display =
+        "block";
 
-        {
-            name:user.profession2,
-            logo:user.professionCompanyLG2
-        },
+        defaultPhoto.style.display =
+        "none";
 
-        {
-            name:user.profession3,
-            logo:user.professionCompanyLG3
-        },
-
-        {
-            name:user.profession4,
-            logo:user.professionCompanyLG4
-        },
-
-        {
-            name:user.profession5,
-            logo:user.professionCompanyLG5
-        },
-
-        {
-            name:user.profession6,
-            logo:user.professionCompanyLG6
-        }
-
-    ];
+    };
 
 
-    renderProfessions(
-        professions
-    );
+    image.onerror =
+
+    function(){
+
+        image.style.display =
+        "none";
+
+        defaultPhoto.style.display =
+        "flex";
+
+    };
+
+
+    image.src =
+
+    photoUrl;
 
 }
 
@@ -1732,17 +2256,18 @@ function displayUser(user){
 
 function renderProfessions(professions){
 
-    const list =
-
-    document.getElementById(
-        "professionList"
-    );
-
 
     const section =
 
     document.getElementById(
         "professionSection"
+    );
+
+
+    const list =
+
+    document.getElementById(
+        "professionList"
     );
 
 
@@ -1752,176 +2277,254 @@ function renderProfessions(professions){
     let count = 0;
 
 
-    professions.forEach(function(item){
+    professions.forEach(
 
-        const name =
-
-        String(
-            item.name || ""
-        ).trim();
+        function(item){
 
 
-        const logo =
+            const profession =
 
-        String(
-            item.logo || ""
-        ).trim();
+            String(
 
+                item.name
 
-        /* EMPTY PROFESSION HIDDEN */
+                ||
 
-        if(!name){
+                ""
 
-            return;
-
-        }
+            ).trim();
 
 
-        count++;
+            const logo =
+
+            String(
+
+                item.logo
+
+                ||
+
+                ""
+
+            ).trim();
 
 
-        const card =
+            /* EMPTY PROFESSION HIDDEN */
 
-        document.createElement(
-            "div"
-        );
+            if(!profession){
 
-        card.className =
-        "profession-card";
+                return;
 
-
-        const left =
-
-        document.createElement(
-            "div"
-        );
-
-        left.className =
-        "profession-left";
+            }
 
 
-        const number =
-
-        document.createElement(
-            "div"
-        );
-
-        number.className =
-        "profession-number";
-
-        number.textContent =
-        count;
+            count++;
 
 
-        const text =
+            /* CARD */
 
-        document.createElement(
-            "div"
-        );
-
-
-        const label =
-
-        document.createElement(
-            "div"
-        );
-
-        label.className =
-        "profession-label";
-
-        label.textContent =
-        "Profession";
-
-
-        const value =
-
-        document.createElement(
-            "div"
-        );
-
-        value.className =
-        "profession-value";
-
-        value.textContent =
-        name;
-
-
-        text.appendChild(label);
-
-        text.appendChild(value);
-
-
-        left.appendChild(number);
-
-        left.appendChild(text);
-
-
-        card.appendChild(left);
-
-
-        /* COMPANY LOGO */
-
-        if(logo){
-
-            const logoWrap =
+            const card =
 
             document.createElement(
                 "div"
             );
 
-            logoWrap.className =
-            "company-logo-wrap";
+
+            card.className =
+
+            "profession-card";
 
 
-            const logoImage =
+            /* LEFT */
+
+            const left =
 
             document.createElement(
-                "img"
+                "div"
             );
 
-            logoImage.className =
-            "company-logo";
 
-            logoImage.src =
-            logo;
+            left.className =
 
-            logoImage.alt =
-            "Company Logo";
+            "profession-name-area";
 
 
-            logoImage.onerror =
-            function(){
+            /* NUMBER */
 
-                logoWrap.style.display =
-                "none";
+            const number =
 
-            };
+            document.createElement(
+                "div"
+            );
 
 
-            logoWrap.appendChild(
-                logoImage
+            number.className =
+
+            "profession-number";
+
+
+            number.textContent =
+
+            count;
+
+
+            /* TEXT */
+
+            const text =
+
+            document.createElement(
+                "div"
+            );
+
+
+            text.className =
+
+            "profession-text";
+
+
+            const label =
+
+            document.createElement(
+                "div"
+            );
+
+
+            label.className =
+
+            "profession-label";
+
+
+            label.textContent =
+
+            "Profession";
+
+
+            const value =
+
+            document.createElement(
+                "div"
+            );
+
+
+            value.className =
+
+            "profession-value";
+
+
+            value.textContent =
+
+            profession;
+
+
+            text.appendChild(
+                label
+            );
+
+
+            text.appendChild(
+                value
+            );
+
+
+            left.appendChild(
+                number
+            );
+
+
+            left.appendChild(
+                text
             );
 
 
             card.appendChild(
-                logoWrap
+                left
             );
+
+
+            /* COMPANY LOGO */
+
+            if(logo){
+
+
+                const logoWrap =
+
+                document.createElement(
+                    "div"
+                );
+
+
+                logoWrap.className =
+
+                "company-logo-wrap";
+
+
+                const logoImage =
+
+                document.createElement(
+                    "img"
+                );
+
+
+                logoImage.className =
+
+                "company-logo";
+
+
+                logoImage.src =
+
+                logo;
+
+
+                logoImage.alt =
+
+                "Company Logo";
+
+
+                logoImage.onerror =
+
+                function(){
+
+                    logoWrap.style.display =
+
+                    "none";
+
+                };
+
+
+                logoWrap.appendChild(
+
+                    logoImage
+
+                );
+
+
+                card.appendChild(
+
+                    logoWrap
+
+                );
+
+
+            }
+
+
+            list.appendChild(
+
+                card
+
+            );
+
 
         }
 
-
-        list.appendChild(
-            card
-        );
-
-    });
+    );
 
 
-    /* NO PROFESSION = HIDE WHOLE SECTION */
+    /* NO PROFESSION */
 
     if(count === 0){
 
         section.style.display =
+
         "none";
 
     }
@@ -1929,6 +2532,7 @@ function renderProfessions(professions){
     else{
 
         section.style.display =
+
         "block";
 
     }
@@ -1941,57 +2545,86 @@ function renderProfessions(professions){
 ===================================================== */
 
 document.getElementById(
+
     "passwordToggle"
+
 ).addEventListener(
 
     "click",
 
     function(){
 
+
         const passwordElement =
 
         document.getElementById(
+
             "accountPassword"
+
         );
 
 
         const password =
 
         passwordElement.dataset.password
-        || "";
+
+        ||
+
+        "";
 
 
-        const isHidden =
+        const button =
+
+        document.getElementById(
+
+            "passwordToggle"
+
+        );
+
+
+        const currentlyHidden =
 
         passwordElement.textContent
+
         ===
+
         "••••••••";
 
 
-        if(isHidden){
+        if(currentlyHidden){
+
 
             passwordElement.textContent =
 
             password
+
             ||
+
             "No Password";
 
 
-            this.textContent =
+            button.textContent =
+
             "Hide";
+
 
         }
 
         else{
 
+
             passwordElement.textContent =
+
             "••••••••";
 
 
-            this.textContent =
+            button.textContent =
+
             "Show";
 
+
         }
+
 
     }
 
@@ -2002,35 +2635,53 @@ document.getElementById(
    MOBILE SIDEBAR
 ===================================================== */
 
+const mobileMenuBtn =
+
+document.getElementById(
+
+    "mobileMenuBtn"
+
+);
+
+
 const sidebar =
 
 document.getElementById(
+
     "sidebar"
+
 );
 
 
 const overlay =
 
 document.getElementById(
+
     "sidebarOverlay"
+
 );
 
 
-document.getElementById(
-    "mobileMenuBtn"
-).addEventListener(
+mobileMenuBtn.addEventListener(
 
     "click",
 
     function(){
 
+
         sidebar.classList.add(
+
             "open"
+
         );
 
+
         overlay.classList.add(
+
             "show"
+
         );
+
 
     }
 
@@ -2043,13 +2694,20 @@ overlay.addEventListener(
 
     function(){
 
+
         sidebar.classList.remove(
+
             "open"
+
         );
 
+
         overlay.classList.remove(
+
             "show"
+
         );
+
 
     }
 
@@ -2061,37 +2719,57 @@ overlay.addEventListener(
 ===================================================== */
 
 document.getElementById(
+
     "logoutBtn"
+
 ).addEventListener(
 
     "click",
 
     function(){
 
+
         localStorage.removeItem(
+
             "loggedIn"
+
         );
 
+
         localStorage.removeItem(
+
             "username"
+
         );
 
+
         localStorage.removeItem(
+
             "name"
+
         );
 
+
         localStorage.removeItem(
+
             "role"
+
         );
 
+
         localStorage.removeItem(
+
             "status"
+
         );
 
 
         window.location.replace(
+
             "login.html"
+
         );
+
 
     }
 
