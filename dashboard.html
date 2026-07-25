@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+name="theme-color"
+content="#07111f"
+>
+
+<title>Dashboard | LINK4 COMMUNICATION</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#07111f;
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:250px;
+
+    height:100vh;
+
+    padding:25px 18px;
+
+    background:#091827;
+
+    border-right:
+    1px solid
+    rgba(255,255,255,0.08);
+
+    z-index:100;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:
+    5px 10px 25px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,0.08);
+
+}
+
+
+.logo-icon{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00c878,
+        #0099ff
+    );
+
+    font-weight:bold;
+
+}
+
+
+.logo-text{
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+
+.logo-text span{
+
+    display:block;
+
+    color:#6e879a;
+
+    font-size:10px;
+
+    margin-top:3px;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav{
+
+    margin-top:30px;
+
+}
+
+
+.nav-title{
+
+    color:#5d7487;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    padding:
+    0 12px 10px;
+
+}
+
+
+.nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:13px 14px;
+
+    margin-bottom:6px;
+
+    border-radius:10px;
+
+    color:#9bb0c0;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:0.3s;
+
+}
+
+
+.nav-item:hover,
+
+.nav-item.active{
+
+    color:white;
+
+    background:
+    rgba(0,200,120,0.10);
+
+}
+
+
+.nav-icon{
+
+    width:25px;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+
+    margin-left:250px;
+
+    min-height:100vh;
+
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar{
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+    0 35px;
+
+    background:
+    rgba(7,17,31,0.90);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,0.08);
+
+}
+
+
+.page-title{
+
+    font-size:21px;
+
+    font-weight:bold;
+
+}
+
+
+.page-subtitle{
+
+    color:#718799;
+
+    font-size:12px;
+
+    margin-top:4px;
+
+}
+
+
+.user-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.user-info{
+
+    text-align:right;
+
+}
+
+
+.user-name{
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.user-role{
+
+    color:#00c878;
+
+    font-size:11px;
+
+    margin-top:3px;
+
+}
+
+
+.user-avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00c878,
+        #0099ff
+    );
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    padding:35px;
+
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome{
+
+    padding:28px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        rgba(0,200,120,0.12),
+        rgba(0,150,255,0.10)
+    );
+
+    border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+}
+
+
+.welcome h2{
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+
+.welcome p{
+
+    color:#8fa4b7;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+
+.stat-card{
+
+    padding:22px;
+
+    border-radius:16px;
+
+    background:#0b1b2a;
+
+    border:
+    1px solid
+    rgba(255,255,255,0.07);
+
+}
+
+
+.stat-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+    rgba(0,200,120,0.10);
+
+    margin-bottom:15px;
+
+}
+
+
+.stat-title{
+
+    color:#7f94a5;
+
+    font-size:12px;
+
+}
+
+
+.stat-value{
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    margin-top:5px;
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr;
+
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    padding:25px;
+
+    background:#0b1b2a;
+
+    border:
+    1px solid
+    rgba(255,255,255,0.07);
+
+    border-radius:16px;
+
+}
+
+
+.card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+}
+
+
+.card-title{
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+
+.card-subtitle{
+
+    color:#718799;
+
+    font-size:12px;
+
+    margin-top:4px;
+
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.actions{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+
+.action{
+
+    padding:18px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#101f2e;
+
+    border:
+    1px solid
+    rgba(255,255,255,0.06);
+
+    transition:0.3s;
+
+}
+
+
+.action:hover{
+
+    transform:
+    translateY(-3px);
+
+    border-color:
+    rgba(0,200,120,0.35);
+
+}
+
+
+.action-icon{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+
+.action-title{
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+
+.action-text{
+
+    color:#718799;
+
+    font-size:11px;
+
+    margin-top:5px;
+
+}
+
+
+/* =====================================================
+   ACCOUNT INFO
+===================================================== */
+
+.account-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:14px 0;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,0.06);
+
+}
+
+
+.account-row:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.account-label{
+
+    color:#718799;
+
+    font-size:12px;
+
+}
+
+
+.account-value{
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.status{
+
+    color:#00e58a;
+
+}
+
+
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.logout-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+    rgba(255,70,70,0.10);
+
+    border:
+    1px solid
+    rgba(255,70,70,0.20);
+
+    color:#ff7777;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+.logout-btn:hover{
+
+    background:
+    rgba(255,70,70,0.18);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .stats{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .sidebar{
+
+        width:70px;
+
+        padding:
+        20px 10px;
+
+    }
+
+
+    .logo-text,
+
+    .nav-title,
+
+    .nav-item span:not(.nav-icon){
+
+        display:none;
+
+    }
+
+
+    .logo{
+
+        justify-content:center;
+
+    }
+
+
+    .nav-item{
+
+        justify-content:center;
+
+    }
+
+
+    .main{
+
+        margin-left:70px;
+
+    }
+
+
+    .topbar{
+
+        padding:
+        0 18px;
+
+    }
+
+
+    .content{
+
+        padding:20px;
+
+    }
+
+
+    .user-info{
+
+        display:none;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .stats{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .actions{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .page-title{
+
+        font-size:17px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+    <div class="logo-icon">
+
+        L4
+
+    </div>
+
+
+    <div class="logo-text">
+
+        LINK4
+
+        <span>
+
+            COMMUNICATION
+
+        </span>
+
+    </div>
+
+</div>
+
+
+<nav class="nav">
+
+
+<div class="nav-title">
+
+    Main Menu
+
+</div>
+
+
+<a
+href="dashboard.html"
+class="nav-item active"
+>
+
+<span class="nav-icon">⌂</span>
+
+<span>Dashboard</span>
+
+</a>
+
+
+<a
+href="support.html"
+class="nav-item"
+>
+
+<span class="nav-icon">◉</span>
+
+<span>Support</span>
+
+</a>
+
+
+<a
+href="call.html"
+class="nav-item"
+>
+
+<span class="nav-icon">☎</span>
+
+<span>Call</span>
+
+</a>
+
+
+<a
+href="#"
+class="nav-item"
+>
+
+<span class="nav-icon">◌</span>
+
+<span>History</span>
+
+</a>
+
+
+</nav>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+
+<div>
+
+<div class="page-title">
+
+    Dashboard
+
+</div>
+
+
+<div class="page-subtitle">
+
+    LINK4 COMMUNICATION Management System
+
+</div>
+
+</div>
+
+
+<div class="user-area">
+
+
+<div class="user-info">
+
+<div
+class="user-name"
+id="topName"
+>
+
+User
+
+</div>
+
+
+<div
+class="user-role"
+id="topRole"
+>
+
+User
+
+</div>
+
+</div>
+
+
+<div
+class="user-avatar"
+id="avatar"
+>
+
+U
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+
+<!-- CONTENT -->
+
+<section class="content">
+
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+<h2>
+
+    Welcome, <span id="welcomeName">User</span> 👋
+
+</h2>
+
+
+<p>
+
+    You are successfully logged in to the LINK4 COMMUNICATION Management System.
+
+</p>
+
+</div>
+
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+    📊
+
+</div>
+
+<div class="stat-title">
+
+    Account Status
+
+</div>
+
+<div
+class="stat-value"
+id="status"
+>
+
+Active
+
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+    👤
+
+</div>
+
+<div class="stat-title">
+
+    Your Role
+
+</div>
+
+<div
+class="stat-value"
+id="role"
+>
+
+User
+
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+    🔐
+
+</div>
+
+<div class="stat-title">
+
+    Access Level
+
+</div>
+
+<div
+class="stat-value"
+>
+
+Authorized
+
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+    🌐
+
+</div>
+
+<div class="stat-title">
+
+    System
+
+</div>
+
+<div class="stat-value">
+
+    Online
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- GRID -->
+
+<div class="dashboard-grid">
+
+
+<!-- QUICK ACTIONS -->
+
+<div class="card">
+
+
+<div class="card-header">
+
+<div>
+
+<div class="card-title">
+
+    Quick Access
+
+</div>
+
+<div class="card-subtitle">
+
+    Access your available modules
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+
+<a
+href="support.html"
+class="action"
+>
+
+<div class="action-icon">
+
+    🛠️
+
+</div>
+
+<div class="action-title">
+
+    Support
+
+</div>
+
+<div class="action-text">
+
+    Manage support activities
+
+</div>
+
+</a>
+
+
+<a
+href="call.html"
+class="action"
+>
+
+<div class="action-icon">
+
+    📞
+
+</div>
+
+<div class="action-title">
+
+    Call
+
+</div>
+
+<div class="action-text">
+
+    Manage call operations
+
+</div>
+
+</a>
+
+
+<a
+href="#"
+class="action"
+>
+
+<div class="action-icon">
+
+    📋
+
+</div>
+
+<div class="action-title">
+
+    Support History
+
+</div>
+
+<div class="action-text">
+
+    View previous activities
+
+</div>
+
+</a>
+
+
+<a
+href="#"
+class="action"
+>
+
+<div class="action-icon">
+
+    📈
+
+</div>
+
+<div class="action-title">
+
+    Monitor
+
+</div>
+
+<div class="action-text">
+
+    Monitor system operations
+
+</div>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ACCOUNT -->
+
+<div class="card">
+
+
+<div class="card-header">
+
+<div>
+
+<div class="card-title">
+
+    My Account
+
+</div>
+
+<div class="card-subtitle">
+
+    Your login information
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="account-row">
+
+<span class="account-label">
+
+    Name
+
+</span>
+
+<span
+class="account-value"
+id="accountName"
+>
+
+-
+
+</span>
+
+</div>
+
+
+<div class="account-row">
+
+<span class="account-label">
+
+    Username
+
+</span>
+
+<span
+class="account-value"
+id="accountUsername"
+>
+
+-
+
+</span>
+
+</div>
+
+
+<div class="account-row">
+
+<span class="account-label">
+
+    Role
+
+</span>
+
+<span
+class="account-value"
+id="accountRole"
+>
+
+-
+
+</span>
+
+</div>
+
+
+<div class="account-row">
+
+<span class="account-label">
+
+    Status
+
+</span>
+
+<span
+class="account-value status"
+id="accountStatus"
+>
+
+-
+
+</span>
+
+</div>
+
+
+<button
+class="logout-btn"
+onclick="logout()"
+>
+
+Logout
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+/* =====================================================
+   LOGIN SECURITY
+===================================================== */
+
+(function(){
+
+    const loggedIn =
+
+        localStorage.getItem(
+            "loggedIn"
+        );
+
+
+    if(
+        loggedIn !== "true"
+    ){
+
+        window.location.replace(
+            "login.html"
+        );
+
+        return;
+
+    }
+
+})();
+
+
+
+/* =====================================================
+   GET USER DATA
+===================================================== */
+
+const name =
+
+    localStorage.getItem(
+        "name"
+    ) || "User";
+
+
+const username =
+
+    localStorage.getItem(
+        "username"
+    ) || "-";
+
+
+const role =
+
+    localStorage.getItem(
+        "role"
+    ) || "User";
+
+
+const status =
+
+    localStorage.getItem(
+        "status"
+    ) || "Active";
+
+
+
+/* =====================================================
+   SHOW USER DATA
+===================================================== */
+
+document.getElementById(
+    "welcomeName"
+).textContent = name;
+
+
+document.getElementById(
+    "topName"
+).textContent = name;
+
+
+document.getElementById(
+    "topRole"
+).textContent = role;
+
+
+document.getElementById(
+    "avatar"
+).textContent =
+
+    name
+    .charAt(0)
+    .toUpperCase();
+
+
+document.getElementById(
+    "status"
+).textContent = status;
+
+
+document.getElementById(
+    "role"
+).textContent = role;
+
+
+document.getElementById(
+    "accountName"
+).textContent = name;
+
+
+document.getElementById(
+    "accountUsername"
+).textContent = username;
+
+
+document.getElementById(
+    "accountRole"
+).textContent = role;
+
+
+document.getElementById(
+    "accountStatus"
+).textContent = status;
+
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    localStorage.removeItem(
+        "username"
+    );
+
+    localStorage.removeItem(
+        "name"
+    );
+
+    localStorage.removeItem(
+        "role"
+    );
+
+    localStorage.removeItem(
+        "status"
+    );
+
+
+    window.location.replace(
+        "login.html"
+    );
+
+}
+
+
+/* =====================================================
+   PREVENT BACK AFTER LOGOUT
+===================================================== */
+
+window.history.pushState(
+    null,
+    "",
+    window.location.href
+);
+
+
+window.addEventListener(
+    "popstate",
+    function(){
+
+        window.history.pushState(
+            null,
+            "",
+            window.location.href
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
