@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#071522"><title>My Account | LINK4 COMMUNICATION</title><script>
 
-<head>
+/* =====================================================
+   LOGIN SECURITY
+===================================================== */
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color" content="#0b7a4b">
-
-<title>My Account | LINK4 COMMUNICATION</title>
-
-<script>
 (function(){
 
-    if(localStorage.getItem("loggedIn") !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace("login.html");
 
     }
 
 })();
-</script>
 
-<style>
+</script><style>
 
 /* =====================================================
    RESET
@@ -45,11 +38,13 @@ body{
     font-family:
     "Segoe UI",
     Arial,
+    Helvetica,
     sans-serif;
 
-    background:#f4f7f6;
+    background:
+    #071522;
 
-    color:#17221d;
+    color:#ffffff;
 
     min-height:100vh;
 
@@ -75,25 +70,32 @@ body{
 
 .sidebar{
 
-    width:255px;
+    width:260px;
+
+    min-height:100vh;
 
     position:fixed;
 
-    top:0;
     left:0;
+
+    top:0;
+
     bottom:0;
 
     z-index:100;
 
+    padding:22px 16px;
+
+    background:
+    #0a1b2a;
+
+    border-right:
+    1px solid
+    rgba(255,255,255,0.07);
+
     display:flex;
 
     flex-direction:column;
-
-    padding:22px 15px;
-
-    background:#ffffff;
-
-    border-right:1px solid #e5ebe8;
 
     transition:0.3s;
 
@@ -112,20 +114,21 @@ body{
 
     gap:12px;
 
-    padding:5px 10px 23px;
+    padding:
+    5px 10px 25px;
 
-    border-bottom:1px solid #edf1ef;
+    border-bottom:
+    1px solid
+    rgba(255,255,255,0.06);
 
 }
 
 
 .brand-logo{
 
-    width:46px;
+    width:48px;
 
-    height:46px;
-
-    border-radius:12px;
+    height:48px;
 
     display:flex;
 
@@ -133,11 +136,18 @@ body{
 
     justify-content:center;
 
-    background:#0b7a4b;
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00d084,
+        #008cff
+    );
 
     color:#ffffff;
 
-    font-size:15px;
+    font-size:17px;
 
     font-weight:800;
 
@@ -146,11 +156,11 @@ body{
 
 .brand-name{
 
-    font-size:14px;
+    font-size:15px;
 
     font-weight:800;
 
-    color:#16221c;
+    line-height:1.3;
 
 }
 
@@ -159,13 +169,13 @@ body{
 
     display:block;
 
-    margin-top:4px;
+    margin-top:3px;
 
-    color:#82918a;
+    color:#6f899b;
 
     font-size:9px;
 
-    letter-spacing:1.3px;
+    letter-spacing:1.5px;
 
 }
 
@@ -182,20 +192,20 @@ body{
 
     gap:11px;
 
-    padding:18px 10px;
+    padding:15px 10px;
 
-    margin-bottom:10px;
+    margin-bottom:15px;
 
 }
 
 
 .user-avatar{
 
-    width:42px;
+    width:40px;
 
-    height:42px;
+    height:40px;
 
-    border-radius:50%;
+    border-radius:12px;
 
     display:flex;
 
@@ -203,13 +213,18 @@ body{
 
     justify-content:center;
 
-    background:#e7f5ef;
+    background:
+    linear-gradient(
+        135deg,
+        #00c878,
+        #008cff
+    );
 
-    color:#0b7a4b;
-
-    font-weight:800;
+    color:#ffffff;
 
     font-size:14px;
+
+    font-weight:800;
 
     overflow:hidden;
 
@@ -242,13 +257,11 @@ body{
 
     overflow:hidden;
 
-    white-space:nowrap;
-
     text-overflow:ellipsis;
 
-    font-size:12px;
+    white-space:nowrap;
 
-    color:#18241e;
+    font-size:12px;
 
 }
 
@@ -259,7 +272,7 @@ body{
 
     margin-top:3px;
 
-    color:#819089;
+    color:#6d8799;
 
     font-size:10px;
 
@@ -267,7 +280,7 @@ body{
 
 
 /* =====================================================
-   MENU
+   SIDEBAR MENU
 ===================================================== */
 
 .sidebar-menu{
@@ -276,7 +289,7 @@ body{
 
     flex-direction:column;
 
-    gap:5px;
+    gap:7px;
 
 }
 
@@ -287,13 +300,15 @@ body{
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
-    padding:11px 12px;
+    width:100%;
 
-    border-radius:10px;
+    padding:12px 13px;
 
-    color:#687870;
+    border-radius:12px;
+
+    color:#91a5b4;
 
     text-decoration:none;
 
@@ -301,34 +316,53 @@ body{
 
     font-weight:600;
 
-    transition:0.2s;
+    border:
+    1px solid
+    transparent;
+
+    transition:0.25s;
 
 }
 
 
 .sidebar-menu a:hover{
 
-    background:#f1f6f3;
+    color:#ffffff;
 
-    color:#0b7a4b;
+    background:
+    rgba(255,255,255,0.045);
+
+    border-color:
+    rgba(255,255,255,0.06);
+
+    transform:
+    translateX(3px);
 
 }
 
 
 .sidebar-menu a.active{
 
-    background:#eaf6f0;
+    color:#ffffff;
 
-    color:#0b7a4b;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,200,120,0.18),
+        rgba(0,140,255,0.12)
+    );
+
+    border-color:
+    rgba(0,200,120,0.18);
 
 }
 
 
 .menu-icon{
 
-    width:32px;
+    width:34px;
 
-    height:32px;
+    height:34px;
 
     display:flex;
 
@@ -336,11 +370,14 @@ body{
 
     justify-content:center;
 
-    border-radius:8px;
+    border-radius:10px;
 
-    background:#f4f7f5;
+    background:
+    rgba(255,255,255,0.045);
 
-    font-size:15px;
+    font-size:16px;
+
+    flex-shrink:0;
 
 }
 
@@ -353,9 +390,11 @@ body{
 
     margin-top:auto;
 
-    padding-top:18px;
+    padding-top:20px;
 
-    border-top:1px solid #edf1ef;
+    border-top:
+    1px solid
+    rgba(255,255,255,0.06);
 
 }
 
@@ -368,23 +407,39 @@ body{
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
-    padding:11px 12px;
+    padding:12px 13px;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    border:1px solid #f0dddd;
+    border:
+    1px solid
+    rgba(255,70,70,0.10);
 
-    background:#fff7f7;
+    background:
+    rgba(255,70,70,0.04);
 
-    color:#d34c4c;
+    color:#ff8b8b;
 
     cursor:pointer;
 
     font-size:12px;
 
     font-weight:600;
+
+    transition:0.25s;
+
+}
+
+
+.logout-btn:hover{
+
+    background:
+    rgba(255,70,70,0.10);
+
+    border-color:
+    rgba(255,70,70,0.20);
 
 }
 
@@ -395,13 +450,14 @@ body{
 
 .main{
 
-    width:calc(100% - 255px);
+    width:
+    calc(100% - 260px);
 
-    margin-left:255px;
-
-    padding:25px;
+    margin-left:260px;
 
     min-height:100vh;
+
+    padding:25px;
 
 }
 
@@ -412,9 +468,7 @@ body{
 
 .topbar{
 
-    min-height:68px;
-
-    padding:13px 18px;
+    min-height:70px;
 
     display:flex;
 
@@ -422,11 +476,22 @@ body{
 
     justify-content:space-between;
 
-    background:#ffffff;
+    gap:20px;
 
-    border:1px solid #e5ebe8;
+    padding:
+    15px 20px;
 
-    border-radius:14px;
+    border:
+    1px solid
+    rgba(255,255,255,0.06);
+
+    border-radius:18px;
+
+    background:
+    rgba(8,25,40,0.80);
+
+    backdrop-filter:
+    blur(15px);
 
 }
 
@@ -444,39 +509,42 @@ body{
 
 .page-title h1{
 
-    font-size:21px;
+    font-size:22px;
 
-    color:#17221d;
+    margin-bottom:4px;
 
 }
 
 
 .page-title p{
 
-    margin-top:3px;
-
-    color:#84928c;
+    color:#6f8798;
 
     font-size:11px;
 
 }
 
 
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
 .mobile-menu-btn{
 
     display:none;
 
-    width:40px;
+    width:42px;
 
-    height:40px;
+    height:42px;
 
     border:none;
 
-    border-radius:9px;
+    border-radius:11px;
 
-    background:#edf6f1;
+    background:
+    rgba(255,255,255,0.05);
 
-    color:#0b7a4b;
+    color:white;
 
     cursor:pointer;
 
@@ -520,32 +588,37 @@ body{
 
     display:block;
 
-    margin-top:3px;
-
-    color:#0b7a4b;
+    color:#00d084;
 
     font-size:10px;
+
+    margin-top:3px;
+
+    text-transform:capitalize;
 
 }
 
 
 .top-avatar{
 
-    width:40px;
+    width:42px;
 
-    height:40px;
+    height:42px;
 
-    border-radius:50%;
-
-    background:#e7f5ef;
-
-    color:#0b7a4b;
+    border-radius:12px;
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00c878,
+        #008cff
+    );
 
     font-size:13px;
 
@@ -568,72 +641,59 @@ body{
 
 
 /* =====================================================
-   EXECUTIVE PROFILE
+   PROFILE HERO
 ===================================================== */
 
 .profile-hero{
 
-    margin-top:22px;
+    margin-top:25px;
 
-    display:grid;
+    padding:35px;
 
-    grid-template-columns:300px 1fr;
+    display:flex;
 
-    min-height:245px;
+    align-items:center;
 
-    background:#ffffff;
+    gap:30px;
 
-    border:1px solid #e3ebe7;
+    border-radius:22px;
 
-    border-radius:18px;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,200,120,0.12),
+        rgba(0,130,255,0.08)
+    );
 
-    overflow:hidden;
-
-    box-shadow:
-    0 8px 30px
-    rgba(24,55,42,0.05);
+    border:
+    1px solid
+    rgba(255,255,255,0.07);
 
 }
 
 
 /* =====================================================
-   PROFILE LEFT
+   PROFILE PHOTO
 ===================================================== */
-
-.profile-left{
-
-    padding:30px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    background:#0b7a4b;
-
-    color:#ffffff;
-
-}
-
 
 .profile-photo-wrap{
 
-    width:105px;
+    width:125px;
 
-    height:105px;
+    height:125px;
 
     padding:4px;
 
     border-radius:50%;
 
-    background:#ffffff;
+    flex-shrink:0;
 
-    margin-bottom:15px;
+    background:
+    linear-gradient(
+        135deg,
+        #00d084,
+        #008cff
+    );
 
 }
 
@@ -648,7 +708,13 @@ body{
 
     object-fit:cover;
 
-    display:none;
+    display:block;
+
+    background:#102638;
+
+    border:
+    4px solid
+    #081a29;
 
 }
 
@@ -667,191 +733,93 @@ body{
 
     justify-content:center;
 
-    background:#e7f5ef;
+    background:#102638;
 
-    color:#0b7a4b;
+    border:
+    4px solid
+    #081a29;
 
-    font-size:35px;
+    font-size:45px;
 
-    font-weight:800;
+    font-weight:700;
 
-}
-
-
-.profile-left h2{
-
-    font-size:20px;
-
-}
-
-
-.profile-left .username{
-
-    margin-top:5px;
-
-    color:#c9e9da;
-
-    font-size:11px;
-
-}
-
-
-.profile-tags{
-
-    display:flex;
-
-    gap:7px;
-
-    margin-top:12px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-
-.profile-tag{
-
-    padding:5px 10px;
-
-    border-radius:20px;
-
-    background:
-    rgba(255,255,255,0.14);
-
-    color:#ffffff;
-
-    font-size:9px;
+    color:#00d084;
 
 }
 
 
 /* =====================================================
-   PROFILE RIGHT
+   PROFILE DETAILS
 ===================================================== */
 
-.profile-right{
+.profile-details h2{
 
-    padding:28px;
+    font-size:28px;
 
-}
-
-
-.profile-right-title{
-
-    margin-bottom:18px;
-
-    padding-bottom:12px;
-
-    border-bottom:1px solid #edf1ef;
+    margin-bottom:7px;
 
 }
 
 
-.profile-right-title h2{
+.profile-details .username{
 
-    font-size:17px;
+    color:#7e96a7;
 
-}
+    font-size:13px;
 
-
-.profile-right-title p{
-
-    margin-top:4px;
-
-    color:#8a9891;
-
-    font-size:10px;
+    margin-bottom:14px;
 
 }
 
 
-.account-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-
-}
-
-
-.info-card{
-
-    padding:14px;
-
-    border:1px solid #e8eeeb;
-
-    border-radius:10px;
-
-    background:#fbfcfc;
-
-}
-
-
-.info-label{
-
-    display:block;
-
-    margin-bottom:6px;
-
-    color:#8a9891;
-
-    font-size:9px;
-
-    text-transform:uppercase;
-
-    letter-spacing:.6px;
-
-}
-
-
-.info-value{
-
-    display:block;
-
-    color:#26342c;
-
-    font-size:12px;
-
-    font-weight:600;
-
-    word-break:break-word;
-
-}
-
-
-.password-row{
+.profile-badges{
 
     display:flex;
 
-    align-items:center;
+    flex-wrap:wrap;
 
-    justify-content:space-between;
-
-    gap:10px;
+    gap:8px;
 
 }
 
 
-.password-toggle{
+.badge{
 
-    border:none;
+    padding:
+    7px 12px;
 
-    background:#eaf6f0;
+    border-radius:20px;
 
-    color:#0b7a4b;
+    background:
+    rgba(255,255,255,0.05);
 
-    padding:5px 8px;
+    border:
+    1px solid
+    rgba(255,255,255,0.07);
 
-    border-radius:6px;
-
-    cursor:pointer;
+    color:#b7c7d1;
 
     font-size:10px;
+
+}
+
+
+.badge.role{
+
+    color:#65eab2;
+
+    border-color:
+    rgba(0,200,120,0.18);
+
+}
+
+
+.badge.status{
+
+    color:#70bfff;
+
+    border-color:
+    rgba(0,140,255,0.18);
 
 }
 
@@ -862,50 +830,146 @@ body{
 
 .section{
 
-    margin-top:24px;
+    margin-top:25px;
 
 }
 
 
-.section-header{
+.section-title{
 
     display:flex;
 
     align-items:center;
 
-    justify-content:space-between;
+    gap:10px;
 
-    margin-bottom:13px;
+    margin-bottom:15px;
 
 }
 
 
-.section-header h2{
+.section-title h2{
 
     font-size:17px;
 
 }
 
 
-.section-header span{
+.section-line{
 
-    color:#8a9891;
+    flex:1;
 
-    font-size:10px;
+    height:1px;
+
+    background:
+    rgba(255,255,255,0.06);
 
 }
 
 
 /* =====================================================
-   PROFESSIONS
+   ACCOUNT GRID
 ===================================================== */
 
-.profession-list{
+.account-grid{
 
     display:grid;
 
     grid-template-columns:
     repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+
+.info-card{
+
+    min-height:80px;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:
+    #0a1b2a;
+
+    border:
+    1px solid
+    rgba(255,255,255,0.06);
+
+    transition:0.25s;
+
+}
+
+
+.info-card:hover{
+
+    border-color:
+    rgba(0,200,120,0.20);
+
+    transform:
+    translateY(-2px);
+
+}
+
+
+.info-label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#607a8c;
+
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:0.7px;
+
+}
+
+
+.info-value{
+
+    display:block;
+
+    color:#e5edf2;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    word-break:break-word;
+
+}
+
+
+/* =====================================================
+   PASSWORD SHOW
+===================================================== */
+
+.password-value{
+
+    color:#00d084;
+
+    letter-spacing:1px;
+
+    word-break:break-all;
+
+}
+
+
+/* =====================================================
+   PROFESSIONAL INFORMATION
+===================================================== */
+
+.profession-list{
+
+    display:flex;
+
+    flex-direction:column;
 
     gap:12px;
 
@@ -914,47 +978,51 @@ body{
 
 .profession-card{
 
+    min-height:72px;
+
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
 
-    gap:15px;
+    gap:20px;
 
-    min-height:75px;
+    padding:
+    14px 18px;
 
-    padding:14px 16px;
+    border-radius:16px;
 
-    background:#ffffff;
+    background:
+    #0a1b2a;
 
-    border:1px solid #e4ebe7;
+    border:
+    1px solid
+    rgba(255,255,255,0.06);
 
-    border-radius:12px;
-
-    transition:.2s;
+    transition:0.25s;
 
 }
 
 
 .profession-card:hover{
 
-    border-color:#9bcbb4;
+    border-color:
+    rgba(0,200,120,0.18);
 
-    box-shadow:
-    0 5px 18px
-    rgba(11,122,75,.06);
+    transform:
+    translateX(3px);
 
 }
 
 
-.profession-left{
+.profession-name-area{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
     min-width:0;
 
@@ -975,62 +1043,94 @@ body{
 
     justify-content:center;
 
-    border-radius:9px;
+    border-radius:10px;
 
-    background:#eaf6f0;
+    background:
+    rgba(0,200,120,0.08);
 
-    color:#0b7a4b;
+    color:#00d084;
 
     font-size:11px;
 
-    font-weight:800;
+    font-weight:700;
+
+}
+
+
+.profession-text{
+
+    min-width:0;
 
 }
 
 
 .profession-label{
 
-    color:#9aa69f;
+    color:#607a8c;
 
     font-size:9px;
 
     text-transform:uppercase;
 
-    margin-bottom:3px;
+    margin-bottom:4px;
 
 }
 
 
 .profession-value{
 
-    color:#25332b;
+    color:#e5edf2;
 
-    font-size:12px;
+    font-size:13px;
 
-    font-weight:700;
+    font-weight:600;
 
     word-break:break-word;
 
 }
 
 
-.company-logo{
+/* =====================================================
+   COMPANY LOGO
+===================================================== */
 
-    width:50px;
+.company-logo-wrap{
 
-    height:50px;
+    width:58px;
+
+    height:58px;
 
     flex-shrink:0;
 
-    padding:5px;
+    display:flex;
 
-    border-radius:9px;
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px;
+
+    border-radius:13px;
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border:
+    1px solid
+    rgba(255,255,255,0.07);
+
+}
+
+
+.company-logo{
+
+    width:100%;
+
+    height:100%;
 
     object-fit:contain;
 
-    border:1px solid #e5ebe8;
-
-    background:#ffffff;
+    border-radius:8px;
 
 }
 
@@ -1041,34 +1141,11 @@ body{
 
 .loading{
 
-    padding:35px;
+    padding:30px;
 
     text-align:center;
 
-    color:#83918a;
-
-    font-size:12px;
-
-}
-
-
-/* =====================================================
-   NO DATA
-===================================================== */
-
-.no-data{
-
-    padding:25px;
-
-    text-align:center;
-
-    color:#89968f;
-
-    background:#ffffff;
-
-    border:1px solid #e5ebe8;
-
-    border-radius:12px;
+    color:#6f8798;
 
     font-size:12px;
 
@@ -1081,13 +1158,13 @@ body{
 
 .footer{
 
-    margin-top:28px;
+    margin-top:30px;
 
-    padding:18px;
+    padding:20px 0;
 
     text-align:center;
 
-    color:#9aa69f;
+    color:#4f6879;
 
     font-size:10px;
 
@@ -1109,7 +1186,7 @@ body{
     z-index:90;
 
     background:
-    rgba(0,0,0,.45);
+    rgba(0,0,0,0.65);
 
 }
 
@@ -1117,31 +1194,6 @@ body{
 /* =====================================================
    RESPONSIVE
 ===================================================== */
-
-@media(max-width:950px){
-
-    .profile-hero{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .profile-left{
-
-        padding:28px;
-
-    }
-
-
-    .profession-list{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
 
 @media(max-width:800px){
 
@@ -1185,10 +1237,51 @@ body{
 
     }
 
+
+    .profile-hero{
+
+        padding:25px;
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+    .profile-badges{
+
+        justify-content:center;
+
+    }
+
 }
 
 
 @media(max-width:600px){
+
+    .account-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .profile-photo-wrap{
+
+        width:105px;
+
+        height:105px;
+
+    }
+
+
+    .profile-details h2{
+
+        font-size:23px;
+
+    }
+
 
     .top-user-info{
 
@@ -1204,517 +1297,305 @@ body{
     }
 
 
-    .account-grid{
+    .profession-card{
 
-        grid-template-columns:1fr;
-
-    }
-
-
-    .profile-right{
-
-        padding:20px;
+        padding:13px;
 
     }
 
 
-    .profile-left{
+    .company-logo-wrap{
 
-        padding:25px 15px;
+        width:50px;
+
+        height:50px;
 
     }
 
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="app">
-
-
-<!-- =====================================================
+</style></head><body><div class="app"><!-- =====================================================
      SIDEBAR
-===================================================== -->
+===================================================== --><aside
+class="sidebar"
+id="sidebar"
+><div class="brand"><div class="brand-logo">L4
 
-<aside class="sidebar" id="sidebar">
+</div><div class="brand-name">LINK4 COMMUNICATION
 
+<small>MANAGEMENT SYSTEM
 
-<div class="brand">
+</small></div></div><!-- MINI USER --><div class="user-mini"><div
+class="user-avatar"
+id="sidebarAvatar"
+>U
 
-<div class="brand-logo">
+</div><div class="user-info"><strong
+id="sidebarName"
 
-L4
-
-</div>
-
-<div class="brand-name">
-
-LINK4 COMMUNICATION
-
-<small>MANAGEMENT SYSTEM</small>
-
-</div>
-
-</div>
-
-
-<div class="user-mini">
-
-<div class="user-avatar" id="sidebarAvatar">
-
-U
-
-</div>
-
-<div class="user-info">
-
-<strong id="sidebarName">
+«»
 
 User
 
-</strong>
+</strong><span
+id="sidebarRole"
 
-<span id="sidebarRole">
+«»
 
 User
 
-</span>
+</span></div></div><!-- MENU --><nav class="sidebar-menu"><a href="dashboard.html"><span class="menu-icon">🏠
 
-</div>
+</span><span>Dashboard
 
-</div>
+</span></a><a href="dashboard.html"><span class="menu-icon">📊
 
+</span><span>Overview
 
-<nav class="sidebar-menu">
+</span></a><a href="support.html"><span class="menu-icon">🛠️
 
+</span><span>Support
 
-<a href="dashboard.html">
+</span></a><a href="call.html"><span class="menu-icon">📞
 
-<span class="menu-icon">🏠</span>
+</span><span>Call
 
-Dashboard
+</span></a><a
+href="account.html"
+class="active"
 
-</a>
+«»
 
+<span class="menu-icon">👤
 
-<a href="dashboard.html">
+</span><span>My Account
 
-<span class="menu-icon">📊</span>
+</span></a></nav><!-- BOTTOM --><div class="sidebar-bottom"><button
+class="logout-btn"
+id="logoutBtn"
 
-Overview
+«»
 
-</a>
+<span class="menu-icon">🚪
 
+</span><span>Logout
 
-<a href="support.html">
-
-<span class="menu-icon">🛠️</span>
-
-Support
-
-</a>
-
-
-<a href="call.html">
-
-<span class="menu-icon">📞</span>
-
-Call
-
-</a>
-
-
-<a href="account.html" class="active">
-
-<span class="menu-icon">👤</span>
-
-My Account
-
-</a>
-
-
-</nav>
-
-
-<div class="sidebar-bottom">
-
-<button class="logout-btn" id="logoutBtn">
-
-<span class="menu-icon">🚪</span>
-
-Logout
-
-</button>
-
-</div>
-
-
-</aside>
-
-
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-
-<!-- =====================================================
+</span></button></div></aside><!-- OVERLAY --><div
+class="sidebar-overlay"
+id="sidebarOverlay"
+></div><!-- =====================================================
      MAIN
-===================================================== -->
+===================================================== --><main class="main"><!-- TOPBAR --><header class="topbar"><div class="page-title"><button
+class="mobile-menu-btn"
+id="mobileMenuBtn"
 
-<main class="main">
-
-
-<header class="topbar">
-
-
-<div class="page-title">
-
-<button class="mobile-menu-btn" id="mobileMenuBtn">
+«»
 
 ☰
 
-</button>
+</button><div><h1>My Account
 
-<div>
+</h1><p>Personal profile and professional information
 
-<h1>My Account</h1>
+</p></div></div><div class="top-user"><div class="top-user-info"><strong
+id="topName"
 
-<p>Employee profile and account information</p>
-
-</div>
-
-</div>
-
-
-<div class="top-user">
-
-<div class="top-user-info">
-
-<strong id="topName">User</strong>
-
-<span id="topRole">User</span>
-
-</div>
-
-<div class="top-avatar" id="topAvatar">
-
-U
-
-</div>
-
-</div>
-
-
-</header>
-
-
-<!-- =====================================================
-     EXECUTIVE PROFILE
-===================================================== -->
-
-<section class="profile-hero">
-
-
-<div class="profile-left">
-
-
-<div class="profile-photo-wrap">
-
-
-<img
-id="profilePhoto"
-class="profile-photo"
-alt="Profile Photo"
->
-
-
-<div id="defaultPhoto" class="default-photo">
-
-U
-
-</div>
-
-
-</div>
-
-
-<h2 id="profileName">
+«»
 
 User
 
-</h2>
+</strong><span
+id="topRole"
 
+«»
 
-<div class="username" id="profileUsername">
+User
 
-@username
+</span></div><div
+class="top-avatar"
+id="topAvatar"
+>U
 
-</div>
+</div></div></header><!-- =====================================================
+     PROFILE HERO
+===================================================== --><section class="profile-hero"><div class="profile-photo-wrap"><img
+id="profilePhoto"
+class="profile-photo"
+alt="Profile Photo"
+style="display:none;"
 
+«»
 
-<div class="profile-tags">
+<div
+id="defaultPhoto"
+class="default-photo"
+>U
 
-<span class="profile-tag" id="profileRole">
+</div></div><div class="profile-details"><h2
+id="profileName"
+>User
+
+</h2><div
+class="username"
+id="profileUsername"
+>@username
+
+</div><div class="profile-badges"><span
+class="badge role"
+id="profileRole"
+
+«»
 
 Role
 
-</span>
+</span><span
+class="badge status"
+id="profileStatus"
 
-<span class="profile-tag" id="profileStatus">
+«»
 
 Status
 
-</span>
+</span></div></div></section><!-- =====================================================
+     ACCOUNT INFORMATION
+===================================================== --><section class="section"><div class="section-title"><h2>Account Information
 
-</div>
+</h2><div class="section-line"></div></div><div class="account-grid"><div class="info-card"><span class="info-label">Name
 
-
-</div>
-
-
-<div class="profile-right">
-
-
-<div class="profile-right-title">
-
-<h2>Account Information</h2>
-
-<p>Your personal account details</p>
-
-</div>
-
-
-<div class="account-grid">
-
-
-<div class="info-card">
-
-<span class="info-label">Name</span>
-
-<span class="info-value" id="accountName">-</span>
-
-</div>
-
-
-<div class="info-card">
-
-<span class="info-label">Username</span>
-
-<span class="info-value" id="accountUsername">-</span>
-
-</div>
-
-
-<div class="info-card">
-
-<span class="info-label">Password</span>
-
-<div class="password-row">
-
-<span
+</span><span
 class="info-value"
+id="accountName"
+
+«»
+
+- 
+
+</span></div><div class="info-card"><span class="info-label">Username
+
+</span><span
+class="info-value"
+id="accountUsername"
+
+«»
+
+- 
+
+</span></div><div class="info-card"><span class="info-label">Password
+
+</span><span
+class="info-value password-value"
 id="accountPassword"
-data-password=""
->
-••••••••
-</span>
 
-<button
-class="password-toggle"
-id="passwordToggle"
->
-Show
-</button>
+«»
 
-</div>
+- 
 
-</div>
+</span></div><div class="info-card"><span class="info-label">Department
 
+</span><span
+class="info-value"
+id="accountDepartment"
 
-<div class="info-card">
+«»
 
-<span class="info-label">Department</span>
+- 
 
-<span class="info-value" id="accountDepartment">-</span>
+</span></div><div class="info-card"><span class="info-label">Join Date
 
-</div>
+</span><span
+class="info-value"
+id="accountJoinDate"
 
+«»
 
-<div class="info-card">
+- 
 
-<span class="info-label">Join Date</span>
+</span></div><div class="info-card"><span class="info-label">Blood Group
 
-<span class="info-value" id="accountJoinDate">-</span>
+</span><span
+class="info-value"
+id="accountBloodGroup"
 
-</div>
+«»
 
+- 
 
-<div class="info-card">
-
-<span class="info-label">Blood Group</span>
-
-<span class="info-value" id="accountBloodGroup">-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- =====================================================
+</span></div></div></section><!-- =====================================================
      PROFESSIONAL INFORMATION
-===================================================== -->
+===================================================== --><section
+class="section"
+id="professionSection"
+style="display:none;"
+><div class="section-title"><h2>Professional Information
 
-<section class="section" id="professionSection">
+</h2><div class="section-line"></div></div><div
+class="profession-list"
+id="professionList"
+></div></section><!-- FOOTER --><footer class="footer">© 2026 LINK4 COMMUNICATION. All rights reserved.
 
-
-<div class="section-header">
-
-<h2>Professional Information</h2>
-
-<span id="professionCount">0 Professional Roles</span>
-
-</div>
-
-
-<div class="profession-list" id="professionList">
-
-<div class="loading">
-
-Loading professional information...
-
-</div>
-
-</div>
-
-
-<div class="no-data" id="noProfession" style="display:none;">
-
-No professional information available.
-
-</div>
-
-
-</section>
-
-
-<footer class="footer">
-
-© 2026 LINK4 COMMUNICATION. All rights reserved.
-
-</footer>
-
-
-</main>
-
-
-</div>
-
-
-<script>
+</footer></main></div><script>
 
 /* =====================================================
-   API CONFIG
+   API CONFIGURATION
 ===================================================== */
 
 const API_URL =
+
 "https://script.google.com/macros/s/AKfycbxbgyIg_ddBYIs8qkQvRN3xS3-ZG451C5y_2sNbVFWdWydzb9Mc6qV5CoWB5rjs91ghjQ/exec";
 
 
 /* =====================================================
-   CURRENT USERNAME
+   GET LOGGED USERNAME
 ===================================================== */
 
 const loggedUsername =
+
 (
-    localStorage.getItem("username") || ""
-).trim();
+    localStorage.getItem("username")
+    || ""
+)
+.trim();
 
 
 /* =====================================================
-   ELEMENTS
+   LOCAL STORAGE FALLBACK
 ===================================================== */
 
-const sidebarName =
-document.getElementById("sidebarName");
+const localName =
 
-const sidebarRole =
-document.getElementById("sidebarRole");
+localStorage.getItem("name")
+|| "User";
 
-const topName =
-document.getElementById("topName");
 
-const topRole =
-document.getElementById("topRole");
+const localRole =
 
-const profileName =
-document.getElementById("profileName");
+localStorage.getItem("role")
+|| "User";
 
-const profileUsername =
-document.getElementById("profileUsername");
 
-const profileRole =
-document.getElementById("profileRole");
+const localStatus =
 
-const profileStatus =
-document.getElementById("profileStatus");
-
-const accountName =
-document.getElementById("accountName");
-
-const accountUsername =
-document.getElementById("accountUsername");
-
-const accountPassword =
-document.getElementById("accountPassword");
-
-const accountDepartment =
-document.getElementById("accountDepartment");
-
-const accountJoinDate =
-document.getElementById("accountJoinDate");
-
-const accountBloodGroup =
-document.getElementById("accountBloodGroup");
-
-const sidebarAvatar =
-document.getElementById("sidebarAvatar");
-
-const topAvatar =
-document.getElementById("topAvatar");
-
-const profilePhoto =
-document.getElementById("profilePhoto");
-
-const defaultPhoto =
-document.getElementById("defaultPhoto");
+localStorage.getItem("status")
+|| "Active";
 
 
 /* =====================================================
-   INITIAL LOCAL DATA
+   INITIAL DISPLAY
 ===================================================== */
 
-setUserData({
+setBasicUserData({
 
     username:
     loggedUsername,
 
     name:
-    localStorage.getItem("name") || "User",
+    localName,
 
     role:
-    localStorage.getItem("role") || "User",
+    localRole,
 
     status:
-    localStorage.getItem("status") || "Active"
+    localStatus
 
 });
 
@@ -1723,10 +1604,10 @@ setUserData({
    LOAD ACCOUNT
 ===================================================== */
 
-loadAccount();
+loadUserAccount();
 
 
-async function loadAccount(){
+async function loadUserAccount(){
 
     if(!loggedUsername){
 
@@ -1738,42 +1619,49 @@ async function loadAccount(){
     try{
 
         const url =
+
         API_URL +
-        "?action=getAccount" +
+
+        "?action=getaccount" +
+
         "&username=" +
-        encodeURIComponent(loggedUsername);
+
+        encodeURIComponent(
+            loggedUsername
+        );
 
 
         const response =
+
         await fetch(
+
             url,
+
             {
                 method:"GET",
                 cache:"no-store"
             }
+
         );
 
 
         if(!response.ok){
 
             throw new Error(
-                "Unable to connect with server."
+                "Server Error"
             );
 
         }
 
 
         const data =
+
         await response.json();
 
 
         if(data.success === true){
 
-            setUserData(
-                data.user
-            );
-
-            renderProfessions(
+            displayUserData(
                 data.user
             );
 
@@ -1792,8 +1680,11 @@ async function loadAccount(){
     catch(error){
 
         console.error(
-            "Account Error:",
+
+            "Account loading error:",
+
             error
+
         );
 
     }
@@ -1802,95 +1693,192 @@ async function loadAccount(){
 
 
 /* =====================================================
-   SET USER DATA
+   BASIC USER DATA
 ===================================================== */
 
-function setUserData(user){
+function setBasicUserData(user){
 
     const name =
-    user.name || "User";
+
+    user.name
+    || "User";
+
 
     const username =
-    user.username || loggedUsername || "-";
+
+    user.username
+    || loggedUsername
+    || "-";
+
 
     const role =
-    user.role || "User";
+
+    user.role
+    || "User";
+
 
     const status =
-    user.status || "Active";
+
+    user.status
+    || "Active";
 
 
-    sidebarName.textContent =
-    name;
+    document.getElementById(
+        "sidebarName"
+    ).textContent = name;
 
-    sidebarRole.textContent =
-    role;
 
-    topName.textContent =
-    name;
+    document.getElementById(
+        "sidebarRole"
+    ).textContent = role;
 
-    topRole.textContent =
-    role;
 
-    profileName.textContent =
-    name;
+    document.getElementById(
+        "topName"
+    ).textContent = name;
 
-    profileUsername.textContent =
+
+    document.getElementById(
+        "topRole"
+    ).textContent = role;
+
+
+    document.getElementById(
+        "profileName"
+    ).textContent = name;
+
+
+    document.getElementById(
+        "profileUsername"
+    ).textContent =
+
     "@" + username;
 
-    profileRole.textContent =
-    role;
 
-    profileStatus.textContent =
-    status;
+    document.getElementById(
+        "profileRole"
+    ).textContent = role;
 
-    accountName.textContent =
-    name;
 
-    accountUsername.textContent =
-    username;
+    document.getElementById(
+        "profileStatus"
+    ).textContent = status;
 
-    accountDepartment.textContent =
-    user.department || "-";
 
-    accountJoinDate.textContent =
-    user.joinDate || "-";
+    document.getElementById(
+        "accountName"
+    ).textContent = name;
 
-    accountBloodGroup.textContent =
-    user.bloodGroup || "-";
+
+    document.getElementById(
+        "accountUsername"
+    ).textContent = username;
+
+
+    document.getElementById(
+        "accountDepartment"
+    ).textContent =
+
+    user.department
+    || "-";
+
+
+    document.getElementById(
+        "accountJoinDate"
+    ).textContent =
+
+    user.joinDate
+    || "-";
+
+
+    document.getElementById(
+        "accountBloodGroup"
+    ).textContent =
+
+    user.bloodGroup
+    || "-";
 
 
     const initial =
+
     name
     .trim()
     .charAt(0)
-    .toUpperCase() || "U";
+    .toUpperCase()
+    || "U";
 
 
-    sidebarAvatar.textContent =
-    initial;
-
-    topAvatar.textContent =
-    initial;
-
-    defaultPhoto.textContent =
-    initial;
+    document.getElementById(
+        "sidebarAvatar"
+    ).textContent = initial;
 
 
-    /* ================================================
+    document.getElementById(
+        "topAvatar"
+    ).textContent = initial;
+
+
+    document.getElementById(
+        "defaultPhoto"
+    ).textContent = initial;
+
+}
+
+
+/* =====================================================
+   DISPLAY COMPLETE USER DATA
+===================================================== */
+
+function displayUserData(user){
+
+    setBasicUserData(user);
+
+
+    /* =================================================
+       PASSWORD SHOW
+    ================================================= */
+
+    const passwordElement =
+
+    document.getElementById(
+        "accountPassword"
+    );
+
+
+    passwordElement.textContent =
+
+    user.password
+    || "-";
+
+
+    /* =================================================
        PROFILE PHOTO
-    ================================================ */
+    ================================================= */
 
     const photo =
+
     String(
         user.photo || ""
     ).trim();
 
 
+    const profilePhoto =
+
+    document.getElementById(
+        "profilePhoto"
+    );
+
+
+    const defaultPhoto =
+
+    document.getElementById(
+        "defaultPhoto"
+    );
+
+
     if(photo){
 
-        profilePhoto.src =
-        photo;
+        profilePhoto.src = photo;
 
         profilePhoto.style.display =
         "block";
@@ -1899,23 +1887,8 @@ function setUserData(user){
         "none";
 
 
-        profilePhoto.onload =
-        function(){
-
-            sidebarAvatar.innerHTML =
-            '<img src="' +
-            photo +
-            '" alt="Profile">';
-
-            topAvatar.innerHTML =
-            '<img src="' +
-            photo +
-            '" alt="Profile">';
-
-        };
-
-
         profilePhoto.onerror =
+
         function(){
 
             profilePhoto.style.display =
@@ -1928,269 +1901,315 @@ function setUserData(user){
 
     }
 
-}
-
-
-/* =====================================================
-   PASSWORD
-===================================================== */
-
-document
-.getElementById("passwordToggle")
-.addEventListener(
-"click",
-function(){
-
-    const password =
-    accountPassword.dataset.password || "";
-
-
-    if(!password){
-
-        return;
-
-    }
-
-
-    if(
-        accountPassword.textContent ===
-        "••••••••"
-    ){
-
-        accountPassword.textContent =
-        password;
-
-        this.textContent =
-        "Hide";
-
-    }
-
     else{
 
-        accountPassword.textContent =
-        "••••••••";
+        profilePhoto.style.display =
+        "none";
 
-        this.textContent =
-        "Show";
+        defaultPhoto.style.display =
+        "flex";
 
     }
 
-});
+
+    /* =================================================
+       PROFESSIONS
+    ================================================= */
+
+    const professions = [
+
+        {
+            name:
+            user.profession1,
+
+            logo:
+            user.professionCompanyLG1
+        },
+
+        {
+            name:
+            user.profession2,
+
+            logo:
+            user.professionCompanyLG2
+        },
+
+        {
+            name:
+            user.profession3,
+
+            logo:
+            user.professionCompanyLG3
+        },
+
+        {
+            name:
+            user.profession4,
+
+            logo:
+            user.professionCompanyLG4
+        },
+
+        {
+            name:
+            user.profession5,
+
+            logo:
+            user.professionCompanyLG5
+        },
+
+        {
+            name:
+            user.profession6,
+
+            logo:
+            user.professionCompanyLG6
+        }
+
+    ];
 
 
-/* =====================================================
-   DISPLAY PASSWORD AFTER API LOAD
-===================================================== */
+    renderProfessions(
+        professions
+    );
 
-const originalSetUserData =
-setUserData;
+}
 
 
 /* =====================================================
    RENDER PROFESSIONS
 ===================================================== */
 
-function renderProfessions(user){
+function renderProfessions(professions){
 
     const list =
+
     document.getElementById(
         "professionList"
     );
 
+
     const section =
+
     document.getElementById(
         "professionSection"
-    );
-
-    const noData =
-    document.getElementById(
-        "noProfession"
-    );
-
-    const countText =
-    document.getElementById(
-        "professionCount"
     );
 
 
     list.innerHTML = "";
 
 
-    const professions = [
-
-        {
-            name:user.profession1,
-            logo:user.professionCompanyLG1
-        },
-
-        {
-            name:user.profession2,
-            logo:user.professionCompanyLG2
-        },
-
-        {
-            name:user.profession3,
-            logo:user.professionCompanyLG3
-        },
-
-        {
-            name:user.profession4,
-            logo:user.professionCompanyLG4
-        },
-
-        {
-            name:user.profession5,
-            logo:user.professionCompanyLG5
-        },
-
-        {
-            name:user.profession6,
-            logo:user.professionCompanyLG6
-        }
-
-    ];
-
-
     let count = 0;
 
 
     professions.forEach(
-    function(item){
 
-        const profession =
-        String(
-            item.name || ""
-        ).trim();
+        function(item){
 
+            const profession =
 
-        const logo =
-        String(
-            item.logo || ""
-        ).trim();
+            String(
+                item.name || ""
+            ).trim();
 
 
-        /* EMPTY PROFESSION HIDE */
+            const logo =
 
-        if(!profession){
-
-            return;
-
-        }
+            String(
+                item.logo || ""
+            ).trim();
 
 
-        count++;
+            /* =========================================
+               EMPTY PROFESSION HIDE
+            ========================================= */
+
+            if(!profession){
+
+                return;
+
+            }
 
 
-        const card =
-        document.createElement(
-            "div"
-        );
-
-        card.className =
-        "profession-card";
+            count++;
 
 
-        const left =
-        document.createElement(
-            "div"
-        );
+            const card =
 
-        left.className =
-        "profession-left";
-
-
-        const number =
-        document.createElement(
-            "div"
-        );
-
-        number.className =
-        "profession-number";
-
-        number.textContent =
-        count;
-
-
-        const text =
-        document.createElement(
-            "div"
-        );
-
-
-        const label =
-        document.createElement(
-            "div"
-        );
-
-        label.className =
-        "profession-label";
-
-        label.textContent =
-        "Professional Role";
-
-
-        const value =
-        document.createElement(
-            "div"
-        );
-
-        value.className =
-        "profession-value";
-
-        value.textContent =
-        profession;
-
-
-        text.appendChild(label);
-
-        text.appendChild(value);
-
-
-        left.appendChild(number);
-
-        left.appendChild(text);
-
-
-        card.appendChild(left);
-
-
-        /* COMPANY LOGO */
-
-        if(logo){
-
-            const image =
             document.createElement(
-                "img"
+                "div"
             );
 
-            image.className =
-            "company-logo";
 
-            image.src =
-            logo;
-
-            image.alt =
-            "Company Logo";
+            card.className =
+            "profession-card";
 
 
-            image.onerror =
-            function(){
+            /* =========================================
+               LEFT SIDE
+            ========================================= */
 
-                this.style.display =
-                "none";
+            const left =
 
-            };
+            document.createElement(
+                "div"
+            );
 
 
-            card.appendChild(image);
+            left.className =
+            "profession-name-area";
+
+
+            const number =
+
+            document.createElement(
+                "div"
+            );
+
+
+            number.className =
+            "profession-number";
+
+
+            number.textContent =
+            count;
+
+
+            const text =
+
+            document.createElement(
+                "div"
+            );
+
+
+            text.className =
+            "profession-text";
+
+
+            const label =
+
+            document.createElement(
+                "div"
+            );
+
+
+            label.className =
+            "profession-label";
+
+
+            label.textContent =
+            "Profession";
+
+
+            const value =
+
+            document.createElement(
+                "div"
+            );
+
+
+            value.className =
+            "profession-value";
+
+
+            value.textContent =
+            profession;
+
+
+            text.appendChild(
+                label
+            );
+
+
+            text.appendChild(
+                value
+            );
+
+
+            left.appendChild(
+                number
+            );
+
+
+            left.appendChild(
+                text
+            );
+
+
+            card.appendChild(
+                left
+            );
+
+
+            /* =========================================
+               COMPANY LOGO
+            ========================================= */
+
+            if(logo){
+
+                const logoWrap =
+
+                document.createElement(
+                    "div"
+                );
+
+
+                logoWrap.className =
+                "company-logo-wrap";
+
+
+                const logoImage =
+
+                document.createElement(
+                    "img"
+                );
+
+
+                logoImage.className =
+                "company-logo";
+
+
+                logoImage.src =
+                logo;
+
+
+                logoImage.alt =
+                "Company Logo";
+
+
+                logoImage.onerror =
+
+                function(){
+
+                    logoWrap.remove();
+
+                };
+
+
+                logoWrap.appendChild(
+                    logoImage
+                );
+
+
+                card.appendChild(
+                    logoWrap
+                );
+
+            }
+
+
+            list.appendChild(
+                card
+            );
 
         }
 
+    );
 
-        list.appendChild(card);
 
-    });
-
+    /* =================================================
+       HIDE SECTION IF NO PROFESSION
+    ================================================= */
 
     if(count === 0){
 
@@ -2204,17 +2223,6 @@ function renderProfessions(user){
         section.style.display =
         "block";
 
-        noData.style.display =
-        "none";
-
-        countText.textContent =
-        count +
-        (
-            count === 1
-            ? " Professional Role"
-            : " Professional Roles"
-        );
-
     }
 
 }
@@ -2225,72 +2233,103 @@ function renderProfessions(user){
 ===================================================== */
 
 const mobileMenuBtn =
+
 document.getElementById(
     "mobileMenuBtn"
 );
 
+
 const sidebar =
+
 document.getElementById(
     "sidebar"
 );
 
+
 const overlay =
+
 document.getElementById(
     "sidebarOverlay"
 );
 
 
 mobileMenuBtn.addEventListener(
-"click",
-function(){
 
-    sidebar.classList.add(
-        "open"
-    );
+    "click",
 
-    overlay.classList.add(
-        "show"
-    );
+    function(){
 
-});
+        sidebar.classList.add(
+            "open"
+        );
+
+        overlay.classList.add(
+            "show"
+        );
+
+    }
+
+);
 
 
 overlay.addEventListener(
-"click",
-function(){
 
-    sidebar.classList.remove(
-        "open"
-    );
+    "click",
 
-    overlay.classList.remove(
-        "show"
-    );
+    function(){
 
-});
+        sidebar.classList.remove(
+            "open"
+        );
+
+        overlay.classList.remove(
+            "show"
+        );
+
+    }
+
+);
 
 
 /* =====================================================
    LOGOUT
 ===================================================== */
 
-document
-.getElementById("logoutBtn")
-.addEventListener(
-"click",
-function(){
+document.getElementById(
+    "logoutBtn"
+).addEventListener(
 
-    localStorage.clear();
+    "click",
 
-    window.location.replace(
-        "login.html"
-    );
+    function(){
 
-});
+        localStorage.removeItem(
+            "loggedIn"
+        );
 
-</script>
+        localStorage.removeItem(
+            "username"
+        );
 
-</body>
+        localStorage.removeItem(
+            "name"
+        );
 
-</html>
-```
+        localStorage.removeItem(
+            "role"
+        );
+
+        localStorage.removeItem(
+            "status"
+        );
+
+
+        window.location.replace(
+            "login.html"
+        );
+
+    }
+
+);
+
+</script></body></html>
